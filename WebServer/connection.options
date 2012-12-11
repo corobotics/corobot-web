@@ -1,0 +1,6 @@
+# These values will be used unless overridden in local.options
+user=root
+password=abcd
+port=3306
+db=world
+hostname=localhost
