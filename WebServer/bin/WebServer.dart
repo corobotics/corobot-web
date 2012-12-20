@@ -5,9 +5,10 @@ import 'package:sqljocky/utils.dart';
 import 'data_access_layer.dart';
 import 'static_file_handler.dart';
 import 'connection_handler.dart';
+
 void main() {
   dbConfig();
-  runServer(8080);
+  //runServer(8080);
 }
 
 //Run Server function is created to create multiple instances 
@@ -49,7 +50,7 @@ void acceptTest(HttpRequest request,HttpResponse response){
 
 void dbConfig()
 {
-OptionsFile options = new OptionsFile('connection.options');
+OptionsFile options = new OptionsFile('connections.options');
 String user = options.getString('user');
 String password = options.getString('password');
 int port = options.getInt('port',3306);
@@ -65,11 +66,12 @@ pool.query('select p.id, p.name, p.age, t.name, t.species '
 
 onSuccess(result)
 {
-  for (var row in result) {
+  print (result);
+  /*for (var row in result) {
     if (row[3] == null) {
       print("ID: ${row[0]}, Name: ${row[1]}, Age: ${row[2]}, No Pets");
     } else {
       print("ID: ${row[0]}, Name: ${row[1]}, Age: ${row[2]}, Pet Name: ${row[3]},     Pet Species ${row[4]}");
     }
-  }
+  }*/
 }
