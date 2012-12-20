@@ -1,12 +1,10 @@
 import 'dart:io';
-import 'package:/options_file/options_file.dart';
-import 'package:sqljocky/sqljocky.dart';
-import 'package:sqljocky/utils.dart';
 import 'data_access_layer.dart';
 import 'static_file_handler.dart';
 import 'connection_handler.dart';
+WebSocketHandler webCon;
 void main() {
-  dbConfig();
+  //dbConfig();
   runServer(8080);
 }
 
@@ -20,7 +18,7 @@ runServer(int port) {
   //with the handler
   server.addRequestHandler((req) => req.path =='/acceptInput',acceptInput);
   server.addRequestHandler((req) => req.path =='/acceptTest',acceptTest);
-  WebSocketHandler webCon=new WebSocketHandler();
+  webCon=new WebSocketHandler();
   webCon.onOpen = new ConnectionHandler("/portConnect").onOpen;
   server.addRequestHandler((req) => req.path == "/portConnect", webCon.onRequest);
   //Default handler is given just for the sake of making 
@@ -36,6 +34,9 @@ void acceptInput(HttpRequest request,HttpResponse response){
   print(request.queryParameters.toString());
   response.outputStream.write('Hello dude'.charCodes);
   response.outputStream.close();
+}
+void webConnectionFunction(HttpRequest request,HttpResponse response){
+  response.outputStream.write('Hello dude'.charCodes);
 }
 
 void acceptTest(HttpRequest request,HttpResponse response){
