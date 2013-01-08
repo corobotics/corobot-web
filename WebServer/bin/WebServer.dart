@@ -69,7 +69,13 @@ updatePosit.UpdateRobotPosition("testrobot", 24, 26).then((x){
 });
 var getPosition=new RobotData();
 getPosition.GetAllRobotPosition().then((x){
+  for (var row in getPosition.listOfPositions)
+  {
+    print(row);
+  }
   getPosition.pool.close();
 });
+
+
 }
 

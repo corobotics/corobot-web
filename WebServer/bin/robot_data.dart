@@ -2,8 +2,9 @@ library RobotData;
 import 'sql/options_file/options_file.dart';
 import 'sql/sqljocky/sqljocky.dart';
 import 'robot_data_structure.dart';
+import 'dart:json';
 class RobotData {
-  List<RobotDataStructure> positionList;
+  var listOfPositions=new List<List>(); 
   ConnectionPool pool;
   RobotData()
   {
@@ -14,6 +15,7 @@ class RobotData {
     String db = options.getString('db');
     String host = options.getString('host','localhost');
     pool= new ConnectionPool(host: host, port: port, user: user, password: password, db: db);
+ 
   }
   
   Future UpdateRobotPosition(String robotname,int xcoordinate,int ycoordinate) {
@@ -25,8 +27,8 @@ class RobotData {
         ];
       return query.executeMulti(parameters);
     }).then((results) {
-      print("query executed");
-      print(results);
+      //print("query executed");
+      //print(results);
       completer.complete(null);
     });
     return completer.future;
@@ -34,11 +36,19 @@ class RobotData {
   
   Future GetAllRobotPosition()
   {
+    
     var completer = new Completer();
     pool.query("SELECT idrobotPosition,robotname,ycoordinate,xcoordinate FROM robotPosition").then((x){
       print("got results");
-      for (var row in x) {
-        print("idrobotPosition: ${row[0]}, robotname: ${row[1]}, ycoordinate: ${row[2]}, xcoordinate: ${row[3]}");
+      for (var row in x) {   
+        
+        List parsedList = row;
+        listOfPositions.add(parsedList);
+        //print(listOfPositions[0][1]);
+        
+        /*print(parsedList[0]);
+        print(parsedList[1]);*/ 
+        //print("idrobotPosition: ${row[0]}, robotname: ${row[1]}, ycoordinate: ${row[2]}, xcoordinate: ${row[3]}");
       }
       completer.complete(null);
     });
