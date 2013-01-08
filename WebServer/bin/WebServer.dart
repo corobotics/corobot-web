@@ -6,6 +6,7 @@ import 'data_access_layer.dart';
 import 'static_file_handler.dart';
 import 'connection_handler.dart';
 import 'example.dart';
+import 'robot_data.dart';
 
 
 void main() {
@@ -54,12 +55,21 @@ void acceptTest(HttpRequest request,HttpResponse response){
 void dbConfig()
 {
 print("connection open");
-var example = new Example();
+//var example = new Example();
 // run the example
-print("running example");
-example.run().then((x) {
+//print("running example");
+//example.run().then((x) {
   // finally, close the connection
-  example.pool.close();
+  //example.pool.close();
+//});
+
+var updatePosit=new RobotData();
+updatePosit.UpdateRobotPosition("testrobot", 24, 26).then((x){
+  updatePosit.pool.close();
+});
+var getPosition=new RobotData();
+getPosition.GetAllRobotPosition().then((x){
+  getPosition.pool.close();
 });
 }
 
