@@ -1,4 +1,4 @@
 library RobotDataStructure;
 class RobotDataStructure {
-  List positionListData;
+  List positionListData=new List();
 }

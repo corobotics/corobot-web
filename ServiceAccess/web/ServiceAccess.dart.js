@@ -1794,7 +1794,7 @@ $$.anon = {"":"Closure;",
 
 $$.anon0 = {"":"Closure;",
  call$1: function(e) {
-  $.print("received message " + $.S(e.get$data()));
+  $.print($.S(e.get$data()));
 }
 };
 

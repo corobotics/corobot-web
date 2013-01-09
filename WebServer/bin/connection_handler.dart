@@ -5,7 +5,10 @@ library ConnectionHandler;
  * */
 import 'dart:io';
 import 'robot_data.dart';
+import 'robot_data_structure.dart';
+import 'dart:json';
 class ConnectionHandler {
+  List positionCollection=new List<List>();
   Set<WebSocketConnection> webSocketConnections;
 
   ConnectionHandler(String basePath) : webSocketConnections = new Set<WebSocketConnection>()  
@@ -18,7 +21,7 @@ class ConnectionHandler {
     webSocketConnections.add(conn);
 
     //Test Code for v alidating persistent communication
-    for(int i=0;i<10;i++)
+    for(int i=0;i<2;i++)
     {
       databaseUpdates();
     }
@@ -43,16 +46,25 @@ class ConnectionHandler {
     getPosition.GetAllRobotPosition().then((x){
       for (var row in getPosition.listOfPositions)
       {
-        print(row);
+        
+        positionCollection.add(row);
+        //print(positionCollection);
+        //print(row);
+        webSocketConnections.forEach((connection){
+          connection.send(row);
+          
+        });
       }
       getPosition.pool.close();
+      
+      
+      //var abc=JSON.stringify(positionCollection);
+      //
+      //print(abc);
+      
     });
 
-    webSocketConnections.forEach((connection){
-      connection.send("Robot position arrived");
-      connection.send("Sending list");
-    });
-
+    
   }
 }
 

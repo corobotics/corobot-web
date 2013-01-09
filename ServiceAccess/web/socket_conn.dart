@@ -13,7 +13,8 @@ class SocketConn {
     });
     
     socket.on.message.add((MessageEvent e) {
-      print('received message ${e.data}');
+      print('${e.data}');
+      
     });
   }
   
