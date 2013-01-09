@@ -8,11 +8,9 @@ import 'connection_handler.dart';
 import 'example.dart';
 import 'robot_data.dart';
 
-
+ConnectionHandler connectedClient=new ConnectionHandler("/portConnect");
 void main() {
   runServer(8080);
-  dbConfig();
-  
 }
 
 //Run Server function is created to create multiple instances 
@@ -26,7 +24,7 @@ runServer(int port) {
   server.addRequestHandler((req) => req.path =='/acceptInput',acceptInput);
   server.addRequestHandler((req) => req.path =='/acceptTest',acceptTest);
   WebSocketHandler webCon=new WebSocketHandler();
-  webCon.onOpen = new ConnectionHandler("/portConnect").onOpen;
+  webCon.onOpen = connectedClient.onOpen;
   server.addRequestHandler((req) => req.path == "/portConnect", webCon.onRequest);
   //Default handler is given just for the sake of making 
   //sure there is a default function handler
@@ -51,7 +49,7 @@ void acceptTest(HttpRequest request,HttpResponse response){
 }
 
 
-void dbConfig()
+void databaseUpdates()
 {
 print("connection open");
 
@@ -68,6 +66,7 @@ getPosition.GetAllRobotPosition().then((x){
   getPosition.pool.close();
 });
 
+connectedClient.SendMessage("Test Robot Position Received");
 
 }
 

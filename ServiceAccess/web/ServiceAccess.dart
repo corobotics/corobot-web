@@ -1,6 +1,10 @@
 import 'dart:html';
+import 'socket_conn.dart';
 
 void main() {
+  SocketConn userClient=new SocketConn("ws://127.0.0.1:8080/portConnect");
+  userClient.sendConnectionStatus("Client1","Handshake completed");
+  /*
   HttpRequest req =new HttpRequest();
   req.on.readyStateChange.add((Event e) {
     if (req.readyState == HttpRequest.DONE &&
@@ -11,7 +15,7 @@ void main() {
   var url = "http://127.0.0.1:8080/acceptInput";
   req.open("POST", url); // Use POST http method to send data in the next call
   req.send("abc");
-
+ */
 }
 
 onSuccess(HttpRequest req) {
