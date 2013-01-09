@@ -44,8 +44,7 @@ void acceptInput(HttpRequest request,HttpResponse response){
 }
 
 void acceptTest(HttpRequest request,HttpResponse response){
-  //The function is just used to test and manipulate the code
-  //just an exploratory function
+
   print("Testfunction is getting called here");
   response.outputStream.write('Test Function'.charCodes);
   response.outputStream.close();
@@ -55,13 +54,6 @@ void acceptTest(HttpRequest request,HttpResponse response){
 void dbConfig()
 {
 print("connection open");
-//var example = new Example();
-// run the example
-//print("running example");
-//example.run().then((x) {
-  // finally, close the connection
-  //example.pool.close();
-//});
 
 var updatePosit=new RobotData();
 updatePosit.UpdateRobotPosition("testrobot", 24, 26).then((x){
