@@ -5,7 +5,6 @@ import 'package:sqljocky/utils.dart';
 import 'data_access_layer.dart';
 import 'static_file_handler.dart';
 import 'connection_handler.dart';
-import 'example.dart';
 import 'robot_data.dart';
 
 ConnectionHandler connectedClient=new ConnectionHandler("/portConnect");

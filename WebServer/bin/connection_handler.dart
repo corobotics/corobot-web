@@ -1,38 +1,36 @@
 library ConnectionHandler;
+/*
+ * The library is used for handling socket communiucation from different client connections
+ *
+ * */
 import 'dart:io';
 import 'robot_data.dart';
 class ConnectionHandler {
   Set<WebSocketConnection> webSocketConnections;
 
-  ConnectionHandler(String basePath) : webSocketConnections = new Set<WebSocketConnection>() 
-  
+  ConnectionHandler(String basePath) : webSocketConnections = new Set<WebSocketConnection>()  
   {
-    
+    //For future use
   }
 
-  // closures!
   onOpen(WebSocketConnection conn) {
     print('new ws conn');
     webSocketConnections.add(conn);
 
-    /*conn.onClosed = (int status, String reason) {
-      print('conn is closed');
-      webSocketConnections.remove(conn);
-    };*/
-
+    //Test Code for v alidating persistent communication
     for(int i=0;i<10;i++)
     {
       databaseUpdates();
     }
-    //conn.send("test");
    
   }
   
   SendMessage(String broadCastMessage)
   {
-    
+    //Code to be written
   }
   
+  //database update code
   void databaseUpdates()
   {
     print("connection open");
@@ -58,13 +56,3 @@ class ConnectionHandler {
   }
 }
 
-/*conn.onMessage = (message) {
-  print('new ws msg: $message');
-  
-  webSocketConnections.forEach((connection) {
-    
-    if (conn != connection) {
-      print('queued msg to be sent');
-    }
-  });
-};*/
