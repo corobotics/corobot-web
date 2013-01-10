@@ -1,9 +1,76 @@
 import 'dart:html';
 import 'socket_conn.dart';
+import 'dart:json';
+
+class SocketConn {
+  WebSocket socket;
+  Object receivedData;
+  SocketConn(String url)
+  {
+    socket=new WebSocket(url);
+    
+    socket.on.open.add((e) {
+      window.alert("Connected with the websocket");
+    });
+    
+    socket.on.message.add((MessageEvent e) {
+      receivedData=e.data;
+      //Map message = JSON.parse(e.data);
+      /*
+       * message.forEach((x){
+        query("#idData").append(x);
+      });*/
+     
+      //JSON.parse(e.data);
+      /*final s = new StringBuffer();
+      TableElement grid=query("#idData");
+      final parsedList = JSON.parse(e.data)/*.fore*/;
+      s.add('<table>');
+      s.add('<thead></thead>');
+      for(final abcd in parsedList){
+        s.add('<tr><td>${abcd}</td></tr>');
+      }
+      s.add('</table>');
+      
+      Element tabledata=new Element.html(s.toString()) as TableElement;
+      query("newTable").innerHTML=s;
+      */
+      
+      final parsedList = JSON.parse(e.data)/*.fore*/;
+      parsedList.forEach((x){
+        print(x[0]);
+      });
+      var div = document.query('#tableContent');
+      final s = new StringBuffer();
+
+      s.add('<table>');
+      s.add('<thead></thead>');
+      s.add('<tr><td>Robot Name</td><td>X Coordinate</td><td>Y Coordinate</td></tr>');
+      for(final element in parsedList){
+        s.add('<tr><td>${element[1]}</td><td>${element[2]}</td><td>${element[3]}</td></tr>');
+      }
+      s.add('</table>');
+      div.elements.add(new Element.html(s.toString()));
+       //as TableElement;
+
+    });
+   
+  }
+  
+  sendConnectionStatus(String clientName, String message)
+  {
+    var encoded = JSON.stringify({'f': clientName, 'm': message});
+    if (socket != null && socket.readyState == WebSocket.OPEN) {
+      socket.send(encoded);
+    } else {
+      print("Error while sending message");
+    }
+  }
+}
+
 
 void main() {
-  SocketConn userClient=new SocketConn("ws://127.0.0.1:8080/portConnect");
-  userClient.sendConnectionStatus("Client1","Handshake completed");
+  SocketConn userClient=new SocketConn("ws://127.0.0.1:8080/portConnect"); 
   
 }
 
@@ -20,3 +87,5 @@ void reverseText(Event event) {
   }
   query("#text").text = buffer.toString();
 }
+
+
