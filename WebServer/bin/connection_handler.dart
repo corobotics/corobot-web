@@ -21,7 +21,7 @@ class ConnectionHandler {
     webSocketConnections.add(conn);
 
     //Test Code for v alidating persistent communication
-    for(int i=0;i<2;i++)
+    for(int i=0;i<1;i++)
     {
       databaseUpdates();
     }
@@ -48,21 +48,16 @@ class ConnectionHandler {
       {
         
         positionCollection.add(row);
-        var encoded=JSON.stringify(row);
-        //print(positionCollection);
-        //print(row);
-        webSocketConnections.forEach((connection){
-          connection.send(encoded);
-          
-        });
+        
+        
       }
+      var encoded=JSON.stringify(positionCollection);
+      webSocketConnections.forEach((connection){
+        connection.send(encoded);
+        
+      });
       getPosition.pool.close();
-      
-      
-      //var abc=JSON.stringify(positionCollection);
-      //
-      //print(abc);
-      
+      positionCollection.clear();
     });
 
     
