@@ -48,10 +48,11 @@ class ConnectionHandler {
       {
         
         positionCollection.add(row);
+        var encoded=JSON.stringify(row);
         //print(positionCollection);
         //print(row);
         webSocketConnections.forEach((connection){
-          connection.send(row);
+          connection.send(encoded);
           
         });
       }

@@ -13,9 +13,11 @@ class SocketConn {
     });
     
     socket.on.message.add((MessageEvent e) {
-      print('${e.data}');
+      
+      print(e.data);
       
     });
+   
   }
   
   sendConnectionStatus(String clientName, String message)

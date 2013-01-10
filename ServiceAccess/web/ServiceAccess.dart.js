@@ -1794,7 +1794,7 @@ $$.anon = {"":"Closure;",
 
 $$.anon0 = {"":"Closure;",
  call$1: function(e) {
-  $.print($.S(e.get$data()));
+  $.print(e.get$data());
 }
 };
 
@@ -2703,7 +2703,10 @@ $.ElementEvents$ = function(_ptr) {
 };
 
 $.print = function(object) {
-  $.Primitives_printString(object);
+  if (typeof object === 'string')
+    $.Primitives_printString(object);
+  else
+    $.Primitives_printString($.getInterceptor(object).toString$0(object));
 };
 
 $.Events$ = function(_ptr) {
