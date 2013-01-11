@@ -36,10 +36,7 @@ class SocketConn {
       query("newTable").innerHTML=s;
       */
       
-      final parsedList = JSON.parse(e.data)/*.fore*/;
-      parsedList.forEach((x){
-        print(x[0]);
-      });
+      final parsedList = JSON.parse(e.data);
       var div = document.query('#tableContent');
       final s = new StringBuffer();
 
@@ -51,7 +48,6 @@ class SocketConn {
       }
       s.add('</table>');
       div.elements.add(new Element.html(s.toString()));
-       //as TableElement;
 
     });
    
