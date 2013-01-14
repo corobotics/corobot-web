@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:/options_file/options_file.dart';
 import 'package:sqljocky/sqljocky.dart';
 import 'package:sqljocky/utils.dart';
-import 'data_access_layer.dart';
 import 'static_file_handler.dart';
 import 'connection_handler.dart';
 import 'robot_data.dart';
@@ -26,6 +25,7 @@ runServer(int port) {
   webCon.onOpen = connectedClient.onOpen;
   
   server.addRequestHandler((req) => req.path == "/portConnect", webCon.onRequest);
+  server.addRequestHandler((req) => req.path == '/upload',UploadFile);
   //Default handler is given just for the sake of making 
   //sure there is a default function handler
   server.defaultRequestHandler = new StaticFileHandler('/acceptInput').onRequest;
@@ -33,6 +33,13 @@ runServer(int port) {
   print('listening for connections on $port');
 }
 
+void UploadFile(HttpRequest request, HttpResponse response) {
+  print(request.inputStream.toString());
+  response.outputStream.write('Upload File'.charCodes);
+  response.outputStream.close();
+}
+
+  
 //The actual function which handles the accept input request
 void acceptInput(HttpRequest request,HttpResponse response){
   print(request.connectionInfo.toString());
@@ -70,4 +77,6 @@ getPosition.GetAllRobotPosition().then((x){
 connectedClient.SendMessage("Test Robot Position Received");
 
 }
+
+
 

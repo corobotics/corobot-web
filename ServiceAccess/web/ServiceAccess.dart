@@ -1,5 +1,4 @@
 import 'dart:html';
-import 'socket_conn.dart';
 import 'dart:json';
 
 class SocketConn {
