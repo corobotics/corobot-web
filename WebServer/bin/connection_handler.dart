@@ -19,6 +19,12 @@ class ConnectionHandler {
   onOpen(WebSocketConnection conn) {
     print('new ws conn');
     webSocketConnections.add(conn);
+    conn.onClosed = (int status, String reason) {
+      print('conn is closed');
+      webSocketConnections.remove(conn);
+    };
+
+
    
   }
   
@@ -26,6 +32,7 @@ class ConnectionHandler {
   {
     //Code to be written
   }
+  
   
   //database update code
   databaseUpdates(String robotname,int xcoordinate,int ycoordinate)
