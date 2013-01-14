@@ -19,12 +19,6 @@ class ConnectionHandler {
   onOpen(WebSocketConnection conn) {
     print('new ws conn');
     webSocketConnections.add(conn);
-
-    //Test Code for v alidating persistent communication
-    /*for(int i=0;i<1;i++)
-    {
-      databaseUpdates();
-    }*/
    
   }
   

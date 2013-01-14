@@ -1,0 +1,30 @@
+
+body {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 15px;
+}
+
+p {
+  color: #333;
+}
+
+
+
+table.tableizer-table {
+  border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+} 
+.tableizer-table td {
+  padding: 4px;
+  margin: 3px;
+  border: 1px solid #ccc;
+}
+.tableizer-table th {
+  background-color: #104E8B; 
+  color: #FFF;
+  font-weight: bold;
+}

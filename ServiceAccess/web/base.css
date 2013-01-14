@@ -1,0 +1,49 @@
+
+body {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 15px;
+}
+
+p {
+  color: #333;
+}
+
+
+table.table1
+{
+border-collapse:collapse;
+}
+table.table1 th
+{
+padding:10px 15px;
+background:#444;
+border:1px solid #555;
+color:orange;
+font-size:12px;
+font-weight:bold;
+text-align:left;
+}
+table.table1 td
+{
+padding:8px 15px;
+background:#eee;
+border:1px solid #bbb;
+color:#333;
+}
+table.table1 tr.odd td
+{
+background:#dfdfdf;
+}
+table.table1 tr td.special
+{
+background:#c5c5c5;
+}
+table.table1 tr:hover td
+{
+background:#555;
+color:white;
+}

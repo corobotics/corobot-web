@@ -20,7 +20,7 @@ class SocketConn {
       div.elements.clear();
       final s = new StringBuffer();
 
-      s.add('<table style="border-width:2px;border-style:dotted">');
+      s.add('<table class="table1">');
       s.add('<thead></thead>');
       s.add('<tr><th >Id</th><th>Robot Name</th><th>X Coordinate</th><th>Y Coordinate</th></tr>');
       for(final element in parsedList){

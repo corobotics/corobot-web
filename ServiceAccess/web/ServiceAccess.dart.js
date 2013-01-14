@@ -2321,7 +2321,7 @@ $$.anon0 = {"":"Closure;this_0",
   $.getInterceptor$JSArray(t1).clear$0(t1);
   s = $.StringBuffer_StringBuffer("");
   t1 = $.getInterceptor$JSArray(s);
-  t1.add$1(s, "<table style=\"border-width:2px;border-style:dotted\">");
+  t1.add$1(s, "<table class=\"table1\">");
   t1.add$1(s, "<thead></thead>");
   t1.add$1(s, "<tr><th >Id</th><th>Robot Name</th><th>X Coordinate</th><th>Y Coordinate</th></tr>");
   for (t2 = $.getInterceptor$JSArray(parsedList).iterator$0(parsedList); t2.get$hasNext() === true;) {
