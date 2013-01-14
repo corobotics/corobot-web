@@ -34,7 +34,7 @@ class ConnectionHandler {
   }
   
   //database update code
-  void databaseUpdates()
+  databaseUpdates()
   {
     print("connection open");
 

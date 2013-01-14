@@ -15,36 +15,16 @@ class SocketConn {
     
     socket.on.message.add((MessageEvent e) {
       receivedData=e.data;
-      //Map message = JSON.parse(e.data);
-      /*
-       * message.forEach((x){
-        query("#idData").append(x);
-      });*/
-     
-      //JSON.parse(e.data);
-      /*final s = new StringBuffer();
-      TableElement grid=query("#idData");
-      final parsedList = JSON.parse(e.data)/*.fore*/;
-      s.add('<table>');
-      s.add('<thead></thead>');
-      for(final abcd in parsedList){
-        s.add('<tr><td>${abcd}</td></tr>');
-      }
-      s.add('</table>');
-      
-      Element tabledata=new Element.html(s.toString()) as TableElement;
-      query("newTable").innerHTML=s;
-      */
-      
       final parsedList = JSON.parse(e.data);
       var div = document.query('#tableContent');
+      div.elements.clear();
       final s = new StringBuffer();
 
       s.add('<table>');
       s.add('<thead></thead>');
       s.add('<tr><td>Robot Name</td><td>X Coordinate</td><td>Y Coordinate</td></tr>');
       for(final element in parsedList){
-        s.add('<tr><td>${element[1]}</td><td>${element[2]}</td><td>${element[3]}</td></tr>');
+        s.add('<tr><td>${element[0]}</td><td>${element[1]}</td><td>${element[2]}</td><td>${element[3]}</td></tr>');
       }
       s.add('</table>');
       div.elements.add(new Element.html(s.toString()));

@@ -36,6 +36,7 @@ runServer(int port) {
 void acceptInput(HttpRequest request,HttpResponse response){
   print(request.connectionInfo.toString());
   print(request.queryParameters.toString());
+  connectedClient.databaseUpdates();
   response.outputStream.write('Hello dude'.charCodes);
   response.outputStream.close();
 }
