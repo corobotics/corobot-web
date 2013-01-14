@@ -5,6 +5,7 @@
 package tempclient;
 
 import java.io.IOException;
+import java.util.Random;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
@@ -16,6 +17,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HttpContext;
 
@@ -34,12 +36,15 @@ public class TempClient {
         // TODO code application logic here
        HttpClient httpclient = new DefaultHttpClient();
         try {
-            HttpGet httpget = new HttpGet("http://127.0.0.1:8080/acceptInput");
-
-            System.out.println("executing request " + httpget.getURI());
-
+            Random coordinate=new Random();
+            String i=String.valueOf(coordinate.nextInt(255));
+            String j=String.valueOf(coordinate.nextInt(255));
+            HttpGet httpget = new HttpGet("http://127.0.0.1:8080/acceptInput?robotname="+"Testrobot&"+"x="+i+"&y="+j);
+            
+            System.out.println("Sent coordinates of the robot Testrobot is x : "+i+" and y :"+j);
             // Create a response handler
             ResponseHandler<String> responseHandler = new BasicResponseHandler();
+            
             String responseBody = httpclient.execute(httpget, responseHandler);
             System.out.println("----------------------------------------");
             System.out.println(responseBody);

@@ -2321,12 +2321,12 @@ $$.anon0 = {"":"Closure;this_0",
   $.getInterceptor$JSArray(t1).clear$0(t1);
   s = $.StringBuffer_StringBuffer("");
   t1 = $.getInterceptor$JSArray(s);
-  t1.add$1(s, "<table>");
+  t1.add$1(s, "<table style=\"border-width:2px;border-style:dotted\">");
   t1.add$1(s, "<thead></thead>");
-  t1.add$1(s, "<tr><td>Robot Name</td><td>X Coordinate</td><td>Y Coordinate</td></tr>");
+  t1.add$1(s, "<tr><th >Id</th><th>Robot Name</th><th>X Coordinate</th><th>Y Coordinate</th></tr>");
   for (t2 = $.getInterceptor$JSArray(parsedList).iterator$0(parsedList); t2.get$hasNext() === true;) {
     t3 = t2.next$0();
-    t1.add$1(s, "<tr><td>" + $.S($.index(t3, 0)) + "</td><td>" + $.S($.index(t3, 1)) + "</td><td>" + $.S($.index(t3, 2)) + "</td><td>" + $.S($.index(t3, 3)) + "</td></tr>");
+    t1.add$1(s, "<tr><td>" + $.S($.index(t3, 0)) + "</td><td>" + $.S($.index(t3, 1)) + "</td><td>" + $.S($.index(t3, 3)) + "</td><td>" + $.S($.index(t3, 2)) + "</td></tr>");
   }
   t1.add$1(s, "</table>");
   t2 = div.get$elements();

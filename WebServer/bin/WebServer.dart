@@ -35,8 +35,8 @@ runServer(int port) {
 //The actual function which handles the accept input request
 void acceptInput(HttpRequest request,HttpResponse response){
   print(request.connectionInfo.toString());
-  print(request.queryParameters.toString());
-  connectedClient.databaseUpdates();
+  print(request.queryParameters);
+  connectedClient.databaseUpdates(request.queryParameters["robotname"],int.parse(request.queryParameters["x"].toString()),int.parse(request.queryParameters["y"].toString()));
   response.outputStream.write('Hello dude'.charCodes);
   response.outputStream.close();
 }

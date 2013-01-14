@@ -21,10 +21,10 @@ class ConnectionHandler {
     webSocketConnections.add(conn);
 
     //Test Code for v alidating persistent communication
-    for(int i=0;i<1;i++)
+    /*for(int i=0;i<1;i++)
     {
       databaseUpdates();
-    }
+    }*/
    
   }
   
@@ -34,31 +34,32 @@ class ConnectionHandler {
   }
   
   //database update code
-  databaseUpdates()
+  databaseUpdates(String robotname,int xcoordinate,int ycoordinate)
   {
-    print("connection open");
+    //print("connection open");
 
     var updatePosit=new RobotData();
-    updatePosit.UpdateRobotPosition("testrobot", 24, 26).then((x){
+    updatePosit.UpdateRobotPosition(robotname, xcoordinate, ycoordinate).then((x){
+      var getPosition=new RobotData();
+      getPosition.GetAllRobotPosition().then((x){
+        for (var row in getPosition.listOfPositions)
+        {
+          
+          positionCollection.add(row);
+          
+          
+        }
+        var encoded=JSON.stringify(positionCollection);
+        webSocketConnections.forEach((connection){
+          connection.send(encoded);
+          
+        });
+        getPosition.pool.close();
+        positionCollection.clear();
+      });
       updatePosit.pool.close();
     });
-    var getPosition=new RobotData();
-    getPosition.GetAllRobotPosition().then((x){
-      for (var row in getPosition.listOfPositions)
-      {
-        
-        positionCollection.add(row);
-        
-        
-      }
-      var encoded=JSON.stringify(positionCollection);
-      webSocketConnections.forEach((connection){
-        connection.send(encoded);
-        
-      });
-      getPosition.pool.close();
-      positionCollection.clear();
-    });
+   
 
     
   }
