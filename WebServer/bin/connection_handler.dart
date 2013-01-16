@@ -5,7 +5,6 @@ library ConnectionHandler;
  * */
 import 'dart:io';
 import 'robot_data.dart';
-import 'robot_data_structure.dart';
 import 'dart:json';
 class ConnectionHandler {
   List positionCollection=new List<List>();

@@ -1,7 +1,6 @@
 library RobotData;
 import 'sql/options_file/options_file.dart';
 import 'sql/sqljocky/sqljocky.dart';
-import 'robot_data_structure.dart';
 import 'dart:json';
 
 //The connection with database is established here.

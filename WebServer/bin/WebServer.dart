@@ -9,11 +9,14 @@ import 'robot_data.dart';
 ConnectionHandler connectedClient=new ConnectionHandler("/portConnect");
 void main() {
   runServer(8080);
+  
+  deployCode();
 }
 
 //Run Server function is created to create multiple instances 
 //of server each with different basepath
 runServer(int port) {
+  
   HttpServer server = new HttpServer();
   //Multiple reuqest handler are added as shown below
   //The string passed in the path name which needs to accessed in order to 
@@ -78,5 +81,12 @@ connectedClient.SendMessage("Test Robot Position Received");
 
 }
 
-
+void deployCode()
+{
+  Process.run('java',['-cp','.','HelloWorld']).then((ProcessResult pr){
+    print(pr.exitCode);
+    print(pr.stdout);
+    print(pr.stderr);
+  });
+}
 
