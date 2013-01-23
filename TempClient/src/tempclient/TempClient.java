@@ -30,16 +30,17 @@ public class TempClient {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         // TODO code application logic here
         HttpClient httpclient = new DefaultHttpClient();
         try {
             for (int k = 0; k < 200; k++)
             {
+                Thread.sleep(1000);
                 Random coordinate = new Random();
                 String i = String.valueOf(coordinate.nextInt(255));
                 String j = String.valueOf(coordinate.nextInt(255));
-                HttpGet httpget = new HttpGet("http://127.0.0.1:8080/acceptInput?robotname=" + "Testrobot&" + "x=" + i + "&y=" + j);
+                HttpGet httpget = new HttpGet("http://129.21.30.80:8080/acceptInput?robotname=" + "Testrobot&" + "x=" + i + "&y=" + j);
 
                 System.out.println("Sent coordinates of the robot Testrobot is x : " + i + " and y :" + j);
                 // Create a response handler

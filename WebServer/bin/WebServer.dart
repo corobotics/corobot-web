@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:/options_file/options_file.dart';
+import 'package:options_file/options_file.dart';
 import 'package:sqljocky/sqljocky.dart';
 import 'package:sqljocky/utils.dart';
 import 'static_file_handler.dart';
@@ -10,7 +10,7 @@ ConnectionHandler connectedClient=new ConnectionHandler("/portConnect");
 void main() {
   runServer(8080);
   
-  deployCode();
+  //deployCode();
 }
 
 //Run Server function is created to create multiple instances 
@@ -47,7 +47,10 @@ void UploadFile(HttpRequest request, HttpResponse response) {
 void acceptInput(HttpRequest request,HttpResponse response){
   print(request.connectionInfo.toString());
   print(request.queryParameters);
-  connectedClient.databaseUpdates(request.queryParameters["robotname"],int.parse(request.queryParameters["x"].toString()),int.parse(request.queryParameters["y"].toString()));
+  print(request.queryParameters["robotname"]);
+  print(request.queryParameters["x"]);
+  print(request.queryParameters["y"]);
+  //connectedClient.databaseUpdates(request.queryParameters["robotname"],int.parse(request.queryParameters["x"].toString()),int.parse(request.queryParameters["y"].toString()));
   response.outputStream.write('Hello dude'.charCodes);
   response.outputStream.close();
 }
