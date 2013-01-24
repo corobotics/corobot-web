@@ -2,5 +2,5 @@
 user=root
 password=abcd
 port=3306
-db=DartDB
+db=dartdb
 hostname=localhost

@@ -17,8 +17,7 @@ void main(){
       reader.on.load.add((e) {
         sendFile(reader.result);
       });
-      reader.readAsDataUrl(file);
-      //reader.readAsDataURL();
+      reader.readAsText(file);
     }
   });
 }
@@ -28,7 +27,7 @@ sendFile(dynamic data) {
   req.on.readyStateChange.add((Event e) {
     if (req.readyState == HttpRequest.DONE &&
         (req.status == 200 || req.status == 0)) {
-      window.alert("upload complete");
+      window.alert("test successful");
     }
   });
   req.open("POST", "http://127.0.0.1:8080/upload");

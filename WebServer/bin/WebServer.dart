@@ -23,6 +23,7 @@ runServer(int port) {
   //execute function associated
   //with the handler
   server.addRequestHandler((req) => req.path =='/acceptInput',acceptInput);
+  
   server.addRequestHandler((req) => req.path =='/acceptTest',acceptTest);
   WebSocketHandler webCon=new WebSocketHandler();
   webCon.onOpen = connectedClient.onOpen;
@@ -36,12 +37,46 @@ runServer(int port) {
   print('listening for connections on $port');
 }
 
+
+
 void UploadFile(HttpRequest request, HttpResponse response) {
-  print(request.inputStream.toString());
-  response.outputStream.write('Upload File'.charCodes);
-  response.outputStream.close();
+  print("handler called");
+  print(request.inputStream.read(26));
+  //response.outputStream.write('Upload File'.charCodes);
+  //response.outputStream.close();
+  _readBody(request, (body) {
+    
+    print(body);
+    var logFile = new File('test.txt');
+    var out = logFile.openOutputStream(FileMode.WRITE);
+    out.writeString(body);
+    out.close();
+    response.statusCode = HttpStatus.CREATED;
+    response.contentLength = 0;
+    response.outputStream.close();
+  });
 }
 
+_readBody(HttpRequest request, void handleContent(String body)) {
+  String contentString = ""; // request body byte data
+  final completer = new Completer();
+  final textFile = new StringInputStream(request.inputStream);
+  textFile.onData = (){
+    print("inside data");
+    contentString = contentString.concat(textFile.read());
+  };
+  textFile.onClosed = () {
+    completer.complete("");
+  };
+  textFile.onError = (Exception e) {
+    print('exeption occured : ${e.toString()}');
+  };
+  
+  // process the request and send a response
+  completer.future.then((_){
+    handleContent(contentString);
+  });
+}
   
 //The actual function which handles the accept input request
 void acceptInput(HttpRequest request,HttpResponse response){
@@ -50,10 +85,12 @@ void acceptInput(HttpRequest request,HttpResponse response){
   print(request.queryParameters["robotname"]);
   print(request.queryParameters["x"]);
   print(request.queryParameters["y"]);
-  //connectedClient.databaseUpdates(request.queryParameters["robotname"],int.parse(request.queryParameters["x"].toString()),int.parse(request.queryParameters["y"].toString()));
+  connectedClient.databaseUpdates(request.queryParameters["robotname"],int.parse(request.queryParameters["x"].toString()),int.parse(request.queryParameters["y"].toString()));
   response.outputStream.write('Hello dude'.charCodes);
   response.outputStream.close();
 }
+
+
 
 void acceptTest(HttpRequest request,HttpResponse response){
 

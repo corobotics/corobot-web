@@ -1196,7 +1196,7 @@ $$.main_anon = {"":"Closure;uploadInput_0",
     reader = $.FileReader_FileReader();
     t1 = reader.get$on().get$load();
     $.getInterceptor$JSArray(t1).add$1(t1, new $.main__anon(reader));
-    reader.readAsDataUrl$1(file);
+    reader.readAsText$1(file);
   }
 }
 };
@@ -2524,7 +2524,7 @@ $.sendFile = function(data) {
   $.getInterceptor$JSArray(t1).add$1(t1, new $.sendFile_anon(req));
   req.open$2("POST", "http://127.0.0.1:8080/upload");
   req.send$1(data);
-  $.print(req.get$responseText());
+  $.print(req.get$response());
 };
 
 $.window = function() {
@@ -3477,14 +3477,20 @@ $.$defineNativeClass('FileReader', {"":"readyState?,result?",
  $dom_addEventListener$3: function(type, listener, useCapture) {
   return this.addEventListener(type,$.convertDartClosureToJS(listener, 1),useCapture);
 },
- readAsDataUrl$1: function(blob) {
-  return this.readAsDataURL(blob);
+ readAsText$2: function(blob, encoding) {
+  return this.readAsText(blob,encoding);
+},
+ readAsText$1: function(blob) {
+  return this.readAsText(blob);
 }
 });
 
 $.$defineNativeClass('FileReaderSync', {
- readAsDataUrl$1: function(blob) {
-  return this.readAsDataURL(blob);
+ readAsText$2: function(blob, encoding) {
+  return this.readAsText(blob,encoding);
+},
+ readAsText$1: function(blob) {
+  return this.readAsText(blob);
 }
 });
 
@@ -3650,7 +3656,7 @@ $.$defineNativeClass('HTMLOptionsCollection', {
 }
 });
 
-$.$defineNativeClass('XMLHttpRequest', {"":"readyState?,responseText?,status?",
+$.$defineNativeClass('XMLHttpRequest', {"":"readyState?,response?,status?",
  get$on: function() {
   return $.HttpRequestEvents$(this);
 },
