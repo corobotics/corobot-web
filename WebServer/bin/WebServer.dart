@@ -45,15 +45,10 @@ void UploadFile(HttpRequest request, HttpResponse response) {
   //response.outputStream.write('Upload File'.charCodes);
   //response.outputStream.close();
   _readBody(request, (body) {
-    
     print(body);
     var logFile = new File('test.txt');
-    var out = logFile.openOutputStream(FileMode.WRITE);
-    out.writeString(body);
-    out.close();
-    response.statusCode = HttpStatus.CREATED;
-    response.contentLength = 0;
-    response.outputStream.close();
+    logFile.openSync(FileMode.APPEND);
+    logFile.writeAsString(contentString);
   });
 }
 
@@ -61,14 +56,18 @@ _readBody(HttpRequest request, void handleContent(String body)) {
   String contentString = ""; // request body byte data
   final completer = new Completer();
   final textFile = new StringInputStream(request.inputStream);
+  
   textFile.onData = (){
     print("inside data");
-    contentString = contentString.concat(textFile.read());
+    contentString=contentString.concat(textFile.readLine());
+    
   };
   textFile.onClosed = () {
+    print("inside data12");
     completer.complete("");
   };
   textFile.onError = (Exception e) {
+    print("inside data115");
     print('exeption occured : ${e.toString()}');
   };
   
