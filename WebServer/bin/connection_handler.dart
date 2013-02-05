@@ -34,7 +34,7 @@ class ConnectionHandler {
   
   
   //database update code
-  databaseUpdates(String robotname,int xcoordinate,int ycoordinate)
+  databaseUpdates(String robotname,double xcoordinate,double ycoordinate)
   {
     //print("connection open");
 
@@ -43,10 +43,8 @@ class ConnectionHandler {
       var getPosition=new RobotData();
       getPosition.GetAllRobotPosition().then((x){
         for (var row in getPosition.listOfPositions)
-        {
-          
-          positionCollection.add(row);
-          
+        { 
+          positionCollection.add(row); 
           
         }
         var encoded=JSON.stringify(positionCollection);

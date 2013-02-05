@@ -45,10 +45,14 @@ void UploadFile(HttpRequest request, HttpResponse response) {
   //response.outputStream.write('Upload File'.charCodes);
   //response.outputStream.close();
   _readBody(request, (body) {
+    
     print(body);
     var logFile = new File('test.txt');
     logFile.openSync(FileMode.APPEND);
-    logFile.writeAsString(contentString);
+    logFile.writeAsString(body);
+    response.statusCode = HttpStatus.CREATED;
+    response.contentLength = 0;
+    response.outputStream.close();
   });
 }
 
@@ -56,18 +60,14 @@ _readBody(HttpRequest request, void handleContent(String body)) {
   String contentString = ""; // request body byte data
   final completer = new Completer();
   final textFile = new StringInputStream(request.inputStream);
-  
   textFile.onData = (){
     print("inside data");
-    contentString=contentString.concat(textFile.readLine());
-    
+    contentString = contentString.concat(textFile.read());
   };
   textFile.onClosed = () {
-    print("inside data12");
     completer.complete("");
   };
   textFile.onError = (Exception e) {
-    print("inside data115");
     print('exeption occured : ${e.toString()}');
   };
   
@@ -84,7 +84,7 @@ void acceptInput(HttpRequest request,HttpResponse response){
   print(request.queryParameters["robotname"]);
   print(request.queryParameters["x"]);
   print(request.queryParameters["y"]);
-  connectedClient.databaseUpdates(request.queryParameters["robotname"],int.parse(request.queryParameters["x"].toString()),int.parse(request.queryParameters["y"].toString()));
+  connectedClient.databaseUpdates(request.queryParameters["robotname"],double.parse(request.queryParameters["x"].toString()),double.parse(request.queryParameters["y"].toString()));
   response.outputStream.write('Hello dude'.charCodes);
   response.outputStream.close();
 }

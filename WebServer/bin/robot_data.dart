@@ -23,7 +23,7 @@ class RobotData {
   }
   
   //Sends the later robot position to table as given by the robot
-  Future UpdateRobotPosition(String robotname,int xcoordinate,int ycoordinate) {
+  Future UpdateRobotPosition(String robotname,double xcoordinate,double ycoordinate) {
     var completer = new Completer();
     pool.prepare("insert into robotposition (robotname,xcoordinate,ycoordinate) values (?,?,?)").chain((query) {
       print("prepared query 1");
