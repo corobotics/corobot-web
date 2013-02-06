@@ -8,9 +8,9 @@ import 'robot_data.dart';
 
 ConnectionHandler connectedClient=new ConnectionHandler("/portConnect");
 void main() {
-  runServer(8080);
+  //runServer(8080);
   
-  //deployCode();
+  deployCode();
 }
 
 //Run Server function is created to create multiple instances 
@@ -122,7 +122,7 @@ connectedClient.SendMessage("Test Robot Position Received");
 
 void deployCode()
 {
-  Process.run('java',['-cp','.','HelloWorld']).then((ProcessResult pr){
+  Process.run('java',['-cp','.;classes.jar;','HelloWorld']).then((ProcessResult pr){
     print(pr.exitCode);
     print(pr.stdout);
     print(pr.stderr);
