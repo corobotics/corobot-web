@@ -5,12 +5,58 @@ import 'package:sqljocky/utils.dart';
 import 'static_file_handler.dart';
 import 'connection_handler.dart';
 import 'robot_data.dart';
-
+List javafiles=new List();
+List classes=new List();
 ConnectionHandler connectedClient=new ConnectionHandler("/portConnect");
 void main() {
   //runServer(8080);
   
   deployCode();
+}
+
+void deployCode()
+{
+
+  classes.add('-cp');
+  classes.add('.:classes.jar');
+ 
+  javafiles.add('-cp');
+  javafiles.add('.:classes.jar');
+  var stream = new StringInputStream(stdin);
+  stream.onLine = () {
+    var str = stream.readLine().trim();
+    if(str == 'EXIT') 
+    {
+      executeCode();
+      //exit(0);
+      }
+    else
+    {
+    String abc= "$str.java";
+    print(abc);
+    javafiles.add(abc);
+    classes.add(str);
+    }
+  };
+
+}
+
+void executeCode()
+{
+  Process.start("javac",javafiles);
+  Process.run('java', classes).then((ProcessResult pr){
+    print(pr.exitCode);
+    print(pr.stdout);
+    print(pr.stderr);
+  });
+    
+  //Process.start("java",javafiles);
+  //Process.run('javac',['-cp','.:classes.jar',abc]);
+  //Process.run('java',['-cp','.:classes.jar','HelloWorld']).then((ProcessResult pr){
+    //print(pr.exitCode);
+   // print(pr.stdout);
+    //print(pr.stderr);
+  //});*/
 }
 
 //Run Server function is created to create multiple instances 
@@ -120,12 +166,13 @@ connectedClient.SendMessage("Test Robot Position Received");
 
 }
 
-void deployCode()
+/*void deployCode()
 {
+  Process.run('javac',['-cp','.;classes.jar;',["HelloWorld.java"]]);
   Process.run('java',['-cp','.;classes.jar;','HelloWorld']).then((ProcessResult pr){
     print(pr.exitCode);
     print(pr.stdout);
     print(pr.stderr);
   });
-}
+}*/
 
