@@ -14,6 +14,7 @@ class SocketConn {
     
     socket.on.message.add((MessageEvent e) {
       receivedData=e.data;
+     
       final parsedList = JSON.parse(e.data);
       var div = document.query('#tableContent');
       div.elements.clear();

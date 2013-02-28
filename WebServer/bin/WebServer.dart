@@ -9,9 +9,9 @@ List javafiles=new List();
 List classes=new List();
 ConnectionHandler connectedClient=new ConnectionHandler("/portConnect");
 void main() {
-  //runServer(8080);
+  runServer(8080);
   
-  deployCode();
+  //deployCode();
 }
 
 void deployCode()
@@ -49,16 +49,10 @@ void executeCode()
     print(pr.stdout);
     print(pr.stderr);
   });
-    
-  //Process.start("java",javafiles);
-  //Process.run('javac',['-cp','.:classes.jar',abc]);
-  //Process.run('java',['-cp','.:classes.jar','HelloWorld']).then((ProcessResult pr){
-    //print(pr.exitCode);
-   // print(pr.stdout);
-    //print(pr.stderr);
-  //});*/
 }
 
+//Run Server function is created to create multiple instances 
+//of server each with different basepath
 //Run Server function is created to create multiple instances 
 //of server each with different basepath
 runServer(int port) {
@@ -79,7 +73,7 @@ runServer(int port) {
   //Default handler is given just for the sake of making 
   //sure there is a default function handler
   server.defaultRequestHandler = new StaticFileHandler('/acceptInput').onRequest;
-  server.listen('127.0.0.1', port);
+  server.listen('129.21.30.80', port);
   print('listening for connections on $port');
 }
 
@@ -87,13 +81,20 @@ runServer(int port) {
 
 void UploadFile(HttpRequest request, HttpResponse response) {
   print("handler called");
+  print(request.queryParameters);
+  print(request.queryParameters["user"]);
+  String currentFilename=request.queryParameters["filename"].toString();
+  String currentUser=request.queryParameters["user"].toString();
   print(request.inputStream.read(26));
   //response.outputStream.write('Upload File'.charCodes);
   //response.outputStream.close();
-  _readBody(request, (body) {
+  _readBody(request,currentFilename,currentUser, (body,currentFilename,currentUser) {
     
     print(body);
-    var logFile = new File('test.txt');
+    
+    var dir = new Directory('CodeFolder/$currentUser');
+    dir.createSync(recursive:true);
+    var logFile = new File('CodeFolder/$currentUser/$currentFilename');
     logFile.openSync(FileMode.APPEND);
     logFile.writeAsString(body);
     response.statusCode = HttpStatus.CREATED;
@@ -102,7 +103,7 @@ void UploadFile(HttpRequest request, HttpResponse response) {
   });
 }
 
-_readBody(HttpRequest request, void handleContent(String body)) {
+_readBody(HttpRequest request,String currentFilename,String currentUser, void handleContent(String body,String currentFilename,String currentUser)) {
   String contentString = ""; // request body byte data
   final completer = new Completer();
   final textFile = new StringInputStream(request.inputStream);
@@ -119,7 +120,7 @@ _readBody(HttpRequest request, void handleContent(String body)) {
   
   // process the request and send a response
   completer.future.then((_){
-    handleContent(contentString);
+    handleContent(contentString,currentFilename,currentUser);
   });
 }
   
@@ -130,7 +131,7 @@ void acceptInput(HttpRequest request,HttpResponse response){
   print(request.queryParameters["robotname"]);
   print(request.queryParameters["x"]);
   print(request.queryParameters["y"]);
-  connectedClient.databaseUpdates(request.queryParameters["robotname"],double.parse(request.queryParameters["x"].toString()),double.parse(request.queryParameters["y"].toString()));
+  connectedClient.databaseUpdates(request.queryParameters["robotname"],double.parse(request.queryParameters["x"].toString()),int.parse(request.queryParameters["y"].toString()));
   response.outputStream.write('Hello dude'.charCodes);
   response.outputStream.close();
 }
