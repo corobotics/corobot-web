@@ -70,6 +70,8 @@ runServer(int port) {
   
   server.addRequestHandler((req) => req.path == "/portConnect", webCon.onRequest);
   server.addRequestHandler((req) => req.path == '/upload',UploadFile);
+  
+  server.addRequestHandler((req) => req.path == '/authenticate',authenticateUser);
   //Default handler is given just for the sake of making 
   //sure there is a default function handler
   server.defaultRequestHandler = new StaticFileHandler('/acceptInput').onRequest;
@@ -77,7 +79,31 @@ runServer(int port) {
   print('listening for connections on $port');
 }
 
+void authenticateUser(HttpRequest request, HttpResponse response) {
+  print(request.queryParameters);
+  
+  String currentUser=request.queryParameters["userName"];
+  print(request.queryParameters["userName"]);
+  print(request.queryParameters["password"]);
+  String s='CodeFolder/$currentUser';
+  List options=new List();
+  options.add('-a');
+  options.add('-t');
+  options.add(s);
+  //var dir = new Directory('CodeFolder/$currentUser');
+  
 
+  Process.run('ls', options).then((ProcessResult results) {
+    //print();
+    
+    response.outputStream.write(results.stdout.charCodes);
+    response.outputStream.close();
+    //response.outputStream.writeString();
+  });
+  
+  
+  
+}
 
 void UploadFile(HttpRequest request, HttpResponse response) {
   print("handler called");
@@ -131,7 +157,7 @@ void acceptInput(HttpRequest request,HttpResponse response){
   print(request.queryParameters["robotname"]);
   print(request.queryParameters["x"]);
   print(request.queryParameters["y"]);
-  connectedClient.databaseUpdates(request.queryParameters["robotname"],double.parse(request.queryParameters["x"].toString()),int.parse(request.queryParameters["y"].toString()));
+  connectedClient.databaseUpdates(request.queryParameters["robotname"],double.parse(request.queryParameters["x"].toString()),double.parse(request.queryParameters["y"].toString()));
   response.outputStream.write('Hello dude'.charCodes);
   response.outputStream.close();
 }
