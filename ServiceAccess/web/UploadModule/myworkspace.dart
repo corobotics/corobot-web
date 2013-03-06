@@ -17,9 +17,12 @@ class Myworkspace {
     });
     
     socket.on.message.add((MessageEvent e) {
+      
       receivedData=e.data;
-     
+      
       final parsedList = JSON.parse(e.data);
+      InputElement userInput = query('#uName');
+      userInput.value=e.data.toString();
       var div = document.query('#tableContent');
       div.elements.clear();
       final s = new StringBuffer();
@@ -27,9 +30,11 @@ class Myworkspace {
       s.add('<thead></thead>');
       s.add('<tr><th >Id</th><th>Robot Name</th><th>X Coordinate</th><th>Y Coordinate</th></tr>');
       for(final element in parsedList){
-        s.add('<tr><td>${element[0]}</td><td>${element[1]}</td><td>${element[3]}</td><td>${element[2]}</td></tr>');
+        window.alert(element);
+        s.add('<tr><td>${element[0]}</td><td>${element[1]}</td><td>${element[2]}</td></tr>');
       }
       s.add('</table>');
+      window.alert(s.toString());
       div.elements.add(new Element.html(s.toString()));
 
     });

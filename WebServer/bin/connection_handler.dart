@@ -39,9 +39,9 @@ class ConnectionHandler {
            fileCollection.add(row); 
            
          }
-         var encoded=JSON.stringify(positionCollection);
-         print(encoded);
-         conn.send(encoded);
+         //var encoded=JSON.stringify(positionCollection);
+         print(fileCollection);
+         conn.send(fileCollection.toString());
          getFileUploaded.pool.close();
          positionCollection.clear();
        });
@@ -119,6 +119,7 @@ class ConnectionHandler {
         
       }
       var encoded=JSON.stringify(positionCollection);
+      print(encoded);
       webSocketConnections.forEach((connect){
         /*if(connection.toString()==connect.toString())
         {

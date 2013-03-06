@@ -16,6 +16,7 @@ class SocketConn {
       receivedData=e.data;
      
       final parsedList = JSON.parse(e.data);
+      window.alert(e.data.toString());
       var div = document.query('#tableContent');
       div.elements.clear();
       final s = new StringBuffer();

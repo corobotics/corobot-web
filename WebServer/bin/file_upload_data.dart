@@ -32,15 +32,16 @@ class FileUploadData {
   
   Future getFileUploaded(String username) {
     var completer = new Completer();
-    pool.prepare("Select idUpload,Uname,Filename from UploadedFiles where Uname=?").chain((query) {
-      print("prepared query 1");
-      var parameters = [
-          [username]
-        ];
-      return query.executeMulti(parameters);
-    }).then((results) {
+    pool.query("Select id,Uname,Filename from UploadedFiles where Uname='$username'").then((x){
+      print("got results");
+      for (var row in x) {   
+        print(row);
+        List parsedList = row;
+        listOfPositions.add(row);
+       }
       completer.complete(null);
     });
+    
     return completer.future;
   }
 }
