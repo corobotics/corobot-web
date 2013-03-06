@@ -8,6 +8,7 @@ import 'robot_data.dart';
 List javafiles=new List();
 List classes=new List();
 ConnectionHandler connectedClient=new ConnectionHandler("/portConnect");
+ConnectionHandler connectedFileUpload=new ConnectionHandler("/getUploadedFile");
 void main() {
   runServer(8080);
   
@@ -68,14 +69,19 @@ runServer(int port) {
   WebSocketHandler webCon=new WebSocketHandler();
   webCon.onOpen = connectedClient.onOpen;
   
+  WebSocketHandler webFileCon=new WebSocketHandler();
+  webFileCon.onOpen = connectedFileUpload.onOpen;
+  
   server.addRequestHandler((req) => req.path == "/portConnect", webCon.onRequest);
+  server.addRequestHandler((req) => req.path == "/getUploadedFile", webFileCon.onRequest);
+  
   server.addRequestHandler((req) => req.path == '/upload',UploadFile);
   
   server.addRequestHandler((req) => req.path == '/authenticate',authenticateUser);
   //Default handler is given just for the sake of making 
   //sure there is a default function handler
   server.defaultRequestHandler = new StaticFileHandler('/acceptInput').onRequest;
-  server.listen('129.21.30.80', port);
+  server.listen('127.0.0.1', port);
   print('listening for connections on $port');
 }
 
@@ -92,12 +98,15 @@ void authenticateUser(HttpRequest request, HttpResponse response) {
   options.add(s);
   //var dir = new Directory('CodeFolder/$currentUser');
   
+  
+  
+  
 
   Process.run('ls', options).then((ProcessResult results) {
     //print();
     
-    response.outputStream.write(results.stdout.charCodes);
-    response.outputStream.close();
+  //  response.outputStream.write(results.stdout.charCodes);
+   // response.outputStream.close();
     //response.outputStream.writeString();
   });
   
@@ -121,6 +130,8 @@ void UploadFile(HttpRequest request, HttpResponse response) {
     var dir = new Directory('CodeFolder/$currentUser');
     dir.createSync(recursive:true);
     var logFile = new File('CodeFolder/$currentUser/$currentFilename');
+    
+    connectedClient.workSpaceUpdate(currentUser, currentFilename);
     logFile.openSync(FileMode.APPEND);
     logFile.writeAsString(body);
     response.statusCode = HttpStatus.CREATED;
