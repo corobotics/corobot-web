@@ -39,9 +39,9 @@ class ConnectionHandler {
            fileCollection.add(row); 
            
          }
-         //var encoded=JSON.stringify(positionCollection);
+         var encoded=JSON.stringify(fileCollection);
          print(fileCollection);
-         conn.send(fileCollection.toString());
+         conn.send(encoded);
          getFileUploaded.pool.close();
          positionCollection.clear();
        });

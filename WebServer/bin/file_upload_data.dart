@@ -34,6 +34,7 @@ class FileUploadData {
     var completer = new Completer();
     pool.query("Select id,Uname,Filename from UploadedFiles where Uname='$username'").then((x){
       print("got results");
+      listOfPositions.clear();
       for (var row in x) {   
         print(row);
         List parsedList = row;

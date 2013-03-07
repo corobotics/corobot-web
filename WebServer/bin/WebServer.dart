@@ -29,8 +29,7 @@ void deployCode()
     if(str == 'EXIT') 
     {
       executeCode();
-      //exit(0);
-      }
+    }
     else
     {
     String abc= "$str.java";

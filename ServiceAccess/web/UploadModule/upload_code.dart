@@ -41,7 +41,7 @@ sendFile(dynamic data,String fileName,String userName) {
     }
   });
   var fullString=new StringBuffer();
-  fullString.add("http://129.21.30.80:8080/upload?");
+  fullString.add("http://127.0.0.1:8080/upload?");
   fullString.add("filename=");
   fullString.add(fileName);
   fullString.add("&user=");
