@@ -7,6 +7,8 @@ import 'dart:io';
 import 'robot_data.dart';
 import 'file_upload_data.dart';
 import 'dart:json';
+List javafiles=new List();
+List classes=new List();
 class ConnectionHandler {
   List positionCollection=new List<List>();
   List fileCollection=new List<List>();
@@ -45,6 +47,8 @@ class ConnectionHandler {
          getFileUploaded.pool.close();
          positionCollection.clear();
        });
+     }else if(parsedMap["m"]=="deploy"){
+       
      }
    };
   }
@@ -129,6 +133,42 @@ class ConnectionHandler {
       });
       getFileUploaded.pool.close();
       positionCollection.clear();
+    });
+  }
+  
+  void deployCode()
+  {
+
+    classes.add('-cp');
+    classes.add('.:classes.jar');
+    
+    javafiles.add('-cp');
+    javafiles.add('.:classes.jar');
+    var stream = new StringInputStream(stdin);
+    stream.onLine = () {
+      var str = stream.readLine().trim();
+      if(str == 'EXIT') 
+      {
+        executeCode();
+      }
+      else
+      {
+        String abc= "$str.java";
+        print(abc);
+        javafiles.add(abc);
+        classes.add(str);
+      }
+    };
+
+  }
+
+  void executeCode()
+  {
+    Process.start("javac",javafiles);
+    Process.run('java', classes).then((ProcessResult pr){
+      print(pr.exitCode);
+      print(pr.stdout);
+      print(pr.stderr);
     });
   }
 }

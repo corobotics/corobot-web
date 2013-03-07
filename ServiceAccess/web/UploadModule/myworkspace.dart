@@ -52,11 +52,14 @@ class Myworkspace {
 
 String userName;
 String password;
+String filelist;
 void main(){
   
   InputElement passwordInput = query('#pName');
 
   InputElement userInput = query('#uName');
+  
+  InputElement fileList=query('#fileList');
   
   userInput.on.change.add((e){
     //window.alert(userInput.value);
@@ -72,6 +75,12 @@ void main(){
     
   });
   
+  fileList.on.change.add((e){
+    //window.alert(userInput.value);
+    filelist=fileList.value;
+    
+  });
+  
   Myworkspace userClient=new Myworkspace("ws://127.0.0.1:8080/getUploadedFile");
   ButtonElement btnSubmitInput = query('#login');
   btnSubmitInput.on.click.add((e){
@@ -83,12 +92,17 @@ void main(){
     req.on.readyStateChange.add((Event e) {
       if (req.readyState == HttpRequest.DONE &&
           (req.status == 200 || req.status == 0)) {
-        window.alert("test successful");
-        window.alert(req.responseText);
+        //window.alert("test successful");
+        //window.alert(req.responseText);
       }
     });
     
     userClient.send(userName, "fileUpload");
+    ButtonElement btnDeploy = query('#deploy');
+    btnDeploy.on.click.add((e){
+      //window.alert("Hey rava");
+      userClient.send(userName,"deploy");
+    });
     /*var fullString=new StringBuffer();
     fullString.add("http://129.21.30.80:8080/authenticate?");
     //fullString.add("http://127.0.0.1:8080/authenticate?");
