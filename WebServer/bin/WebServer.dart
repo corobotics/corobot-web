@@ -19,7 +19,8 @@ void deployCode()
 {
 
   classes.add('-cp');
-  classes.add('.:classes.jar');
+  //classes.add('.:classes.jar');
+  classes.add('.');
  
   javafiles.add('-cp');
   javafiles.add('.:classes.jar');

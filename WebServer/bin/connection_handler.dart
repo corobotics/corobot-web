@@ -31,6 +31,7 @@ class ConnectionHandler {
 
    conn.onMessage=void Message(m){
      Map parsedMap=JSON.parse(m);
+     fileCollection.clear();
      print(parsedMap);
      if(parsedMap["m"]=="fileUpload")
      {
@@ -48,7 +49,9 @@ class ConnectionHandler {
          positionCollection.clear();
        });
      }else if(parsedMap["m"]=="deploy"){
-       
+       List<String> content=parsedMap["f"].split('|');
+       deployCode(conn,content[0],content[1],int.parse(content[2]));
+    
      }
    };
   }
@@ -116,6 +119,7 @@ class ConnectionHandler {
   
   getFileUpload(String username){
     var getFileUploaded=new FileUploadData();
+    fileCollection.clear();
     getFileUploaded.getFileUploaded(username).then((x){
       for (var row in getFileUploaded.listOfPositions)
       { 
@@ -136,20 +140,38 @@ class ConnectionHandler {
     });
   }
   
-  void deployCode()
+  void deployCode(WebSocketConnection conn,String userName,String files,int count)
   {
 
+   
     classes.add('-cp');
-    classes.add('.:classes.jar');
-    
+    classes.add('CodeFolder/$userName');
+    //classes.add('');
+    //classes.add('.:classes.jar');
+    int index=0;
     javafiles.add('-cp');
     javafiles.add('.:classes.jar');
-    var stream = new StringInputStream(stdin);
+    List<String> fileCollection=files.split(" ");
+    fileCollection.forEach((x){
+      String abc= "CodeFolder/$userName/$x.java";
+      String def= "$x";
+      print(def);
+      print(abc);
+      javafiles.add(abc);
+      classes.add(def);
+      index++;
+    });
+    do
+    {
+      executeCode(conn);
+    }
+    while(index<count);
+    /*var stream = new StringInputStream(stdin);
     stream.onLine = () {
       var str = stream.readLine().trim();
       if(str == 'EXIT') 
       {
-        executeCode();
+        
       }
       else
       {
@@ -158,17 +180,24 @@ class ConnectionHandler {
         javafiles.add(abc);
         classes.add(str);
       }
-    };
+    };*/
 
   }
 
-  void executeCode()
+  void executeCode(WebSocketConnection conn)
   {
-    Process.start("javac",javafiles);
+    //Process.start("javac",javafiles);
+    print(classes);
     Process.run('java', classes).then((ProcessResult pr){
+      String a=pr.stdout;
+      String b=pr.stderr;
+      //conn.send(pr.exitCode);
+      conn.send(a);
+      conn.send(b);
       print(pr.exitCode);
       print(pr.stdout);
       print(pr.stderr);
+      
     });
   }
 }

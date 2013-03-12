@@ -3,7 +3,7 @@ import 'sql/options_file/options_file.dart';
 import 'sql/sqljocky/sqljocky.dart';
 import 'dart:json';
 class FileUploadData {
-  var listOfPositions=new List<List>(); 
+  List<List> listOfPositions; 
   ConnectionPool pool;
   FileUploadData(){
     OptionsFile options = new OptionsFile('connections.options');
@@ -32,9 +32,11 @@ class FileUploadData {
   
   Future getFileUploaded(String username) {
     var completer = new Completer();
+  
     pool.query("Select id,Uname,Filename from UploadedFiles where Uname='$username'").then((x){
       print("got results");
-      listOfPositions.clear();
+      //listOfPositions.clear();
+      this.listOfPositions=new List<List>(); 
       for (var row in x) {   
         print(row);
         List parsedList = row;

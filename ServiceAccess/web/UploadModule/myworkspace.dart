@@ -18,7 +18,9 @@ class Myworkspace {
     
     socket.on.message.add((MessageEvent e) {  
       receivedData=e.data;
+      window.alert(e.data.toString());
       final parsedList = JSON.parse(e.data);
+      
       //window.alert(e.data.toString());
       var div = document.query('#tableContent');
       div.elements.clear();
@@ -53,6 +55,7 @@ class Myworkspace {
 String userName;
 String password;
 String filelist;
+String numfiles;
 void main(){
   
   InputElement passwordInput = query('#pName');
@@ -60,6 +63,8 @@ void main(){
   InputElement userInput = query('#uName');
   
   InputElement fileList=query('#fileList');
+  
+  InputElement numFiles=query('#numFiles');
   
   userInput.on.change.add((e){
     //window.alert(userInput.value);
@@ -78,6 +83,12 @@ void main(){
   fileList.on.change.add((e){
     //window.alert(userInput.value);
     filelist=fileList.value;
+    
+  });
+  
+  numFiles.on.change.add((e){
+    //window.alert(userInput.value);
+    numfiles=numFiles.value;
     
   });
   
@@ -100,8 +111,7 @@ void main(){
     userClient.send(userName, "fileUpload");
     ButtonElement btnDeploy = query('#deploy');
     btnDeploy.on.click.add((e){
-      //window.alert("Hey rava");
-      userClient.send(userName,"deploy");
+      userClient.send('$userName|$filelist|$numfiles',"deploy");
     });
     /*var fullString=new StringBuffer();
     fullString.add("http://129.21.30.80:8080/authenticate?");
