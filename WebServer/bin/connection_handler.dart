@@ -1,6 +1,6 @@
 library ConnectionHandler;
 /*
- * The library is used for handling socket communiucation from different client connections
+ * The library is used for handling socket communication from different client connections
  *
  * */
 import 'dart:io';
@@ -43,7 +43,6 @@ class ConnectionHandler {
            
          }
          var encoded=JSON.stringify(fileCollection);
-         //print(fileCollection);
          conn.send(encoded);
          getFileUploaded.pool.close();
          positionCollection.clear();
@@ -154,6 +153,7 @@ class ConnectionHandler {
   void executeCode(WebSocketConnection conn)
   {
     //Untested code for compilation has some issues to asynchronous call
+    
     //Process.start("javac",javafiles);
     print(classes);
     
