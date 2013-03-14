@@ -20,12 +20,12 @@ class ConnectionHandler {
   }
 
   onOpen(WebSocketConnection conn) {
-    print('new ws conn');
+    //print('new ws conn');
 
     webSocketConnections.add(conn);
     conn.onClosed = (int status, String reason) {
-      print('conn is closed');
-      //webSocketConnections.remove(conn);
+      //print('conn is closed');
+      webSocketConnections.remove(conn);
     };
 
 
@@ -43,7 +43,7 @@ class ConnectionHandler {
            
          }
          var encoded=JSON.stringify(fileCollection);
-         print(fileCollection);
+         //print(fileCollection);
          conn.send(encoded);
          getFileUploaded.pool.close();
          positionCollection.clear();
@@ -91,32 +91,16 @@ class ConnectionHandler {
     
   }
   
+  //Currently not being used, just a sample demonstration code of POC
   workSpaceUpdate(String username,String filename)
   {
     var updateFileList=new FileUploadData();
     updateFileList.InsertFileUpload(username, filename).then((x){
-      /*var getFileUploaded=new FileUploadData();
-      getFileUploaded.getFileUploaded(username).then((x){
-        for (var row in getFileUploaded.listOfPositions)
-        { 
-          fileCollection.add(row); 
-          
-        }
-        var encoded=JSON.stringify(positionCollection);
-        webSocketConnections.forEach((connect){
-          if(connection.toString()==connect.toString())
-          {
-            connect.send(encoded);
-          }
-          
-        });
-        getFileUploaded.pool.close();
-        positionCollection.clear();
-      });*/
       updateFileList.pool.close();
     });
   }
   
+  //Currently not being used, just a sample demonstration code of POC
   getFileUpload(String username){
     var getFileUploaded=new FileUploadData();
     fileCollection.clear();
@@ -129,10 +113,6 @@ class ConnectionHandler {
       var encoded=JSON.stringify(positionCollection);
       print(encoded);
       webSocketConnections.forEach((connect){
-        /*if(connection.toString()==connect.toString())
-        {
-          connect.send(encoded);
-        }*/
         
       });
       getFileUploaded.pool.close();
@@ -140,6 +120,7 @@ class ConnectionHandler {
     });
   }
   
+  //Currently has the issue of copying the classes.jar to each user folder
   void deployCode(WebSocketConnection conn,String userName,String files,int count)
   {
 
@@ -166,28 +147,33 @@ class ConnectionHandler {
       executeCode(conn);
     }
     while(index<count);
-    /*var stream = new StringInputStream(stdin);
-    stream.onLine = () {
-      var str = stream.readLine().trim();
-      if(str == 'EXIT') 
-      {
-        
-      }
-      else
-      {
-        String abc= "$str.java";
-        print(abc);
-        javafiles.add(abc);
-        classes.add(str);
-      }
-    };*/
-
+  
   }
 
+  //Executes the java code and sends the stdout messages to the user
   void executeCode(WebSocketConnection conn)
   {
+    //Untested code for compilation has some issues to asynchronous call
     //Process.start("javac",javafiles);
     print(classes);
+    
+    //Currently untested code but will be rectified to make it work.
+    
+    /*Process.run("javac",javafiles).then((ProcessResult pr){
+      Process.run('java', classes).then((ProcessResult pr){
+        String a=pr.stdout;
+        String b=pr.stderr;
+        //conn.send(pr.exitCode);
+        conn.send(a);
+        conn.send(b);
+        print(pr.exitCode);
+        print(pr.stdout);
+        print(pr.stderr);
+        
+      });    
+    });*/
+    
+    //Executable code which works for pre compiled java process
     Process.run('java', classes).then((ProcessResult pr){
       String a=pr.stdout;
       String b=pr.stderr;
@@ -199,6 +185,7 @@ class ConnectionHandler {
       print(pr.stderr);
       
     });
+    
   }
 }
 

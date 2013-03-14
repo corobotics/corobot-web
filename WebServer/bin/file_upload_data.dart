@@ -1,4 +1,8 @@
 library FileUploadData;
+/*
+ * The library is used for file upload and keeping track of the same.
+ * 
+ */
 import 'sql/options_file/options_file.dart';
 import 'sql/sqljocky/sqljocky.dart';
 import 'dart:json';
@@ -19,10 +23,7 @@ class FileUploadData {
   Future InsertFileUpload(String username,String filename) {
     var completer = new Completer();
     pool.prepare("insert into UploadedFiles (Uname,Filename) values (?,?)").chain((query) {
-      print("prepared query 1");
-      var parameters = [
-          [username,filename]
-        ];
+      var parameters = [[username,filename]];
       return query.executeMulti(parameters);
     }).then((results) {
       completer.complete(null);
@@ -32,19 +33,14 @@ class FileUploadData {
   
   Future getFileUploaded(String username) {
     var completer = new Completer();
-  
     pool.query("Select id,Uname,Filename from UploadedFiles where Uname='$username'").then((x){
-      print("got results");
-      //listOfPositions.clear();
       this.listOfPositions=new List<List>(); 
       for (var row in x) {   
-        print(row);
         List parsedList = row;
         listOfPositions.add(row);
        }
       completer.complete(null);
     });
-    
     return completer.future;
   }
 }

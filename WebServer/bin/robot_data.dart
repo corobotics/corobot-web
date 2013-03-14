@@ -1,4 +1,8 @@
 library RobotData;
+/*
+ * The library is used for fetching information about the robot position.
+ * 
+ */
 import 'sql/options_file/options_file.dart';
 import 'sql/sqljocky/sqljocky.dart';
 import 'dart:json';
@@ -26,7 +30,6 @@ class RobotData {
   Future UpdateRobotPosition(String robotname,double xcoordinate,double ycoordinate) {
     var completer = new Completer();
     pool.prepare("insert into robotposition (robotname,xcoordinate,ycoordinate) values (?,?,?)").chain((query) {
-      print("prepared query 1");
       var parameters = [
           [robotname,xcoordinate,ycoordinate]
         ];
@@ -42,7 +45,6 @@ class RobotData {
   {
     var completer = new Completer();
     pool.query("SELECT idrobotPosition,robotname,ycoordinate,xcoordinate FROM robotPosition").then((x){
-      print("got results");
       for (var row in x) {   
         List parsedList = row;
         listOfPositions.add(parsedList);

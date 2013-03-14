@@ -1,4 +1,5 @@
 library StaticFileHandler;
+//Attached to the default handler.
 import 'dart:io';
 
 class StaticFileHandler {

@@ -8,8 +8,6 @@ void main() {
   deployCode(); 
 }
 
-
-
 void deployCode()
 {
 
@@ -20,21 +18,19 @@ void deployCode()
   javafiles.add('.:classes.jar');
   var stream = new StringInputStream(stdin);
   stream.onLine = () {
-    var str = stream.readLine().trim();
-    if(str == 'EXIT') 
-    {
-      executeCode();
-      //exit(0);
+      var str = stream.readLine().trim();
+      if(str == 'EXIT') 
+      {
+        executeCode();
       }
-    else
-    {
-    String abc= "$str.java";
-    print(abc);
-    javafiles.add(abc);
-    classes.add(str);
-    }
+      else
+      {
+        String abc= "$str.java";
+        print(abc);
+        javafiles.add(abc);
+        classes.add(str);
+      }
   };
-
 }
 
 void executeCode()
@@ -45,12 +41,4 @@ void executeCode()
     print(pr.stdout);
     print(pr.stderr);
   });
-    
-  //Process.start("java",javafiles);
-  //Process.run('javac',['-cp','.:classes.jar',abc]);
-  //Process.run('java',['-cp','.:classes.jar','HelloWorld']).then((ProcessResult pr){
-    //print(pr.exitCode);
-   // print(pr.stdout);
-    //print(pr.stderr);
-  //});*/
 }
