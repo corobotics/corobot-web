@@ -35,18 +35,25 @@ class ConnectionHandler {
      print(parsedMap);
      if(parsedMap["m"]=="fileUpload")
      {
+       List<String> userDetails=parsedMap["f"].split("|");
        var getFileUploaded=new FileUploadData();
-       getFileUploaded.getFileUploaded(parsedMap["f"]).then((x){
-         for (var row in getFileUploaded.listOfPositions)
-         { 
-           fileCollection.add(row); 
-           
+       getFileUploaded.authenticateUser(userDetails[0],userDetails[1]).then((x){
+         if(getFileUploaded.isAuthenticated)
+         {
+           getFileUploaded.getFileUploaded(userDetails[0]).then((x){
+             for (var row in getFileUploaded.listOfPositions)
+             { 
+               fileCollection.add(row); 
+               
+             }
+             var encoded=JSON.stringify(fileCollection);
+             conn.send(encoded);
+             getFileUploaded.pool.close();
+             positionCollection.clear();
+           });
          }
-         var encoded=JSON.stringify(fileCollection);
-         conn.send(encoded);
-         getFileUploaded.pool.close();
-         positionCollection.clear();
        });
+       
      }else if(parsedMap["m"]=="deploy"){
        List<String> content=parsedMap["f"].split('|');
        deployCode(conn,content[0],content[1],int.parse(content[2]));

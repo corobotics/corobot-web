@@ -120,10 +120,10 @@ void UploadFile(HttpRequest request, HttpResponse response) {
   print(request.queryParameters["user"]);
   String currentFilename=request.queryParameters["filename"].toString();
   String currentUser=request.queryParameters["user"].toString();
-  print(request.inputStream.read(26));
+   
   //response.outputStream.write('Upload File'.charCodes);
   //response.outputStream.close();
-  _readBody(request,currentFilename,currentUser, (body,currentFilename,currentUser) {
+    _readBody(request,currentFilename,currentUser, (body,currentFilename,currentUser) {
     
     print(body);
     

@@ -108,7 +108,7 @@ void main(){
       }
     });
     
-    userClient.send(userName, "fileUpload");
+    userClient.send('$userName|$password', "fileUpload");
     ButtonElement btnDeploy = query('#deploy');
     btnDeploy.on.click.add((e){
       userClient.send('$userName|$filelist|$numfiles',"deploy");

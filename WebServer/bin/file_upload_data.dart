@@ -9,6 +9,7 @@ import 'dart:json';
 class FileUploadData {
   List<List> listOfPositions; 
   ConnectionPool pool;
+  bool isAuthenticated=false;
   FileUploadData(){
     OptionsFile options = new OptionsFile('connections.options');
     String user = options.getString('user');
@@ -42,5 +43,25 @@ class FileUploadData {
       completer.complete(null);
     });
     return completer.future;
+  }
+  
+  Future authenticateUser(String username,String password)
+  {
+    var completer = new Completer();
+    pool.query("Select Count(*) as Authenticate from DartDb.UserName where UserName='$username' and Password='$password'").then((x){
+      this.listOfPositions=new List<List>(); 
+      for (var row in x) {   
+        if(row[0].toInt()==1)
+        {
+          isAuthenticated=true;
+        }
+        else
+        {
+          isAuthenticated=false;
+        }
+       }
+      completer.complete(null);
+    });
+    return completer.future; 
   }
 }
