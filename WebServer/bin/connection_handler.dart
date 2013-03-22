@@ -144,12 +144,12 @@ class ConnectionHandler {
 
    
     classes.add('-cp');
-    classes.add('CodeFolder/$userName');
+    classes.add('CodeFolder/classes.jar:CodeFolder/$userName');
     //classes.add('');
     //classes.add('.:classes.jar');
     int index=0;
     javafiles.add('-cp');
-    javafiles.add('.:classes.jar');
+    javafiles.add('CodeFolder/classes.jar');
     List<String> fileCollection=files.split(" ");
     fileCollection.forEach((x){
       String abc= "CodeFolder/$userName/$x.java";
