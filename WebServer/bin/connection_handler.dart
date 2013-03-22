@@ -98,12 +98,24 @@ class ConnectionHandler {
   }
   
   //Currently not being used, just a sample demonstration code of POC
-  workSpaceUpdate(String username,String filename)
+  workSpaceUpdate(String username,String password,String filename,String body)
   {
-    var updateFileList=new FileUploadData();
-    updateFileList.InsertFileUpload(username, filename).then((x){
-      updateFileList.pool.close();
-    });
+    var getFileUploaded=new FileUploadData();
+    getFileUploaded.authenticateUser(username,password).then((x){
+      if(getFileUploaded.isAuthenticated)
+      {
+        var updateFileList=new FileUploadData();
+        updateFileList.InsertFileUpload(username, filename).then((x){
+          updateFileList.pool.close();
+          var dir = new Directory('CodeFolder/$username');
+          dir.createSync(recursive:true);
+          var logFile = new File('CodeFolder/$username/$filename');
+          logFile.openSync(FileMode.APPEND);
+          logFile.writeAsString(body);
+        });
+      }
+      });
+    
   }
   
   //Currently not being used, just a sample demonstration code of POC
@@ -166,7 +178,7 @@ class ConnectionHandler {
     
     //Currently untested code but will be rectified to make it work.
     
-    /*Process.run("javac",javafiles).then((ProcessResult pr){
+    Process.run("javac",javafiles).then((ProcessResult pr){
       Process.run('java', classes).then((ProcessResult pr){
         String a=pr.stdout;
         String b=pr.stderr;
@@ -178,10 +190,10 @@ class ConnectionHandler {
         print(pr.stderr);
         
       });    
-    });*/
+    });
     
     //Executable code which works for pre compiled java process
-    Process.run('java', classes).then((ProcessResult pr){
+    /*Process.run('java', classes).then((ProcessResult pr){
       String a=pr.stdout;
       String b=pr.stderr;
       //conn.send(pr.exitCode);
@@ -191,7 +203,7 @@ class ConnectionHandler {
       print(pr.stdout);
       print(pr.stderr);
       
-    });
+    });*/
     
   }
 }

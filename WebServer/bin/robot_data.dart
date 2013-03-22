@@ -20,7 +20,7 @@ class RobotData {
     String password = options.getString('password');
     int port = options.getInt('port',3306);
     String db = options.getString('db');
-    String host = options.getString('host','localhost');
+    String host = options.getString('host','129.21.30.80');
     //Added to connection pool
     pool= new ConnectionPool(host: host, port: port, user: user, password: password, db: db);
  

@@ -81,7 +81,7 @@ runServer(int port) {
   //Default handler is given just for the sake of making 
   //sure there is a default function handler
   server.defaultRequestHandler = new StaticFileHandler('/acceptInput').onRequest;
-  server.listen('127.0.0.1', port);
+  server.listen('129.21.30.80', port);
   print('listening for connections on $port');
 }
 
@@ -120,27 +120,25 @@ void UploadFile(HttpRequest request, HttpResponse response) {
   print(request.queryParameters["user"]);
   String currentFilename=request.queryParameters["filename"].toString();
   String currentUser=request.queryParameters["user"].toString();
-   
+  String currentUserPassword=request.queryParameters["password"].toString(); 
+  
   //response.outputStream.write('Upload File'.charCodes);
   //response.outputStream.close();
-    _readBody(request,currentFilename,currentUser, (body,currentFilename,currentUser) {
+    _readBody(request,currentFilename,currentUserPassword,currentUser, (body,currentFilename,currentUserPassword,currentUser) {
     
     print(body);
     
-    var dir = new Directory('CodeFolder/$currentUser');
-    dir.createSync(recursive:true);
-    var logFile = new File('CodeFolder/$currentUser/$currentFilename');
+   
     
-    connectedClient.workSpaceUpdate(currentUser, currentFilename);
-    logFile.openSync(FileMode.APPEND);
-    logFile.writeAsString(body);
+    connectedClient.workSpaceUpdate(currentUser,currentUserPassword, currentFilename,body);
+    
     response.statusCode = HttpStatus.CREATED;
     response.contentLength = 0;
     response.outputStream.close();
   });
 }
 
-_readBody(HttpRequest request,String currentFilename,String currentUser, void handleContent(String body,String currentFilename,String currentUser)) {
+_readBody(HttpRequest request,String currentFilename,String currentUserPassword,String currentUser, void handleContent(String body,String currentFilename,String currentUserPassword,String currentUser)) {
   String contentString = ""; // request body byte data
   final completer = new Completer();
   final textFile = new StringInputStream(request.inputStream);
@@ -157,7 +155,7 @@ _readBody(HttpRequest request,String currentFilename,String currentUser, void ha
   
   // process the request and send a response
   completer.future.then((_){
-    handleContent(contentString,currentFilename,currentUser);
+    handleContent(contentString,currentFilename,currentUserPassword,currentUser);
   });
 }
   

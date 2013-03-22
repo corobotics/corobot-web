@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>uploadcode</title>
-    <link rel="stylesheet" href="base.css">
-  </head>
-  <body>
-    <h1>Upload your code</h1>
-    
-    <p>Welcome to corobots</p>
-    
-    <div id="container">
-      <input type="text" name="uName"  id="uName"/> 
-      <p></p>
-      <input type="file" name="uploadFile" id="uploadFile"/> 
-      <p></p>
-    </div>
+    <head>
+        <meta charset="utf-8">
+        <title>uploadcode</title>
+        <link rel="stylesheet" href="base.css">
+    </head>
+    <body>
+        <h1>Upload your code</h1>
 
-    <script type="application/dart" src="upload_code.dart"></script>
-    <script src="https://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
-    
-  </body>
+        <p>Welcome to corobots</p>
+
+        <div id="container">
+            <table>
+                <tr>
+                    <td>
+                        <label for="uName">Username:</label>  
+                    </td>
+                    <td></td>
+                    <td>
+                        <input type="text" name="uName"  id="uName"/> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="passWord">Password:</label>  
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <input type="text" name="passWord"  id="passWord"/> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Upload File:</td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <input type="file" name="uploadFile" id="uploadFile"/> 
+                    </td>
+                </tr>
+            </table>
+
+            <p></p>
+
+            <p></p>
+        </div>
+
+        <script type="application/dart" src="upload_code.dart"></script>
+        <script src="https://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
+
+    </body>
 </html>

@@ -8,17 +8,17 @@ class Myworkspace {
     socket=new WebSocket(url);
     
     socket.on.open.add((e) {
-      window.alert("Connected with the websocket");
+      //window.alert("Connected with the websocket");
       
     });
     
     socket.on.close.add((e){
-      window.alert("Closed");
+      //window.alert("Closed");
     });
     
     socket.on.message.add((MessageEvent e) {  
       receivedData=e.data;
-      window.alert(e.data.toString());
+      //window.alert(e.data.toString());
       final parsedList = JSON.parse(e.data);
       
       //window.alert(e.data.toString());
@@ -29,7 +29,6 @@ class Myworkspace {
       s.add('<thead></thead>');
       s.add('<tr><th>Id</th><th>User</th><th>Filename</th></tr>');
       for(final element in parsedList){
-        window.alert(element);
         s.add('<tr><td>${element[0]}</td><td>${element[1]}</td><td>${element[2]}</td></tr>');
       }
       s.add('</table>');
@@ -92,11 +91,11 @@ void main(){
     
   });
   
-  Myworkspace userClient=new Myworkspace("ws://127.0.0.1:8080/getUploadedFile");
+  Myworkspace userClient=new Myworkspace("ws://129.21.30.80:8080/getUploadedFile");
   ButtonElement btnSubmitInput = query('#login');
   btnSubmitInput.on.click.add((e){
-    window.alert(userName);
-    window.alert(password);
+    //window.alert(userName);
+    //window.alert(password);
     final req = new HttpRequest();
   
    

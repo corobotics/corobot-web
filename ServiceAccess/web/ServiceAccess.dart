@@ -46,7 +46,7 @@ class SocketConn {
 
 
 void main() {
-  SocketConn userClient=new SocketConn("ws://127.0.0.1:8080/portConnect"); 
+  SocketConn userClient=new SocketConn("ws://129.21.30.80:8080/portConnect"); 
   
 }
 

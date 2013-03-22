@@ -1,35 +1,78 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>uploadcode</title>
-    <link rel="stylesheet" href="base.css">
-  </head>
-  <body>
-    <h1>Work Space</h1>
-    
-    <p>Welcome to corobots</p>
-    
-    <div id="container">
-      <input type="text" name="uName"  id="uName"/> 
-      <p></p>
-      <input type="password" name="pName"  id="pName"/> 
-      <p></p>
-      <button type="button" name="login" id="login">Show Workspace</button> 
-      <p></p>
-      <div id="tableContent" class="CSSTableGenerator">
-      </div>
-      <p></p>   
-      <input type="text" name="fileList"  id="fileList"/> 
-      <p></p>   
-      <input type="text" name="numFiles"  id="numFiles"/> 
-      <p></p> 
-      <button type="button" name="deploy" id="deploy">Deploy</button>
-    </div>
+    <head>
+        <meta charset="utf-8">
+        <title>uploadcode</title>
+        <link rel="stylesheet" href="base.css">
+    </head>
+    <body>
+        <h1>Work Space</h1>
 
-    <script type="application/dart" src="myworkspace.dart"></script>
-    <script src="https://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
-    
-  </body>
+        <p>Welcome to corobots</p>
+
+        <div id="container">
+            <table>
+                <tr>
+                    <td>
+                        <label for="uName">Username:</label>
+                    </td>
+                    <td width="33px"></td>
+                    <td>
+                        <input type="text" name="uName" label="User Name"  id="uName"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pName">Password:</label>  
+                    </td>
+                    <td></td>
+                    <td>
+                        <input type="password" name="pName"  id="pName"/> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td></td>
+                    <td>
+                        <button type="button" name="login" id="login">Show Workspace</button> 
+                    </td>
+                </tr>
+            </table>
+            <div id="tableContent" class="CSSTableGenerator">
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <label for="fileList">Filenames:</label>  
+                    </td>
+                    <td></td>
+                    <td>
+                        <input type="text" name="fileList"  id="fileList"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="numFiles">Number of Files:</label>  
+                    </td>
+                    <td></td>
+                    <td>
+                        <input type="text" name="numFiles"  id="numFiles"/> 
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button type="button" name="deploy" id="deploy">Deploy</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <script type="application/dart" src="myworkspace.dart"></script>
+        <script src="https://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
+
+    </body>
 </html>
