@@ -11,17 +11,13 @@ ConnectionHandler connectedClient=new ConnectionHandler("/portConnect");
 ConnectionHandler connectedFileUpload=new ConnectionHandler("/getUploadedFile");
 void main() {
   runServer(8080);
-  
-  //deployCode();
 }
 
+//Unused code need to be removed after testing.
 void deployCode()
 {
-
   classes.add('-cp');
-  //classes.add('.:classes.jar');
   classes.add('.');
- 
   javafiles.add('-cp');
   javafiles.add('.:classes.jar');
   var stream = new StringInputStream(stdin);
@@ -39,9 +35,9 @@ void deployCode()
     classes.add(str);
     }
   };
-
 }
 
+//old code for executing java process from dartvm.
 void executeCode()
 {
   Process.start("javac",javafiles);
@@ -85,9 +81,8 @@ runServer(int port) {
   print('listening for connections on $port');
 }
 
+//temp authentication which needs to be removed.
 void authenticateUser(HttpRequest request, HttpResponse response) {
-  print(request.queryParameters);
-  
   String currentUser=request.queryParameters["userName"];
   print(request.queryParameters["userName"]);
   print(request.queryParameters["password"]);
@@ -96,54 +91,31 @@ void authenticateUser(HttpRequest request, HttpResponse response) {
   options.add('-a');
   options.add('-t');
   options.add(s);
-  //var dir = new Directory('CodeFolder/$currentUser');
-  
-  
-  
-  
-
   Process.run('ls', options).then((ProcessResult results) {
-    //print();
-    
-  //  response.outputStream.write(results.stdout.charCodes);
-   // response.outputStream.close();
-    //response.outputStream.writeString();
   });
-  
-  
-  
 }
 
 void UploadFile(HttpRequest request, HttpResponse response) {
-  print("handler called");
-  print(request.queryParameters);
-  print(request.queryParameters["user"]);
   String currentFilename=request.queryParameters["filename"].toString();
   String currentUser=request.queryParameters["user"].toString();
   String currentUserPassword=request.queryParameters["password"].toString(); 
-  
-  //response.outputStream.write('Upload File'.charCodes);
-  //response.outputStream.close();
+
+  //The function below is a delegate for reading the entire file and its 
+  //content
     _readBody(request,currentFilename,currentUserPassword,currentUser, (body,currentFilename,currentUserPassword,currentUser) {
-    
-    print(body);
-    
-   
-    
     connectedClient.workSpaceUpdate(currentUser,currentUserPassword, currentFilename,body);
-    
     response.statusCode = HttpStatus.CREATED;
     response.contentLength = 0;
     response.outputStream.close();
   });
 }
 
+//Basic function to read and traverse the file contents.
 _readBody(HttpRequest request,String currentFilename,String currentUserPassword,String currentUser, void handleContent(String body,String currentFilename,String currentUserPassword,String currentUser)) {
   String contentString = ""; // request body byte data
   final completer = new Completer();
   final textFile = new StringInputStream(request.inputStream);
   textFile.onData = (){
-    print("inside data");
     contentString = contentString.concat(textFile.read());
   };
   textFile.onClosed = () {
@@ -172,7 +144,7 @@ void acceptInput(HttpRequest request,HttpResponse response){
 }
 
 
-
+//Basic handler testing function will be displayed for production release.
 void acceptTest(HttpRequest request,HttpResponse response){
 
   print("Testfunction is getting called here");
@@ -180,35 +152,20 @@ void acceptTest(HttpRequest request,HttpResponse response){
   response.outputStream.close();
 }
 
-
-void databaseUpdates()
-{
-print("connection open");
-
-var updatePosit=new RobotData();
-updatePosit.UpdateRobotPosition("testrobot", 24, 26).then((x){
-  updatePosit.pool.close();
-});
-var getPosition=new RobotData();
-getPosition.GetAllRobotPosition().then((x){
-  for (var row in getPosition.listOfPositions)
-  {
-    print(row);
-  }
-  getPosition.pool.close();
-});
-
-connectedClient.SendMessage("Test Robot Position Received");
-
-}
-
-/*void deployCode()
-{
-  Process.run('javac',['-cp','.;classes.jar;',["HelloWorld.java"]]);
-  Process.run('java',['-cp','.;classes.jar;','HelloWorld']).then((ProcessResult pr){
-    print(pr.exitCode);
-    print(pr.stdout);
-    print(pr.stderr);
+//Old code used for testing needs to be removed.
+void databaseUpdates(){
+  var updatePosit=new RobotData();
+  updatePosit.UpdateRobotPosition("testrobot", 24.00, 26.00).then((x){
+    updatePosit.pool.close();
   });
-}*/
+  var getPosition=new RobotData();
+  getPosition.GetAllRobotPosition().then((x){
+    for (var row in getPosition.listOfPositions)
+    {
+      print(row);
+    }
+    getPosition.pool.close();
+  });
+  connectedClient.SendMessage("Test Robot Position Received");
+}
 
