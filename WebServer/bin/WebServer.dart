@@ -133,13 +133,15 @@ _readBody(HttpRequest request,String currentFilename,String currentUserPassword,
   
 //The actual function which handles the accept input request
 void acceptInput(HttpRequest request,HttpResponse response){
+  /*
   print(request.connectionInfo.toString());
   print(request.queryParameters);
   print(request.queryParameters["robotname"]);
   print(request.queryParameters["x"]);
   print(request.queryParameters["y"]);
+  */
   connectedClient.databaseUpdates(request.queryParameters["robotname"],double.parse(request.queryParameters["x"].toString()),double.parse(request.queryParameters["y"].toString()));
-  response.outputStream.write('Hello dude'.charCodes);
+  response.outputStream.write('Server received data'.charCodes);
   response.outputStream.close();
 }
 
