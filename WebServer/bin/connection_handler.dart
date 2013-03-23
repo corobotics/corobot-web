@@ -20,11 +20,8 @@ class ConnectionHandler {
   }
 
   onOpen(WebSocketConnection conn) {
-    //print('new ws conn');
-
     webSocketConnections.add(conn);
     conn.onClosed = (int status, String reason) {
-      //print('conn is closed');
       webSocketConnections.remove(conn);
     };
 
@@ -32,19 +29,15 @@ class ConnectionHandler {
    conn.onMessage=void Message(m){
      Map parsedMap=JSON.parse(m);
      fileCollection.clear();
-     print(parsedMap);
      if(parsedMap["m"]=="fileUpload")
      {
        List<String> userDetails=parsedMap["f"].split("|");
        var getFileUploaded=new FileUploadData();
        getFileUploaded.authenticateUser(userDetails[0],userDetails[1]).then((x){
-         if(getFileUploaded.isAuthenticated)
-         {
+         if(getFileUploaded.isAuthenticated){
            getFileUploaded.getFileUploaded(userDetails[0]).then((x){
-             for (var row in getFileUploaded.listOfPositions)
-             { 
+             for (var row in getFileUploaded.listOfPositions){ 
                fileCollection.add(row); 
-               
              }
              var encoded=JSON.stringify(fileCollection);
              conn.send(encoded);
@@ -52,49 +45,40 @@ class ConnectionHandler {
              positionCollection.clear();
            });
          }
-       });
-       
-     }else if(parsedMap["m"]=="deploy"){
+       });  
+     }
+     else if(parsedMap["m"]=="deploy"){
        List<String> content=parsedMap["f"].split('|');
        deployCode(conn,content[0],content[1],int.parse(content[2]));
-    
      }
    };
   }
   
-  SendMessage(String broadCastMessage)
-  {
+  SendMessage(String broadCastMessage){
     //Code to be written
   }
   
   
   //database update code
-  databaseUpdates(String robotname,double xcoordinate,double ycoordinate)
-  {
-    //print("connection open");
+  databaseUpdates(String robotname,double xcoordinate,double ycoordinate){
 
     var updatePosit=new RobotData();
     updatePosit.UpdateRobotPosition(robotname, xcoordinate, ycoordinate).then((x){
       var getPosition=new RobotData();
       getPosition.GetAllRobotPosition().then((x){
-        for (var row in getPosition.listOfPositions)
-        { 
+        for (var row in getPosition.listOfPositions){ 
           positionCollection.add(row); 
           
         }
         var encoded=JSON.stringify(positionCollection);
         webSocketConnections.forEach((connection){
           connection.send(encoded);
-          
         });
         getPosition.pool.close();
         positionCollection.clear();
       });
       updatePosit.pool.close();
-    });
-   
-
-    
+    }); 
   }
   
   //Currently not being used, just a sample demonstration code of POC
@@ -102,8 +86,7 @@ class ConnectionHandler {
   {
     var getFileUploaded=new FileUploadData();
     getFileUploaded.authenticateUser(username,password).then((x){
-      if(getFileUploaded.isAuthenticated)
-      {
+      if(getFileUploaded.isAuthenticated){
         var updateFileList=new FileUploadData();
         updateFileList.InsertFileUpload(username, filename).then((x){
           updateFileList.pool.close();
@@ -114,8 +97,7 @@ class ConnectionHandler {
           logFile.writeAsString(body);
         });
       }
-      });
-    
+    });
   }
   
   //Currently not being used, just a sample demonstration code of POC
@@ -123,15 +105,12 @@ class ConnectionHandler {
     var getFileUploaded=new FileUploadData();
     fileCollection.clear();
     getFileUploaded.getFileUploaded(username).then((x){
-      for (var row in getFileUploaded.listOfPositions)
-      { 
+      for (var row in getFileUploaded.listOfPositions){ 
         fileCollection.add(row); 
-        
       }
       var encoded=JSON.stringify(positionCollection);
       print(encoded);
       webSocketConnections.forEach((connect){
-        
       });
       getFileUploaded.pool.close();
       positionCollection.clear();
@@ -139,14 +118,9 @@ class ConnectionHandler {
   }
   
   //Currently has the issue of copying the classes.jar to each user folder
-  void deployCode(WebSocketConnection conn,String userName,String files,int count)
-  {
-
-   
+  void deployCode(WebSocketConnection conn,String userName,String files,int count){
     classes.add('-cp');
     classes.add('CodeFolder/classes.jar:CodeFolder/$userName');
-    //classes.add('');
-    //classes.add('.:classes.jar');
     int index=0;
     javafiles.add('-cp');
     javafiles.add('CodeFolder/classes.jar');
@@ -160,17 +134,13 @@ class ConnectionHandler {
       classes.add(def);
       index++;
     });
-    do
-    {
+    do{
       executeCode(conn);
-    }
-    while(index<count);
-  
+    }while(index<count);
   }
 
   //Executes the java code and sends the stdout messages to the user
-  void executeCode(WebSocketConnection conn)
-  {
+  void executeCode(WebSocketConnection conn){
     //Untested code for compilation has some issues to asynchronous call
     
     //Process.start("javac",javafiles);
@@ -191,20 +161,6 @@ class ConnectionHandler {
         
       });    
     });
-    
-    //Executable code which works for pre compiled java process
-    /*Process.run('java', classes).then((ProcessResult pr){
-      String a=pr.stdout;
-      String b=pr.stderr;
-      //conn.send(pr.exitCode);
-      conn.send(a);
-      conn.send(b);
-      print(pr.exitCode);
-      print(pr.stdout);
-      print(pr.stderr);
-      
-    });*/
-    
   }
 }
 
