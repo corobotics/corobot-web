@@ -5,11 +5,28 @@
         <meta charset="utf-8">
         <title>uploadcode</title>
         <link rel="stylesheet" href="base.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../GenericWeb/css/style.css" type="text/css" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="css/ie7.css" type="text/css" />
+    <![endif]-->
     </head>
     <body>
+      <div class="page">
+      <div class="header">
+        <a href="index.html" id="logo"></a>
+        <ul>
+         <li><a href="../home.html">Home</a></li>
+          <li><a href="../index.html">Robot Location</a></li>
+          <li class="selected"><a href="uploadcode.html">Upload Code</a></li>
+          <li><a href="workspace.html">Workspace</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="body">
         <h1>Upload your code</h1>
 
-        <p>Welcome to corobots</p>
+        <p>Upload one file at a time and kindly confirm your upload in your workspace.</p>
 
         <div id="container">
             <table>
@@ -34,7 +51,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Upload File:</td>
+                    <td><label>Upload File: </label></td>
                     <td>
                         
                     </td>
@@ -48,7 +65,10 @@
 
             <p></p>
         </div>
-
+        
+      </div>
+       
+        
         <script type="application/dart" src="upload_code.dart"></script>
         <script src="https://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
 

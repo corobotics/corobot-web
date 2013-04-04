@@ -1,6 +1,5 @@
 import 'dart:html';
 import 'dart:json';
-
 class SocketConn {
   WebSocket socket;
   Object receivedData;
@@ -28,7 +27,6 @@ class SocketConn {
       }
       s.add('</table>');
       div.elements.add(new Element.html(s.toString()));
-
     });
    
   }
@@ -47,7 +45,12 @@ class SocketConn {
 
 void main() {
   SocketConn userClient=new SocketConn("ws://129.21.30.80:8080/portConnect"); 
-  
+  var context= js.context;
+  js.context.alert('Hello from Dart via JavaScript.');
+  ButtonElement getCurrentRobotLocation = query('#getData');
+  getCurrentRobotLocation.on.click.add((e){
+   // userClient.send('$userName|$filelist|$numfiles',"deploy");
+  });
 }
 
 onSuccess(HttpRequest req) {
