@@ -149,7 +149,7 @@ void acceptInput(HttpRequest request,HttpResponse response){
 //Basic handler testing function will be displayed for production release.
 void acceptTest(HttpRequest request,HttpResponse response){
 
-  print("Testfunction is getting called here");
+  //print("Testfunction is getting called here");
   response.outputStream.write('Test Function'.charCodes);
   response.outputStream.close();
 }
