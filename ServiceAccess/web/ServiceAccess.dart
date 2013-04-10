@@ -45,8 +45,6 @@ class SocketConn {
 
 void main() {
   SocketConn userClient=new SocketConn("ws://129.21.30.80:8080/portConnect"); 
-  var context= js.context;
-  js.context.alert('Hello from Dart via JavaScript.');
   ButtonElement getCurrentRobotLocation = query('#getData');
   getCurrentRobotLocation.on.click.add((e){
    // userClient.send('$userName|$filelist|$numfiles',"deploy");
