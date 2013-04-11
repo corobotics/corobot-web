@@ -20,7 +20,9 @@ class ConnectionHandler {
   }
 
   onOpen(WebSocketConnection conn) {
+    //print(conn.)
     webSocketConnections.add(conn);
+    
     conn.onClosed = (int status, String reason) {
       webSocketConnections.remove(conn);
     };
@@ -51,6 +53,10 @@ class ConnectionHandler {
        List<String> content=parsedMap["f"].split('|');
        deployCode(conn,content[0],content[1],int.parse(content[2]));
      }
+     else if(parsedMap["m"]=="index"){
+       print("test");
+       getRobotPosition();
+     }
    };
   }
   
@@ -60,26 +66,49 @@ class ConnectionHandler {
   
   
   //database update code
+  /*databaseUpdates(String robotname,double xcoordinate,double ycoordinate){
+
+    var updatePosit=new RobotData();
+    var getPosition=new RobotData();
+    getPosition.GetAllRobotPosition().then((x){
+      for (var row in getPosition.listOfPositions){ 
+        positionCollection.add(row); 
+        
+      }
+      var encoded=JSON.stringify(positionCollection);
+      webSocketConnections.forEach((connection){
+        connection.send(encoded);
+      });
+      getPosition.pool.close();
+      positionCollection.clear();
+    }); 
+    updatePosit.UpdateRobotPosition(robotname, xcoordinate, ycoordinate);
+    updatePosit.pool.close();
+    
+  }*/
+  
   databaseUpdates(String robotname,double xcoordinate,double ycoordinate){
 
     var updatePosit=new RobotData();
-    updatePosit.UpdateRobotPosition(robotname, xcoordinate, ycoordinate).then((x){
-      var getPosition=new RobotData();
-      getPosition.GetAllRobotPosition().then((x){
-        for (var row in getPosition.listOfPositions){ 
-          positionCollection.add(row); 
-          
-        }
-        var encoded=JSON.stringify(positionCollection);
-        webSocketConnections.forEach((connection){
-          connection.send(encoded);
-        });
-        getPosition.pool.close();
-        positionCollection.clear();
+    var getPosition=new RobotData();
+    getPosition.GetAllRobotPosition().then((x){
+      for (var row in getPosition.listOfPositions){ 
+        positionCollection.add(row); 
+        
+      }
+      var encoded=JSON.stringify(positionCollection);
+      webSocketConnections.forEach((connection){
+        connection.send(encoded);
       });
-      updatePosit.pool.close();
+      getPosition.pool.close();
+      positionCollection.clear();
     }); 
+    updatePosit.UpdateRobotPosition(robotname, xcoordinate, ycoordinate);
+    updatePosit.pool.close();
+    
   }
+
+  
   
   //Currently not being used, just a sample demonstration code of POC
   workSpaceUpdate(String username,String password,String filename,String body)
@@ -162,5 +191,22 @@ class ConnectionHandler {
       });    
     });
   }
+  
+  void getRobotPosition(){
+    var getPosition=new RobotData();
+    getPosition.GetAllRobotPosition().then((x){
+      for (var row in getPosition.listOfPositions){ 
+        positionCollection.add(row); 
+        
+      }
+      var encoded=JSON.stringify(positionCollection);
+      webSocketConnections.forEach((connection){
+        connection.send(encoded);
+      });
+      getPosition.pool.close();
+      positionCollection.clear();
+    });
+  }
+  
 }
 

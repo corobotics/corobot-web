@@ -5,48 +5,13 @@ import 'package:sqljocky/utils.dart';
 import 'static_file_handler.dart';
 import 'connection_handler.dart';
 import 'robot_data.dart';
-List javafiles=new List();
-List classes=new List();
+
 ConnectionHandler connectedClient=new ConnectionHandler("/portConnect");
 ConnectionHandler connectedFileUpload=new ConnectionHandler("/getUploadedFile");
 void main() {
   runServer(8080);
 }
 
-//Unused code need to be removed after testing.
-void deployCode()
-{
-  classes.add('-cp');
-  classes.add('.');
-  javafiles.add('-cp');
-  javafiles.add('.:classes.jar');
-  var stream = new StringInputStream(stdin);
-  stream.onLine = () {
-    var str = stream.readLine().trim();
-    if(str == 'EXIT') 
-    {
-      executeCode();
-    }
-    else
-    {
-    String abc= "$str.java";
-    print(abc);
-    javafiles.add(abc);
-    classes.add(str);
-    }
-  };
-}
-
-//old code for executing java process from dartvm.
-void executeCode()
-{
-  Process.start("javac",javafiles);
-  Process.run('java', classes).then((ProcessResult pr){
-    print(pr.exitCode);
-    print(pr.stdout);
-    print(pr.stderr);
-  });
-}
 
 //Run Server function is created to create multiple instances 
 //of server each with different basepath
@@ -61,7 +26,7 @@ runServer(int port) {
   //with the handler
   server.addRequestHandler((req) => req.path =='/acceptInput',acceptInput);
   
-  server.addRequestHandler((req) => req.path =='/acceptTest',acceptTest);
+  //server.addRequestHandler((req) => req.path =='/acceptTest',acceptTest);
   WebSocketHandler webCon=new WebSocketHandler();
   webCon.onOpen = connectedClient.onOpen;
   
@@ -77,7 +42,7 @@ runServer(int port) {
   //Default handler is given just for the sake of making 
   //sure there is a default function handler
   server.defaultRequestHandler = new StaticFileHandler('/acceptInput').onRequest;
-  server.listen('129.21.30.80', port);
+  server.listen('127.0.0.1', port);
   print('listening for connections on $port');
 }
 
@@ -133,26 +98,12 @@ _readBody(HttpRequest request,String currentFilename,String currentUserPassword,
   
 //The actual function which handles the accept input request
 void acceptInput(HttpRequest request,HttpResponse response){
-  /*
-  print(request.connectionInfo.toString());
-  print(request.queryParameters);
-  print(request.queryParameters["robotname"]);
-  print(request.queryParameters["x"]);
-  print(request.queryParameters["y"]);
-  */
   connectedClient.databaseUpdates(request.queryParameters["robotname"],double.parse(request.queryParameters["x"].toString()),double.parse(request.queryParameters["y"].toString()));
-  response.outputStream.write('Server received data'.charCodes);
-  response.outputStream.close();
+  //response.outputStream.write('Server received data'.charCodes);
+  //response.outputStream.close();
 }
 
 
-//Basic handler testing function will be displayed for production release.
-void acceptTest(HttpRequest request,HttpResponse response){
-
-  //print("Testfunction is getting called here");
-  response.outputStream.write('Test Function'.charCodes);
-  response.outputStream.close();
-}
 
 //Old code used for testing needs to be removed.
 void databaseUpdates(){

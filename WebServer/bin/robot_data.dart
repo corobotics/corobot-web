@@ -28,6 +28,7 @@ class RobotData {
   
   //Sends the later robot position to table as given by the robot
   Future UpdateRobotPosition(String robotname,double xcoordinate,double ycoordinate) {
+   
     var completer = new Completer();
     
     pool.prepare("Update robotposition set isCurrentPosition='0' where robotname='$robotname'").then((query){

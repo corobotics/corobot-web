@@ -8,14 +8,14 @@ class SocketConn {
     socket=new WebSocket(url);
     
     socket.on.open.add((e) {
-      window.alert("Connected with the websocket");
+      //window.alert("Connected with the websocket");
     });
     
     socket.on.message.add((MessageEvent e) {
       receivedData=e.data;
      
       final parsedList = JSON.parse(e.data);
-      window.alert(e.data.toString());
+      //window.alert(e.data.toString());
       var div = document.query('#tableContent');
       div.elements.clear();
       final s = new StringBuffer();
@@ -34,10 +34,15 @@ class SocketConn {
   sendConnectionStatus(String clientName, String message)
   {
     var encoded = JSON.stringify({'f': clientName, 'm': message});
-    if (socket != null && socket.readyState == WebSocket.OPEN) {
+    
+    //if (socket != null && socket.readyState == WebSocket.OPEN) 
+    {
+      //window.alert(encoded);
       socket.send(encoded);
-    } else {
-      print("Error while sending message");
+    }
+    //else
+    {
+      //print("Error while sending message");
     }
   }
 }
@@ -45,10 +50,11 @@ class SocketConn {
 
 void main() {
   SocketConn userClient=new SocketConn("ws://129.21.30.80:8080/portConnect"); 
-  ButtonElement getCurrentRobotLocation = query('#getData');
+  userClient.sendConnectionStatus("robotPosition", "index");
+  /*ButtonElement getCurrentRobotLocation = query('#getData');
   getCurrentRobotLocation.on.click.add((e){
    // userClient.send('$userName|$filelist|$numfiles',"deploy");
-  });
+  });*/
 }
 
 onSuccess(HttpRequest req) {
