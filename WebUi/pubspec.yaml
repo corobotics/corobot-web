@@ -1,0 +1,10 @@
+name:  ServiceAccess
+description:  A sample application
+
+dependencies:
+  sqljocky:
+    git: git://github.com/jamesots/sqljocky.git
+  web_ui: any
+#dependencies:
+#  js: any
+#  unittest: { sdk: unittest }
