@@ -58,7 +58,6 @@ void main() {
 }
 
 onSuccess(HttpRequest req) {
-  
    window.alert(req.responseText.toString()); // print the received raw JSON text
 }
 
