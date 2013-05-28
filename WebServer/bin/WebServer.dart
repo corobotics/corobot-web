@@ -106,6 +106,7 @@ void acceptInput(HttpRequest request,HttpResponse response){
 
 
 //Old code used for testing needs to be removed.
+//In future going to be edited by Kimaya 
 void databaseUpdates(){
   var updatePosit=new RobotData();
   updatePosit.UpdateRobotPosition("testrobot", 24.00, 26.00).then((x){
