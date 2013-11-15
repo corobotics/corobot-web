@@ -6,8 +6,7 @@ def init (WELCOME_MSG="", HOST="", PORT=0, BUFFER_SIZE=0, MAX_NO_OF_CONNECTIONS=
 	"""
 	Includes variables for the default communication setup.
 	If any of the parameters are not defined, use the mentioned default 
-	ones.
-	Returns : statusFileHandler: File handler for status logs."""
+	ones."""
 
 	if WELCOME_MSG == "" :
 		WELCOME_MSG = "Welcome to corobotics server."
@@ -36,6 +35,7 @@ def init (WELCOME_MSG="", HOST="", PORT=0, BUFFER_SIZE=0, MAX_NO_OF_CONNECTIONS=
 	globals()["SERVER_STATUS_FILE"] = SERVER_STATUS_FILE
 
 	# Open server status file in append + reading mode
+	global statusFileHandler
 	statusFileHandler = open ("SERVER_STATUS_FILE","a+")
 
 	# DEBUG 
@@ -44,8 +44,6 @@ def init (WELCOME_MSG="", HOST="", PORT=0, BUFFER_SIZE=0, MAX_NO_OF_CONNECTIONS=
 	\nDELIM : %s"
 	 % (WELCOME_MSG,HOST,PORT,BUFFER_SIZE,MAX_NO_OF_CONNECTIONS,
 		ROBOTS_INFO_DICT,DELIM)"""
-
-	return statusFileHandler
 
 
 # Function to send the status of all the robots to the browser.
@@ -56,6 +54,8 @@ def sendStatusToBrowser (conn):
 # Function to print the current time and the data
 def printWithTime(data):
 	print ("%s-->%s" %(time.asctime(), data))
+	global statusFileHandler
+	statusFileHandler.write ("%s-->%s" %(time.asctime(), data))
 
 # 3. Function to get the robot name and its status
 def getRobotNameAndStatus (conn, ip, port):
@@ -123,7 +123,7 @@ def clientThread(conn, ip, port, robotName):
 def main():
 
 	# Initialising all the global variables and return file handler.
-	statusFileHandler = init()
+	init()
 	printWithTime ("Server started.")
 	printWithTime ("Server status file : OPENED.")
 
@@ -174,21 +174,21 @@ def main():
 				break
 	
 	# In case of any exception, do not spawn a new thread
+	except KeyboardInterrupt:
+		printWithTime ("KeyboardInterrupt!")
+
 	except Exception,msg:
 		printWithTime ("Exception while communicating with %s. Closing connection." %(str(ip)))
 		conn.close()
 		printWithTime ("Error Message : %s" %msg)
 		printWithTime ("Error info : %s" % sys.exc_info())
 
-	except KeyboardInterrupt:
-		printWithTime ("KeyboardInterrupt!")
-
 	# Close the socket
 	finally:
 		serverSocket.close()
+		printWithTime ("Server closed.")
+		printWithTime ("Server status file : CLOSED.")
 	statusFileHandler.close()
-	printWithTime ("Server status file : CLOSED.")
-	printWithTime ("Server closed.")
 
 if __name__ == "__main__":
 	# Global variables
@@ -200,4 +200,5 @@ if __name__ == "__main__":
 	ROBOTS_INFO_DICT = {}
 	DELIM = ""
 	SERVER_STATUS_FILE = "serverStatus.txt"
+	statusFileHandler = None
 	main()

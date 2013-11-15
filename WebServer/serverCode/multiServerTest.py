@@ -33,14 +33,22 @@ def startServer():
 	
 	return (serverSocket, browserSocket)
 
-# Communicate
+# Send JSON data to browser
+def sendToBrowser (conn, ip, port, connectionType):
+	try:
+		printWithTime ("%s::%s:%d-Sending JSON data." % (connectionType, str(ip), port))
+		jsonData = json.dumps (sampleDict)
+		conn.send (jsonData)
+		printWithTime ('JSON data sent. Closing connection.')
+	except socket.error, msg:
+		printWithTime ('Socket error with BROWSER! Closing connection!')
+	finally:
+		conn.close()
+
+
+# Communicate with the robots
 def communicate (conn, ip, port, connectionType):
 	while True:
-		if connectionType == "BROWSER":
-			jsonData = json.dumps (sampleDict)
-			printWithTime (jsonData)
-			conn.close()
-			return
 		try:
 			data = conn.recv (1024)
 			if not data:
@@ -49,6 +57,8 @@ def communicate (conn, ip, port, connectionType):
 		except socket.error, (errNo,errMessage):
 			printWithTime ("Error with %s::%s:%d. Error no : %d. Error Message : %s" % (connectionType, str(ip), port, errNo, errMessage))
 			break
+		except Exception as E:
+			printWithTime ('Some exception! %s' % E)
 	printWithTime ("Closing connection with %s :: %s:%d." % (connectionType,str(ip), port))
 	conn.close()
 
@@ -81,16 +91,15 @@ def main():
 				# For server socket
 				if item is serverSocket:
 					conn, (ip,port) = serverSocket.accept()
-					#ip,port = addr
 					printWithTime (str (ip) + "::" + str(port) + "---SERVER connection.")
+					# Communicate with the ROBOT socket.
 					thread.start_new_thread (communicate, (conn,ip,port,"ROBOT", ))
 				# For browser socket
 				elif item is browserSocket:
 					conn, (ip,port) = browserSocket.accept()
-					#ip,port = addr
 					printWithTime (str (ip) + "::" + str(port) + "---BROWSER connection.")
-					thread.start_new_thread (communicate, (conn,ip,port,"BROWSER", ))
-				# After accepting the connection, append to output
+					# Send the JSON data to the incoming browser connection.
+					thread.start_new_thread (sendToBrowser, (conn,ip,port,"BROWSER", ))
 				else:
 					printWithTime ("Unknown input connection")
 					

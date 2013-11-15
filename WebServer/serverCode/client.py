@@ -18,7 +18,7 @@ def init (WELCOME_MSG="", HOST="", PORT=0, ROBOT_NAME="", STATUS="",
 	if HOST == "":
 		HOST = "129.21.30.80"
 	if PORT == 0:
-		PORT = 8081
+		PORT = 8081 
 	#if ROBOT_NAME == "":
 		#ROBOT_NAME = "Robot 1"
 	if STATUS == "":
@@ -49,6 +49,7 @@ def communicate (conn):
 	count = 0
 	try:
 		while count < 10:
+			print ("Sending %d of 10" % count+1)
 			conn.send(ROBOT_NAME + ":" + statusList[i]+"\n\r")
 			# Sleep for 1 second
 			time.sleep(1)
