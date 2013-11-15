@@ -1,0 +1,109 @@
+import socket,select,time,thread
+
+# Function to print the current time and the data
+def printWithTime(data):
+	print ("%s--> %s" % (time.asctime(), data))
+
+# Function to close the server.
+def closeServer(serverSocket, browserSocket):
+	"""Close all the sockets.
+	serverSocket : server socket
+	browserSocket : browser socket"""
+	serverSocket.close()
+	browserSocket.close()
+
+# Start the server
+def startServer():
+
+	# Create the sockets
+	serverSocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+	browserSocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+
+	# Bind the sockets
+	serverSocket.bind (("129.21.30.80",4000))
+	browserSocket.bind (("129.21.30.80",4010))
+	printWithTime ("Sockets binded successfully.")
+
+	# Listen for incoming connections
+	serverSocket.listen (10)
+	browserSocket.listen(10)
+	printWithTime ("Listening for incoming connections")
+	
+	return (serverSocket, browserSocket)
+
+# Communicate
+def communicate (conn, (ip, port), connectionType):
+	while True:
+		try:
+			data = conn.recv (1024)
+			if not data:
+				break
+			printWithTime ("%s::%s:%d-data received : %s" % (connectionType,str(ip),port, data))
+		except socket.error, (errNo,errMessage):
+			printWithTime ("Error with %s::%s:%d. Error no : %d. Error Message : %s" % (connectionType, str(ip), port, errNo, errMessage))
+			break
+	printWithTime ("Closing connection with %s :: %s:%d." % (connectionType,str(ip), port))
+	conn.close()
+
+		
+# Main function
+def main():
+	""" Creating 3 lists for select() module.
+		1. Input list
+		2. Output list
+		3. Error list"""
+
+	serverSocket,browserSocket = startServer()
+
+	# Create an input sockets list
+	inputs = [serverSocket,browserSocket]
+
+	# Create an output socket list
+	outputs = []
+
+	# Frequency to poll all channels in seconds
+	timeout = 1
+
+	try:
+		while inputs:
+			printWithTime ("\t---Waiting for next event to occur---")
+			readable, writeable, exceptional = select.select (inputs, outputs, inputs)
+			
+			# Input channel
+			for item in readable:
+				# For server socket
+				if item is serverSocket:
+					printWithTime ("---Waiting for SERVER connection---")
+					conn, addr = serverSocket.accept()
+					ip,port = addr
+					printWithTime (str (ip) + "::" + str(port) + "---SERVER connection.")
+					#inputs.append (conn)
+					thread.start_new_thread (communicate, (conn,addr,"ROBOT", ))
+				# For browser socket
+				elif item is browserSocket:
+					printWithTime ("---Waiting for BROWSER connection---")
+					conn, addr = browserSocket.accept()
+					ip,port = addr
+					printWithTime (str (ip) + "::" + str(port) + "---BROWSER connection.")
+					#inputs.append (conn)
+					thread.start_new_thread (communicate, (conn,addr,"BROWSER", ))
+				# After accepting the connection, append to output
+				else:
+					printWithTime ("Unknown input connection")
+					
+			# Output channel
+			for item in writeable:
+				printWithTime ("%s available on output channel" %type(item))
+				
+			# Error channel
+			for item in exceptional:
+				printWithTime ("%s available on error channel" %type(item))
+
+		
+	except KeyboardInterrupt:
+		printWithTime ("Keyboard interrupt.")
+		closeServer(browserSocket, serverSocket)
+		
+if __name__ == "__main__":
+	main()
+	printWithTime ("Closing.")
