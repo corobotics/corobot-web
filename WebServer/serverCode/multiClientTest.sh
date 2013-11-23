@@ -8,5 +8,5 @@ fi
 
 for (( i=1 ;i <= $1 ; i++ ))
 do
-	python client.py "ROBOT$i" &
+	python client.py "ROBOT$i" 51000 &
 done

@@ -54,6 +54,7 @@ def communicate (conn, ip, port, connectionType):
 			if not data:
 				break
 			printWithTime ("%s::%s:%d-data received : %s" % (connectionType,str(ip),port, data))
+			conn.send ("OK...")
 		except socket.error, (errNo,errMessage):
 			printWithTime ("Error with %s::%s:%d. Error no : %d. Error Message : %s" % (connectionType, str(ip), port, errNo, errMessage))
 			break
@@ -115,8 +116,8 @@ def main():
 	except KeyboardInterrupt:
 		printWithTime ("Keyboard interrupt!")
 
-	except Exception as e:
-		printWithTime ("Some exception-%s" % str(e))
+	except Exception, msg:
+		printWithTime ("Some exception. Exception message : %s" % msg)
 	finally:
 		closeServer(browserSocket, serverSocket)
 		

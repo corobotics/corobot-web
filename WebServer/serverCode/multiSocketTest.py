@@ -13,14 +13,24 @@ def sendData (sock, name):
 			printWithTime ("%s sending data:%s" % (name, string))
 			sock.send (string)
 	except socket.error, msg:
-		printWithTime ('Socket error! %s' %msg)
+		printWithTime ('Socket error! Error code : %d. Error message : ' % msg[0], msg[1])
+	except Exception as E:
+		printWithTime ("Some exception! %s" % E)
 	printWithTime ("Sending completed. Closing now")
 	closeSocket (sock, name)
 
 
 # Function to receive data
 def receiveData (sock, name):
-
+	while True:
+		try:
+			data = conn.recv(4096)
+			if not data:
+				break
+			printWithTime ("%s received %s : " % name, data)
+		except socket.error, msg:
+			printWithTime ('Socket error! Error code : %d. Error message : ' % msg[0], msg[1])
+	closeSocket (sock, name)
 
 # Function to make a socket connection
 def makeSocket(host, port):
@@ -45,11 +55,10 @@ def main () :
 	printWithTime ("Starting a new thread for browser.")
 	thread.start_new_thread (sendData, (browserSocket,"browser",))
 	# Forever loop.
-	try:
-		while (True):
-			pass
-	except:
-		printWithTime ('Exiting!')
+	while (True):
+		if not (threading.activeCount() > 1):
+			break
+	printWithTime ('Exiting!')
 
 if __name__ == '__main__':
 	main()
