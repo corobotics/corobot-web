@@ -4,61 +4,73 @@
     <meta charset="utf-8">
     <title>Robot Status Page</title>
     <link rel="stylesheet" href="GenericWeb/css/style.css" type="text/css" />
-    <script type="text/javascript">
-		var DELIM = ":";
-		var ERROR_CODE = "E";
-		var SUCCESS_CODE = "S";
-		var xmlhttp = new XMLHttpRequest(); 		
-		var isAjaxWorking = false;
-		var url = "http://129.21.30.80/cgi-bin/status.py";
-		function checkRobotStatus() {
-			if(xmlhttp && !isAjaxWorking) {
-				xmlhttp.open("GET", url, true);
-				xmlhttp.onreadystatechange = function() {
-						isAjaxWorking = false;
-						if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-							var output = new String(xmlhttp.response);
-							var data = output.split (DELIM);
-							if (data[0] == ERROR_CODE) {
-								document.getElementById ("error-code").innerHTML = "Error in communicaton";
-							} else if (data[0] == SUCCESS_CODE) {
-								document.getElementById ("error-code").innerHTML = "Connected...";
-//							var robotName = temp.substr(0,index);
-//							var robotStatus = temp.substr(index+1);
-								var robotName = new String(data[1]);
-								var robotStatus = new String (data[2]);
-								document.getElementById (robotName).cells[0].innerHTML = robotName;
-								document.getElementById (robotName).cells[1].innerHTML = robotStatus;
-							}
-
-						} else if(xmlhttp.readyState == 4 && xmlhttp.status > 200) {
-								document.getElementById("error-code").innerHTML = "Something is wrong";
-						}
-					};
-				isAjaxWorking = true;
-				xmlhttp.send();
-			}
-			setTimeout("checkRobotStatus();",10000);
-		}
-	</script>
 </head>
 
-<body onload="checkRobotStatus()">
+<body>
 <?php include "include.php"; ?>
 	<div><h2>Welcome</h2></div>
 	<div>
-		<h3>Connection Status : <label id="error-code">NOT-CONNECTED</label></h3>
-		<input type="submit" onclick="checkRobotStatus()" value="Get status"</input>
+		<h3>Connection Status : <label id="errorCode">NOT-CONNECTED</label></h3>
+        <h3>Total robots : <label id="robotCount">0</label></h3>
+		<!--input type="submit" onclick="checkRobotStatus()" value="Get status"</input-->
 		<table id="robotStatusTable" border=1>
 			<thead><tr>
-				<td>Robot Name</td>
-				<td>Robot Status</td>
+				<th>Robot Name</th>
+				<th>Robot Status</th>
+                <th>X-position</th>
+                <th>Y-position</th>
 			</tr></thead>
-			<tr id="ROBOT1">
-				<td>$robotname</td>
-				<td>$status</td>
-			</tr>
+            <tbody>
+                <tr>
+                    <td>$robot-name</td>
+                    <td>$robot-status</td>
+                    <td>$robot-X-position</td>
+                    <td>$robot-Y-position</td>
+                </tr>
+            </tbody>
 		</table>
 	</div>
 </body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+    	function communicate(){
+    		$.getJSON("/cgi-bin/jsonTest.py", function (data){
+                var output = $.parseJSON (data);
+                $("#robotStatusTable td").parent().remove();
+                if (output == null){
+                    $("#robotStatusTable").append 
+                    ("<tr><td>$robot-name</td><td>$robot-status</td><td>$robot-X-position</td><td>$robot-Y-position</td></tr>");                    
+                    console.log ("No data");
+                    $("#robotCount").text("0");
+                    $("#errorCode").text("NOT-CONNECTED!");
+                }
+                else {
+                    var count = 0;
+                    $.each (output, function (key,val){
+                        //console.log (key);
+                        //console.log (val);
+                        $("#robotStatusTable").append ("<tr><td>"+key+"</td><td>"+val[2]+"</td><td>"+val[3]+"</td><td>"+val[4]+"</td></tr>");
+                        count += 1;
+                        /*for (var i=0;i < val.length;i++){
+                            console.log(val[i]);
+                        }*/
+                    });
+                    $("#robotCount").text(count);
+                    $("#errorCode").text("Connected...");                    
+                }
+            })
+            .success( function(){
+                $("#errorCode").text("Connected...");
+            })
+            .fail( function(){
+                $("#errorCode").text("NOT-CONNECTED!");
+            });
+
+    		setTimeout ('communicate()',5000);
+    	};
+
+    	$(document).ready( function(){
+    		communicate();
+    	});
+	</script>
 </html>

@@ -9,5 +9,6 @@
 		<li><a href="/UploadModule/workspace.php">Workspace</a></li>
 		<li><a href="/status.php">Status</a></li>
 		<li><a href="/contact.php">Contact</a></li>
+		<li><a href="/deploy.php">Deploy</a></li>
 	</ul>
 </div>
