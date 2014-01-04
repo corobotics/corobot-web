@@ -1,4 +1,4 @@
-import socket,sys,thread,time,select,json,threading,subprocess
+import socket,sys,thread,time,select,json,threading,subprocess,datetime
 #from corobot import robot
 
 # Function to initialize with default values
@@ -34,6 +34,7 @@ def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
 		DELIM = ":"
 	if SERVER_STATUS_FILE == "":
 		SERVER_STATUS_FILE = "/home/robotics/Desktop/gitWebServer/corobot-web/WebServer/serverCode/serverStatusLog.txt"
+		SERVER_STATUS_FILE += "-" + str(datetime.datetime.now().strftime ("%Y-%m-%d::%H:%M"))
 	if ROBOT_TIMEOUT == 0:
 		ROBOT_TIMEOUT = 10
 	
@@ -221,7 +222,7 @@ def getIdleRobot ():
 	else:
 		return None, None
 
-# Function to cater to a client request. Assign an IDLE robot to a client.S
+# Function to cater to a client request. Assign an IDLE robot to a client.
 def assignRobot (conn, ip, port):
 	"""
 	conn : socket object of the client.
@@ -242,7 +243,7 @@ def assignRobot (conn, ip, port):
 			printWithTime ("%s::Destination to be assigned : %s. No of IDLE robots : %d." % (str(ip),destination, getIdleRobotCount()))
 			robotName, attribList = getIdleRobot()
 			if robotName is not None:
-				conn.sendall ("Idle robot found. Robot name : %s" % robotName)
+				conn.sendall ("Idle robot found. Robot name : %s." % robotName)
 				printWithTime ("%s::Idle robot found. Robot name : %s" % (str(ip), robotName))
 				# Send the IP of the robot
 			else:
@@ -257,7 +258,7 @@ def assignRobot (conn, ip, port):
 		printWithTime ("Closing connection with CLIENT :: (%s:%d)." % (str(ip), port))
 		# Deploy the code for the assigned robot
 		if robotName is not None:
-			conn.sendall ("Deploying code on IP (%s)." % attribList[0])
+			#conn.sendall ("Deploying code on IP (%s)." % attribList[0])
 			printWithTime ("%s::Deploying code on IP (%s) Robot name : %s." % (str(ip), attribList[0], robotName))
 			conn.sendall ("Please check the status on our webpage : www.vhost1.cs.rit.edu/status.php")
 			conn.close()
@@ -341,7 +342,7 @@ def main():
 	printWithTime ("\t%s" % WELCOME_MSG)
 
 	# Start the timer to clean-up dead robots
-	thread.start_new_thread (cleanupRobots, ())
+	#thread.start_new_thread (cleanupRobots, ())
 
 	try:
 		# 1. Wait for incoming connections

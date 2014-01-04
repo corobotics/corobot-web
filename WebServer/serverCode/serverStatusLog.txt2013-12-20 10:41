@@ -1,0 +1,198 @@
+
+Fri Dec 20 10:41:24 2013-->Sockets binded successfully..
+Fri Dec 20 10:41:24 2013-->Robot socket at port : 51000.
+Fri Dec 20 10:41:24 2013-->Client socket at port : 56000.
+Fri Dec 20 10:41:24 2013-->Browser socket at port : 61000.
+Fri Dec 20 10:41:24 2013-->Listening for incoming connections..
+Fri Dec 20 10:41:24 2013-->Server started..
+Fri Dec 20 10:41:24 2013-->Server status file : OPENED..
+Fri Dec 20 10:41:24 2013-->	Welcome to corobotics server..
+Fri Dec 20 10:41:24 2013-->Trying to cleanup robots..
+Fri Dec 20 10:41:29 2013-->Trying to cleanup robots..
+Fri Dec 20 10:41:34 2013-->Trying to cleanup robots..
+Fri Dec 20 10:41:36 2013-->Sending welcome message : Welcome to corobotics server...
+Fri Dec 20 10:41:36 2013-->Welcome message sent..
+Fri Dec 20 10:41:36 2013-->Data received : corobot4:IDLE..
+Fri Dec 20 10:41:36 2013-->129.21.72.74 :: Robot name : corobot4 and current status: IDLE..
+Fri Dec 20 10:41:36 2013-->New thread for ('129.21.30.80', 51000)..
+Fri Dec 20 10:41:37 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:38 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:39 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:39 2013-->Trying to cleanup robots..
+Fri Dec 20 10:41:39 2013-->corobot4 : Timestamp : 1387554099 Now : 1387554099 Diff : 0.
+Fri Dec 20 10:41:40 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:41 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:42 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:43 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:44 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:44 2013-->Trying to cleanup robots..
+Fri Dec 20 10:41:44 2013-->corobot4 : Timestamp : 1387554104 Now : 1387554104 Diff : 0.
+Fri Dec 20 10:41:45 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:46 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:47 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:48 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:49 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:49 2013-->Trying to cleanup robots..
+Fri Dec 20 10:41:49 2013-->corobot4 : Timestamp : 1387554109 Now : 1387554110 Diff : 0.
+Fri Dec 20 10:41:50 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:51 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:52 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:53 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:54 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:55 2013-->Trying to cleanup robots..
+Fri Dec 20 10:41:55 2013-->corobot4 : Timestamp : 1387554114 Now : 1387554115 Diff : 0.
+Fri Dec 20 10:41:55 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:56 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:57 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:58 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:41:59 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:00 2013-->Trying to cleanup robots..
+Fri Dec 20 10:42:00 2013-->corobot4 : Timestamp : 1387554119 Now : 1387554120 Diff : 0.
+Fri Dec 20 10:42:00 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:01 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:02 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:03 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:04 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:05 2013-->Trying to cleanup robots..
+Fri Dec 20 10:42:05 2013-->corobot4 : Timestamp : 1387554124 Now : 1387554125 Diff : 0.
+Fri Dec 20 10:42:05 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:06 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:07 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:08 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:09 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:10 2013-->Trying to cleanup robots..
+Fri Dec 20 10:42:10 2013-->corobot4 : Timestamp : 1387554129 Now : 1387554130 Diff : 0.
+Fri Dec 20 10:42:10 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:11 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:12 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:13 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:14 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:15 2013-->Trying to cleanup robots..
+Fri Dec 20 10:42:15 2013-->corobot4 : Timestamp : 1387554134 Now : 1387554135 Diff : 0.
+Fri Dec 20 10:42:15 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:16 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:17 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:18 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:19 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:20 2013-->Trying to cleanup robots..
+Fri Dec 20 10:42:20 2013-->corobot4 : Timestamp : 1387554139 Now : 1387554140 Diff : 0.
+Fri Dec 20 10:42:20 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:21 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:42:22 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:23 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:24 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:25 2013-->Trying to cleanup robots..
+Fri Dec 20 10:42:25 2013-->corobot4 : Timestamp : 1387554144 Now : 1387554145 Diff : 0.
+Fri Dec 20 10:42:25 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:26 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:27 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:28 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:29 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:30 2013-->Trying to cleanup robots..
+Fri Dec 20 10:42:30 2013-->corobot4 : Timestamp : 1387554149 Now : 1387554150 Diff : 0.
+Fri Dec 20 10:42:30 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:31 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:32 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:33 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:34 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:35 2013-->Trying to cleanup robots..
+Fri Dec 20 10:42:35 2013-->corobot4 : Timestamp : 1387554154 Now : 1387554155 Diff : 0.
+Fri Dec 20 10:42:35 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:36 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.001:0.0..
+Fri Dec 20 10:42:37 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.003:0.0..
+Fri Dec 20 10:42:38 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.016:0.0..
+Fri Dec 20 10:42:39 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.016:0.0..
+Fri Dec 20 10:42:40 2013-->Trying to cleanup robots..
+Fri Dec 20 10:42:40 2013-->corobot4 : Timestamp : 1387554159 Now : 1387554160 Diff : 0.
+Fri Dec 20 10:42:40 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.016:0.0..
+Fri Dec 20 10:42:41 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.016:0.0..
+Fri Dec 20 10:42:42 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.016:0.0..
+Fri Dec 20 10:42:43 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.016:0.0..
+Fri Dec 20 10:42:44 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.016:0.0..
+Fri Dec 20 10:42:45 2013-->Trying to cleanup robots..
+Fri Dec 20 10:42:45 2013-->corobot4 : Timestamp : 1387554164 Now : 1387554165 Diff : 0.
+Fri Dec 20 10:42:45 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.016:0.0..
+Fri Dec 20 10:42:46 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.016:0.0..
+Fri Dec 20 10:42:47 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.016:0.0..
+Fri Dec 20 10:42:48 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.016:0.0..
+Fri Dec 20 10:42:49 2013-->Closing connection with corobot4 :: (129.21.72.74:57437)..
+Fri Dec 20 10:42:50 2013-->Trying to cleanup robots..
+Fri Dec 20 10:42:50 2013-->corobot4 : Timestamp : 1387554168 Now : 1387554170 Diff : 1.
+Fri Dec 20 10:42:55 2013-->Trying to cleanup robots..
+Fri Dec 20 10:42:55 2013-->corobot4 : Timestamp : 1387554168 Now : 1387554175 Diff : 6.
+Fri Dec 20 10:43:00 2013-->Trying to cleanup robots..
+Fri Dec 20 10:43:00 2013-->corobot4 : Timestamp : 1387554168 Now : 1387554180 Diff : 11.
+Fri Dec 20 10:43:00 2013-->corobot4 status expired. Will be removed..
+Fri Dec 20 10:43:00 2013-->('129.21.72.74', 57437, 'IDLE', '0.016', '0.0', 1387554168.133261).
+Fri Dec 20 10:43:38 2013-->Sending welcome message : Welcome to corobotics server...
+Fri Dec 20 10:43:38 2013-->Welcome message sent..
+Fri Dec 20 10:43:38 2013-->Data received : corobot4:IDLE..
+Fri Dec 20 10:43:38 2013-->129.21.72.74 :: Robot name : corobot4 and current status: IDLE..
+Fri Dec 20 10:43:38 2013-->New thread for ('129.21.30.80', 51000)..
+Fri Dec 20 10:43:39 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:43:40 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:43:41 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:43:42 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0:0.0..
+Fri Dec 20 10:43:43 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:44 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:45 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:46 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:47 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:48 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:49 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:50 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:51 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:52 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:53 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:54 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:55 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:56 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:57 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:58 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:43:59 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:00 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:01 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:02 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:03 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:04 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:05 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:06 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:07 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:08 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:09 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:10 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:11 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:12 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:13 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:14 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:15 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:16 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:17 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:18 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:19 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:20 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:21 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:22 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:23 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:24 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:25 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.00998979519674:-3.25966312387e-05..
+Fri Dec 20 10:44:26 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0109859603571:-0.000120089335976..
+Fri Dec 20 10:44:27 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0109859603571:-0.000120089335976..
+Fri Dec 20 10:44:28 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0159667861586:-0.000557552859661..
+Fri Dec 20 10:44:29 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:30 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:31 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:32 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:33 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:34 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:35 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:36 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:37 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:38 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:39 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:40 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:41 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:42 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:43 2013-->'129.21.72.74'::corobot4:Data received : IDLE:0.0169629513189:-0.000645045564398..
+Fri Dec 20 10:44:44 2013-->Keyboard interrupt!.
+Fri Dec 20 10:44:44 2013-->Server closed..
