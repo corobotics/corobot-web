@@ -10,9 +10,9 @@
     <?php include "include.php"; ?>
     <h2>[Page under construction]</h2>
         <div>
-            <h3>Enter the destination : <input type="text">
-                <button type="button" name="deploy" id="deploy">Click to deploy</button> 
-            </h3>
+            <!--h3>Enter the destination : <input type="text"> 
+            </h3-->
+            <h3>NAV_TO.PY &ltDestination&gt : <input type="text" name="destination" id="destination"></h3>
             <button type="button" name="deploy" id="deploy">Deploy</button> 
             <button type="button" name="startServer" id="startServer">Start server</button>
             <h4>Code status : <label id="codeStatus"></label></h4>
@@ -21,8 +21,13 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
         $("#deploy").click(function(){
+            //console.log ($("#destination").val());
+            
             $.ajax({
-                url : "/cgi-bin/deploy.py",
+                url : "/cgi-bin/deployAjax.php",
+                data :  "destination=" + $("#destination").val(),
+                type : "GET",
+                done : console.log ("I sent data : " + $("#destination").val()),
                 success : function(data){
                     $("#codeStatus").text (data)},
                 fail : $("#codeStatus").text("Sorry! Communication error!")

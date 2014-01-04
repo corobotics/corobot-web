@@ -8,11 +8,25 @@
 
 <body>
 <?php include "include.php"; ?>
-	<div><h2>Welcome</h2></div>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <h2>Welcome</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Send/receive requests : <label id="requestStatus">ACTIVE</label>
+                    <input type="submit" onclick="toggleCommunicateStatus()" id="toggleButton" value="Stop getting status" 
+                    title="Click to toggle send/receive request status"</input>
+                </td>
+            </tr>
+        </table>
+    </div>
 	<div>
-		<h3>Connection Status : <label id="errorCode">NOT-CONNECTED</label></h3>
+		<h3>Connection Status : <label id="errorCode">NOT-CONNECTED!</label></h3>
         <h3>Total robots : <label id="robotCount">0</label></h3>
-		<!--input type="submit" onclick="checkRobotStatus()" value="Get status"</input-->
 		<table id="robotStatusTable" border=1>
 			<thead><tr>
 				<th>Robot Name</th>
@@ -33,30 +47,47 @@
 </body>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
+        // Send receive status for communicate()
+        communicateStatus = true;
+        // Function to toggle the status of send/receive requests.
+        function toggleCommunicateStatus(){
+            // Send/receive status : ACTIVE
+            if (getCommunicateStatus()) {
+                communicateStatus = false;
+                $("#requestStatus").text("STOPPED");
+                $("#toggleButton").val("Start getting status");
+            }
+            // Send/receive status : STOPPED
+            else {
+                communicateStatus = true;
+                $("#requestStatus").text("ACTIVE");
+                $("#toggleButton").val("Stop getting status");
+                // Call communicate method
+                communicate();
+            }
+        }
+        function getCommunicateStatus(){
+            return communicateStatus;
+        }
+        // Function to communicate to the server to get the robot count. Output received is JSON.
     	function communicate(){
-    		$.getJSON("/cgi-bin/jsonTest.py", function (data){
+            // Check if communicate status is active or not.
+            if (!getCommunicateStatus()) return;
+        	$.getJSON("/cgi-bin/jsonTest.py", function (data){
                 var output = $.parseJSON (data);
                 $("#robotStatusTable td").parent().remove();
                 if (output == null){
                     $("#robotStatusTable").append 
                     ("<tr><td>$robot-name</td><td>$robot-status</td><td>$robot-X-position</td><td>$robot-Y-position</td></tr>");                    
-                    console.log ("No data");
                     $("#robotCount").text("0");
-                    $("#errorCode").text("NOT-CONNECTED!");
                 }
                 else {
                     var count = 0;
                     $.each (output, function (key,val){
-                        //console.log (key);
-                        //console.log (val);
                         $("#robotStatusTable").append ("<tr><td>"+key+"</td><td>"+val[2]+"</td><td>"+val[3]+"</td><td>"+val[4]+"</td></tr>");
                         count += 1;
-                        /*for (var i=0;i < val.length;i++){
-                            console.log(val[i]);
-                        }*/
                     });
                     $("#robotCount").text(count);
-                    $("#errorCode").text("Connected...");                    
                 }
             })
             .success( function(){
@@ -65,9 +96,9 @@
             .fail( function(){
                 $("#errorCode").text("NOT-CONNECTED!");
             });
-
+            // Call communicate every 5 seconds.
     		setTimeout ('communicate()',5000);
-    	};
+    	}; // End of communicate()
 
     	$(document).ready( function(){
     		communicate();
