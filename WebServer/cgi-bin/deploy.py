@@ -3,7 +3,7 @@ import socket
 print ("Content-type : text/plain\n")
 HOST = "129.21.30.80"
 PORT = 56000
-WAY_POINT = "RNDLab"
+WAY_POINT = "ehall0"
 try:
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.connect ((HOST,PORT))
@@ -15,3 +15,5 @@ try:
         print data
 except socket.error, (errNo, errMessage):
     print ("Error while starting server. Error code : %d. Error message : %s. Terminating!!!" % (errNo, errMessage))
+finally:
+    client.close()

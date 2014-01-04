@@ -12,9 +12,9 @@ try:
         print "null"
     robotSocket.close()
 except socket.error:
-    print "null"
+    print "Error"
 except Exception:
-    print "null"
+    print "Exception"
 
 """
 sampleDict = {"a":1,"b":2}
