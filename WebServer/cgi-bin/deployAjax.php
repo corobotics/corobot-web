@@ -8,7 +8,6 @@
 
     // Connection parameters
     $HOST = "vhost1.cs.rit.edu";
-    //$HOST = "129.21.135.109";
     $PORT = 56000;
 
     // Create a TCP/IP socket
@@ -22,7 +21,6 @@
 
     echo "Attempting to connect to '$HOST' at port '$PORT'.\n";
     if (!(socket_connect($socket, $HOST, $PORT))) {
-    //if ($client === false) {
         $errorCode = socket_last_error();
         $errorMessage = socket_strerror($errorCode);
         die ("Unable to connect to '$HOST' at port '$PORT'.\n");
@@ -35,16 +33,14 @@
         die ("Unable to send data. Error code : [$errorCode]. Error message : $errorMessage.\n");
     }
     echo ("Message sent successfully.");
-    //while (True) {
-        if (socket_recv ($socket, $data, 1024, MSG_WAITALL) === FALSE){
-            $errorCode = socket_last_error();
-            $errorMessage = socket_strerror($errorCode);
-            socket_close($socket);
-            die ("Unable to receive data. Error code : [$errorCode]. Error message : $errorMessage.\n");
-        }
-        else{
-            echo "Data received : " . $data . "\n";
-            socket_close($socket);
-        }
-    //}
+    if (socket_recv ($socket, $data, 1024, MSG_WAITALL) === FALSE){
+        $errorCode = socket_last_error();
+        $errorMessage = socket_strerror($errorCode);
+        socket_close($socket);
+        die ("Unable to receive data. Error code : [$errorCode]. Error message : $errorMessage.\n");
+    }
+    else{
+        echo "Data received : " . $data . "\n";
+        socket_close($socket);
+    }
 ?>

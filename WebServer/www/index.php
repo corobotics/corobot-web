@@ -1,54 +1,28 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Corobots Template</title>
-        <link rel="stylesheet" href="GenericWeb/css/style.css" type="text/css" />
-        <!--[if IE 7]>
-          <link rel="stylesheet" href="css/ie7.css" type="text/css" />
-        <![endif]-->
-    </head>
-    <body>
-<!--
-        <div class="page">
-            <div class="header">
-                <a href="index.html" id="logo"></a>
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li class="selected"><a href="index.html">Robot Location</a></li>
--->
-                    <!--<li><a href="UploadModule/uploadcode.html">Upload Code</a></li>-->
-<!--
-                    <li><a href="UploadModule/workspace.html">Workspace</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-		    <li><a href="status.html">Status</a></li>		
-                </ul>
-            </div>
--->
-<?php include "include.php" ?>
-            <div class="body">
-               
-                    <h1>index</h1>
-                    <p>Corobots from Dart</p> 
-                    <p>
-                        <!--<button type="button" name="getRobotLocation" id="getData">Get Location</button>-->
-                    </p>
-                    <div id="container">
-                        <p id="text"></p>
-                    </div>
-
-                    <div id="tableContent" class="CSSTableGenerator">
-                    </div>   
-                    <p><img src="70FloorPlan.png"/></p>
-
-            </div>
-
-
-
-            <script type="application/dart" src="ServiceAccess.dart">
-
-            </script>
-            <script src="https://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
-    </body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="GenericWeb/css/style.css" type="text/css"/>
+    <title>Welcome Corobots server</title>
+  </head>
+  <body>
+    <?php include "./include.php";
+        error_reporting(E_ALL);
+    ?>
+    <div class="body">
+      <h1>Welcome to the RIT Corobot server!</h1>
+        <p>
+      	  Our robots are ready and waiting on the third floor of the Golisano
+      	  building to help you with tasks that you define.  These robots are
+      	  already capable of navigating the building and reporting back to you,
+      	  it's up to you (and your program) to tell them what to do.
+        </p>
+          <ul>
+      	    <li>See where the robots are right now <a href="./location.php">here.</a></li>
+            <li>Get the API to start writing your code (to be announced).</li>
+            <li>Log in to upload and deploy your code <a href="uploadModule/workspace.php">here</a></li>
+          </ul>
+        </p>
+    </div>
+  </body>
 </html>

@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="utf-8">
         <title>Deploy code page</title>
-        <link rel="stylesheet" href="GenericWeb/css/style.css" type="text/css" />
+        <link rel="stylesheet" href="./GenericWeb/css/style.css" type="text/css" />
     </head>
-
     <body>
-    <?php include "include.php"; ?>
-    <h2>[Page under construction]</h2>
+    <?php include "./include.php";
+        error_reporting(E_ALL);
+    ?>
         <div>
-            <!--h3>Enter the destination : <input type="text"> 
-            </h3-->
             <h3>NAV_TO.PY &ltDestination&gt : <input type="text" name="destination" id="destination"></h3>
             <button type="button" name="deploy" id="deploy">Deploy</button> 
             <button type="button" name="startServer" id="startServer">Start server</button>

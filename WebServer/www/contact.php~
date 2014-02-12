@@ -25,6 +25,7 @@
         </ul>
       </div>
 -->
+<?php include "/include.php"; ?>
       <div class="body">
        
         <h1>Contact</h1>

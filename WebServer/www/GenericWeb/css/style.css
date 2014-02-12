@@ -355,17 +355,7 @@ label{
 }
 .footer div.connect a#facebook{
 	width:27px;
-	height:28px;
-	display:block;
-	text-indent:-9999px;
-	background:url(../images/icons.gif) no-repeat;
-}
-.footer div.connect a#twitter{
-	width:36px;
-	height:28px;
-	display:block;
-	text-indent:-9999px;
-	background:url(../images/icons.gif) no-repeat 0 -48px;
+	height:28px;depeat 0 -48px;
 	margin:0 0 0 68px;
 }
 .footer div.connect a#vimeo{
