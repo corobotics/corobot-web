@@ -1,0 +1,76 @@
+
+Mon Feb  3 16:08:44 2014-->Sockets binded successfully..
+Mon Feb  3 16:08:44 2014-->Robot socket at port : 51000.
+Mon Feb  3 16:08:44 2014-->Client socket at port : 56000.
+Mon Feb  3 16:08:44 2014-->Browser socket at port : 61000.
+Mon Feb  3 16:08:44 2014-->Listening for incoming connections..
+Mon Feb  3 16:08:44 2014-->Server started..
+Mon Feb  3 16:08:44 2014-->Server status file : OPENED..
+Mon Feb  3 16:08:44 2014-->	Welcome to corobotics server..
+Mon Feb  3 16:08:44 2014-->Trying to cleanup robots..
+Mon Feb  3 16:08:44 2014-->No robots to clean..
+Mon Feb  3 16:08:50 2014-->Sending Robots' information to browser::IP (129.21.30.80:43340)..
+Mon Feb  3 16:08:50 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:43340). Closing connection!.
+Mon Feb  3 16:08:55 2014-->Sending Robots' information to browser::IP (129.21.30.80:43341)..
+Mon Feb  3 16:08:55 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:43341). Closing connection!.
+Mon Feb  3 16:08:59 2014-->Trying to cleanup robots..
+Mon Feb  3 16:08:59 2014-->No robots to clean..
+Mon Feb  3 16:09:14 2014-->Trying to cleanup robots..
+Mon Feb  3 16:09:14 2014-->No robots to clean..
+Mon Feb  3 16:09:29 2014-->Trying to cleanup robots..
+Mon Feb  3 16:09:29 2014-->No robots to clean..
+Mon Feb  3 16:09:44 2014-->Trying to cleanup robots..
+Mon Feb  3 16:09:44 2014-->No robots to clean..
+Mon Feb  3 16:09:59 2014-->Trying to cleanup robots..
+Mon Feb  3 16:09:59 2014-->No robots to clean..
+Mon Feb  3 16:10:14 2014-->Trying to cleanup robots..
+Mon Feb  3 16:10:14 2014-->No robots to clean..
+Mon Feb  3 16:10:29 2014-->Trying to cleanup robots..
+Mon Feb  3 16:10:29 2014-->No robots to clean..
+Mon Feb  3 16:10:44 2014-->Trying to cleanup robots..
+Mon Feb  3 16:10:44 2014-->No robots to clean..
+Mon Feb  3 16:10:59 2014-->Trying to cleanup robots..
+Mon Feb  3 16:10:59 2014-->No robots to clean..
+Mon Feb  3 16:11:14 2014-->Trying to cleanup robots..
+Mon Feb  3 16:11:14 2014-->No robots to clean..
+Mon Feb  3 16:11:29 2014-->Trying to cleanup robots..
+Mon Feb  3 16:11:29 2014-->No robots to clean..
+Mon Feb  3 16:11:44 2014-->Trying to cleanup robots..
+Mon Feb  3 16:11:44 2014-->No robots to clean..
+Mon Feb  3 16:11:59 2014-->Trying to cleanup robots..
+Mon Feb  3 16:11:59 2014-->No robots to clean..
+Mon Feb  3 16:12:14 2014-->Trying to cleanup robots..
+Mon Feb  3 16:12:14 2014-->No robots to clean..
+Mon Feb  3 16:12:29 2014-->Trying to cleanup robots..
+Mon Feb  3 16:12:29 2014-->No robots to clean..
+Mon Feb  3 16:12:44 2014-->Trying to cleanup robots..
+Mon Feb  3 16:12:44 2014-->No robots to clean..
+Mon Feb  3 16:12:59 2014-->Trying to cleanup robots..
+Mon Feb  3 16:12:59 2014-->No robots to clean..
+Mon Feb  3 16:13:14 2014-->Trying to cleanup robots..
+Mon Feb  3 16:13:14 2014-->No robots to clean..
+Mon Feb  3 16:13:29 2014-->Trying to cleanup robots..
+Mon Feb  3 16:13:29 2014-->No robots to clean..
+Mon Feb  3 16:13:44 2014-->Trying to cleanup robots..
+Mon Feb  3 16:13:44 2014-->No robots to clean..
+Mon Feb  3 16:13:59 2014-->Trying to cleanup robots..
+Mon Feb  3 16:13:59 2014-->No robots to clean..
+Mon Feb  3 16:14:14 2014-->Trying to cleanup robots..
+Mon Feb  3 16:14:14 2014-->No robots to clean..
+Mon Feb  3 16:14:29 2014-->Trying to cleanup robots..
+Mon Feb  3 16:14:29 2014-->No robots to clean..
+Mon Feb  3 16:14:44 2014-->Trying to cleanup robots..
+Mon Feb  3 16:14:44 2014-->No robots to clean..
+Mon Feb  3 16:14:59 2014-->Trying to cleanup robots..
+Mon Feb  3 16:14:59 2014-->No robots to clean..
+Mon Feb  3 16:15:14 2014-->Trying to cleanup robots..
+Mon Feb  3 16:15:14 2014-->No robots to clean..
+Mon Feb  3 16:15:29 2014-->Trying to cleanup robots..
+Mon Feb  3 16:15:29 2014-->No robots to clean..
+Mon Feb  3 16:15:44 2014-->Trying to cleanup robots..
+Mon Feb  3 16:15:44 2014-->No robots to clean..
+Mon Feb  3 16:15:59 2014-->Trying to cleanup robots..
+Mon Feb  3 16:15:59 2014-->No robots to clean..
+Mon Feb  3 16:16:14 2014-->Trying to cleanup robots..
+Mon Feb  3 16:16:14 2014-->No robots to clean..
+Mon Feb  3 16:16:29 2014-->Trying to cleanup rob

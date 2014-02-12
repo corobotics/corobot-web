@@ -1,0 +1,50 @@
+
+Thu Feb  6 18:44:32 2014-->Sockets binded successfully..
+Thu Feb  6 18:44:32 2014-->Robot socket at port : 51000.
+Thu Feb  6 18:44:32 2014-->Client socket at port : 56000.
+Thu Feb  6 18:44:32 2014-->Browser socket at port : 61000.
+Thu Feb  6 18:44:32 2014-->Listening for incoming connections..
+Thu Feb  6 18:44:32 2014-->Server started..
+Thu Feb  6 18:44:32 2014-->Server status file : OPENED..
+Thu Feb  6 18:44:32 2014-->	Welcome to corobotics server..
+Thu Feb  6 18:44:32 2014-->Trying to cleanup robots..
+Thu Feb  6 18:44:32 2014-->No robots to clean..
+Thu Feb  6 18:44:34 2014-->Sending Robots' information to browser::IP (129.21.30.80:44619)..
+Thu Feb  6 18:44:34 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:44619). Closing connection!.
+Thu Feb  6 18:44:37 2014-->Sending Robots' information to browser::IP (129.21.30.80:44620)..
+Thu Feb  6 18:44:37 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:44620). Closing connection!.
+Thu Feb  6 18:44:42 2014-->Sending Robots' information to browser::IP (129.21.30.80:44621)..
+Thu Feb  6 18:44:42 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:44621). Closing connection!.
+Thu Feb  6 18:44:46 2014-->Sending welcome message : Welcome to corobotics server...
+Thu Feb  6 18:44:46 2014-->Welcome message sent..
+Thu Feb  6 18:44:46 2014-->Data received : corobot3:IDLE..
+Thu Feb  6 18:44:46 2014-->129.21.89.95 :: Robot name : corobot3 and current status: IDLE..
+Thu Feb  6 18:44:46 2014-->New thread for ('129.21.30.80', 51000)..
+Thu Feb  6 18:44:47 2014-->Sending Robots' information to browser::IP (129.21.30.80:44622)..
+Thu Feb  6 18:44:47 2014-->Robots info sent in JSON format to browser::IP (129.21.30.80:44622). Closing connection!.
+Thu Feb  6 18:44:47 2014-->Trying to cleanup robots..
+Thu Feb  6 18:44:47 2014-->corobot3 :: Timestamp : 1391730286. Now : 1391730287. Diff : 1..
+Thu Feb  6 18:44:47 2014-->'129.21.89.95'::corobot3:Data received : IDLE:86.6009863581:32.9414535901..
+Thu Feb  6 18:44:52 2014-->Sending Robots' information to browser::IP (129.21.30.80:44623)..
+Thu Feb  6 18:44:52 2014-->Robots info sent in JSON format to browser::IP (129.21.30.80:44623). Closing connection!.
+Thu Feb  6 18:44:57 2014-->Sending Robots' information to browser::IP (129.21.30.80:44624)..
+Thu Feb  6 18:44:57 2014-->Robots info sent in JSON format to browser::IP (129.21.30.80:44624). Closing connection!.
+Thu Feb  6 18:45:01 2014-->Sending Robots' information to browser::IP (129.21.30.80:44625)..
+Thu Feb  6 18:45:01 2014-->Robots info sent in JSON format to browser::IP (129.21.30.80:44625). Closing connection!.
+Thu Feb  6 18:45:02 2014-->Trying to cleanup robots..
+Thu Feb  6 18:45:02 2014-->corobot3 :: Timestamp : 1391730286. Now : 1391730302. Diff : 16..
+Thu Feb  6 18:45:02 2014-->corobot3 status expired. Will be removed..
+Thu Feb  6 18:45:06 2014-->Sending Robots' information to browser::IP (129.21.30.80:44626)..
+Thu Feb  6 18:45:06 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:44626). Closing connection!.
+Thu Feb  6 18:45:11 2014-->Sending Robots' information to browser::IP (129.21.30.80:44627)..
+Thu Feb  6 18:45:11 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:44627). Closing connection!.
+Thu Feb  6 18:45:16 2014-->Sending Robots' information to browser::IP (129.21.30.80:44628)..
+Thu Feb  6 18:45:16 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:44628). Closing connection!.
+Thu Feb  6 18:45:17 2014-->Trying to cleanup robots..
+Thu Feb  6 18:45:17 2014-->No robots to clean..
+Thu Feb  6 18:45:21 2014-->Sending Robots' information to browser::IP (129.21.30.80:44629)..
+Thu Feb  6 18:45:21 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:44629). Closing connection!.
+Thu Feb  6 18:45:26 2014-->Sending Robots' information to browser::IP (129.21.30.80:44630)..
+Thu Feb  6 18:45:26 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:44630). Closing connection!.
+Thu Feb  6 18:45:28 2014-->Keyboard interrupt!.
+Thu Feb  6 18:45:28 2014-->Server closed..

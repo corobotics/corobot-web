@@ -1,0 +1,13 @@
+
+Thu Feb  6 20:12:58 2014-->Sockets binded successfully..
+Thu Feb  6 20:12:58 2014-->Robot socket at port : 51000.
+Thu Feb  6 20:12:58 2014-->Client socket at port : 56000.
+Thu Feb  6 20:12:58 2014-->Browser socket at port : 61000.
+Thu Feb  6 20:12:58 2014-->Listening for incoming connections..
+Thu Feb  6 20:12:58 2014-->Server started..
+Thu Feb  6 20:12:58 2014-->Server status file : OPENED..
+Thu Feb  6 20:12:58 2014-->	Welcome to corobotics server..
+Thu Feb  6 20:12:58 2014-->Trying to cleanup robots..
+Thu Feb  6 20:12:58 2014-->No robots to clean..
+Thu Feb  6 20:13:09 2014-->Keyboard interrupt!.
+Thu Feb  6 20:13:09 2014-->Server closed..

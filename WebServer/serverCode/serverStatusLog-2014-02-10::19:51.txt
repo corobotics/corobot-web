@@ -1,0 +1,103 @@
+
+Mon Feb 10 19:51:34 2014-->Sockets binded successfully..
+Mon Feb 10 19:51:34 2014-->Robot socket at port : 51000.
+Mon Feb 10 19:51:34 2014-->Client socket at port : 56000.
+Mon Feb 10 19:51:34 2014-->Browser socket at port : 61000.
+Mon Feb 10 19:51:34 2014-->Listening for incoming connections..
+Mon Feb 10 19:51:34 2014-->Server started..
+Mon Feb 10 19:51:34 2014-->Server status file : OPENED..
+Mon Feb 10 19:51:34 2014-->	Welcome to corobotics server..
+Mon Feb 10 19:51:34 2014-->Trying to cleanup robots..
+Mon Feb 10 19:51:34 2014-->No robots to clean..
+Mon Feb 10 19:51:49 2014-->Trying to cleanup robots..
+Mon Feb 10 19:51:49 2014-->No robots to clean..
+Mon Feb 10 19:52:04 2014-->Trying to cleanup robots..
+Mon Feb 10 19:52:04 2014-->No robots to clean..
+Mon Feb 10 19:52:19 2014-->Trying to cleanup robots..
+Mon Feb 10 19:52:19 2014-->No robots to clean..
+Mon Feb 10 19:52:34 2014-->Trying to cleanup robots..
+Mon Feb 10 19:52:34 2014-->No robots to clean..
+Mon Feb 10 19:52:49 2014-->Trying to cleanup robots..
+Mon Feb 10 19:52:49 2014-->No robots to clean..
+Mon Feb 10 19:53:04 2014-->Trying to cleanup robots..
+Mon Feb 10 19:53:04 2014-->No robots to clean..
+Mon Feb 10 19:53:20 2014-->Trying to cleanup robots..
+Mon Feb 10 19:53:20 2014-->No robots to clean..
+Mon Feb 10 19:53:35 2014-->Trying to cleanup robots..
+Mon Feb 10 19:53:35 2014-->No robots to clean..
+Mon Feb 10 19:53:50 2014-->Trying to cleanup robots..
+Mon Feb 10 19:53:50 2014-->No robots to clean..
+Mon Feb 10 19:54:05 2014-->Trying to cleanup robots..
+Mon Feb 10 19:54:05 2014-->No robots to clean..
+Mon Feb 10 19:54:16 2014-->Sending Robots' information to browser::IP (129.21.30.80:46064)..
+Mon Feb 10 19:54:16 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46064). Closing connection!.
+Mon Feb 10 19:54:20 2014-->Trying to cleanup robots..
+Mon Feb 10 19:54:20 2014-->No robots to clean..
+Mon Feb 10 19:54:21 2014-->Sending Robots' information to browser::IP (129.21.30.80:46065)..
+Mon Feb 10 19:54:21 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46065). Closing connection!.
+Mon Feb 10 19:54:26 2014-->Sending Robots' information to browser::IP (129.21.30.80:46066)..
+Mon Feb 10 19:54:26 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46066). Closing connection!.
+Mon Feb 10 19:54:31 2014-->Sending Robots' information to browser::IP (129.21.30.80:46067)..
+Mon Feb 10 19:54:31 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46067). Closing connection!.
+Mon Feb 10 19:54:35 2014-->Trying to cleanup robots..
+Mon Feb 10 19:54:35 2014-->No robots to clean..
+Mon Feb 10 19:54:36 2014-->Sending Robots' information to browser::IP (129.21.30.80:46068)..
+Mon Feb 10 19:54:36 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46068). Closing connection!.
+Mon Feb 10 19:54:41 2014-->Sending Robots' information to browser::IP (129.21.30.80:46069)..
+Mon Feb 10 19:54:41 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46069). Closing connection!.
+Mon Feb 10 19:54:46 2014-->Sending Robots' information to browser::IP (129.21.30.80:46070)..
+Mon Feb 10 19:54:46 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46070). Closing connection!.
+Mon Feb 10 19:54:50 2014-->Trying to cleanup robots..
+Mon Feb 10 19:54:50 2014-->No robots to clean..
+Mon Feb 10 19:54:51 2014-->Sending Robots' information to browser::IP (129.21.30.80:46071)..
+Mon Feb 10 19:54:51 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46071). Closing connection!.
+Mon Feb 10 19:54:56 2014-->Sending Robots' information to browser::IP (129.21.30.80:46072)..
+Mon Feb 10 19:54:56 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46072). Closing connection!.
+Mon Feb 10 19:55:01 2014-->Sending Robots' information to browser::IP (129.21.30.80:46073)..
+Mon Feb 10 19:55:01 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46073). Closing connection!.
+Mon Feb 10 19:55:05 2014-->Trying to cleanup robots..
+Mon Feb 10 19:55:05 2014-->No robots to clean..
+Mon Feb 10 19:55:06 2014-->Sending Robots' information to browser::IP (129.21.30.80:46074)..
+Mon Feb 10 19:55:06 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46074). Closing connection!.
+Mon Feb 10 19:55:11 2014-->Sending Robots' information to browser::IP (129.21.30.80:46075)..
+Mon Feb 10 19:55:11 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46075). Closing connection!.
+Mon Feb 10 19:55:16 2014-->Sending Robots' information to browser::IP (129.21.30.80:46076)..
+Mon Feb 10 19:55:16 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46076). Closing connection!.
+Mon Feb 10 19:55:20 2014-->Trying to cleanup robots..
+Mon Feb 10 19:55:20 2014-->No robots to clean..
+Mon Feb 10 19:55:21 2014-->Sending Robots' information to browser::IP (129.21.30.80:46077)..
+Mon Feb 10 19:55:21 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46077). Closing connection!.
+Mon Feb 10 19:55:26 2014-->Sending Robots' information to browser::IP (129.21.30.80:46078)..
+Mon Feb 10 19:55:26 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46078). Closing connection!.
+Mon Feb 10 19:55:31 2014-->Sending Robots' information to browser::IP (129.21.30.80:46079)..
+Mon Feb 10 19:55:31 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46079). Closing connection!.
+Mon Feb 10 19:55:35 2014-->Trying to cleanup robots..
+Mon Feb 10 19:55:35 2014-->No robots to clean..
+Mon Feb 10 19:55:36 2014-->Sending Robots' information to browser::IP (129.21.30.80:46080)..
+Mon Feb 10 19:55:36 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46080). Closing connection!.
+Mon Feb 10 19:55:41 2014-->Sending Robots' information to browser::IP (129.21.30.80:46081)..
+Mon Feb 10 19:55:41 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46081). Closing connection!.
+Mon Feb 10 19:55:46 2014-->Sending Robots' information to browser::IP (129.21.30.80:46082)..
+Mon Feb 10 19:55:46 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46082). Closing connection!.
+Mon Feb 10 19:55:50 2014-->Trying to cleanup robots..
+Mon Feb 10 19:55:50 2014-->No robots to clean..
+Mon Feb 10 19:55:51 2014-->Sending Robots' information to browser::IP (129.21.30.80:46083)..
+Mon Feb 10 19:55:51 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46083). Closing connection!.
+Mon Feb 10 19:55:56 2014-->Sending Robots' information to browser::IP (129.21.30.80:46084)..
+Mon Feb 10 19:55:56 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46084). Closing connection!.
+Mon Feb 10 19:56:01 2014-->Sending Robots' information to browser::IP (129.21.30.80:46085)..
+Mon Feb 10 19:56:01 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46085). Closing connection!.
+Mon Feb 10 19:56:05 2014-->Trying to cleanup robots..
+Mon Feb 10 19:56:05 2014-->No robots to clean..
+Mon Feb 10 19:56:06 2014-->Sending Robots' information to browser::IP (129.21.30.80:46086)..
+Mon Feb 10 19:56:06 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46086). Closing connection!.
+Mon Feb 10 19:56:11 2014-->Sending Robots' information to browser::IP (129.21.30.80:46087)..
+Mon Feb 10 19:56:11 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46087). Closing connection!.
+Mon Feb 10 19:56:16 2014-->Sending Robots' information to browser::IP (129.21.30.80:46088)..
+Mon Feb 10 19:56:16 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46088). Closing connection!.
+Mon Feb 10 19:56:20 2014-->Trying to cleanup robots..
+Mon Feb 10 19:56:20 2014-->No robots to clean..
+Mon Feb 10 19:56:21 2014-->Sending Robots' information to browser::IP (129.21.30.80:46089)..
+Mon Feb 10 19:56:21 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:46089). Closing connection!.
+Mon Feb 10 19:56:26 2014-->Sending Robots' information to browser::IP (129.21.30.80:46090)..
+Mon Feb 10 19
