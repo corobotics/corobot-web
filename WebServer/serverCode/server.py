@@ -2,8 +2,8 @@ import socket,sys,thread,time,select,json,threading,subprocess,datetime
 
 # 0. Function to initialize with default values
 def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
-	BUFFER_SIZE=0,MAX_NO_OF_CONNECTIONS=0,ROBOTS_INFO_DICT={},DELIM="",
-	SERVER_STATUS_FILE="", ROBOT_TIMEOUT=0, FREQUENCY=0):
+	CLIENT_IP_PORT=0, BUFFER_SIZE=0, MAX_NO_OF_CONNECTIONS=0,ROBOTS_INFO_DICT={},
+	DELIM="",SERVER_STATUS_FILE="", ROBOT_TIMEOUT=0, FREQUENCY=0):
 	"""
 	Includes variables for the default communication setup.
 	Initializes the parameters. 
@@ -15,6 +15,7 @@ def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
 	ROBOT_PORT 				: Port no. for robot connections.
 	CLIENT_PORT 			: Port no. for client connections.
 	BROWSER_PORT 			: Port no. for browser connections.
+	CLIENT_IP_PORT 			: Port no. for client-IP-only connections.
 	BUFFER_SIZE 			: Buffer size for socket communication.
 	MAX_NO_OF_CONNECTIONS 	: Max no. of connections a socket can listen to.
 	ROBOTS_INFO_DICT 		: Dictionary containing all the information about 
@@ -28,6 +29,7 @@ def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
 	DELIM 					: Delimiter of data sent from robots.
 	SERVER_STATUS_FILE 		: Name of the server status log file.
 	ROBOT_TIMEOUT 			: Timeout in seconds for robot status.
+	FREQUENCY 				: Frequency of dead robot cleanup method in seconds.
 	"""
 	# File handler for status file.
 	global statusFileHandler, myLock
@@ -44,6 +46,8 @@ def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
 		CLIENT_PORT = 56000	
 	if BROWSER_PORT == 0:
 		BROWSER_PORT = 61000
+	if CLIENT_IP_PORT == 0:
+		CLIENT_IP_PORT = 65000	
 	if BUFFER_SIZE == 0:
 		BUFFER_SIZE = 4096
 	if MAX_NO_OF_CONNECTIONS == 0:
@@ -65,6 +69,7 @@ def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
 	globals()["ROBOT_PORT"] = ROBOT_PORT
 	globals()["CLIENT_PORT"] = CLIENT_PORT
 	globals()["BROWSER_PORT"] = BROWSER_PORT
+	globals()["CLIENT_IP_PORT"] = CLIENT_IP_PORT
 	globals()["BUFFER_SIZE"] = BUFFER_SIZE
 	globals()["MAX_NO_OF_CONNECTIONS"] = MAX_NO_OF_CONNECTIONS
 	globals()["ROBOTS_INFO_DICT"] = ROBOTS_INFO_DICT
@@ -101,7 +106,7 @@ def writeToFile(data):
 	global statusFileHandler
 	statusFileHandler.write ("\n%s-->%s." %(time.asctime(), data))
 
-# 11. Function to close the server.
+# 13. Function to close the server.
 def closeServer(robotSocket, clientSocket, browserSocket):
 	"""Close all the sockets.
 	robotSocket : robot socket
@@ -111,7 +116,23 @@ def closeServer(robotSocket, clientSocket, browserSocket):
 	clientSocket.close()
 	browserSocket.close()
 
-# 10. Send JSON data to browser
+# 12. Function to return IP of an IDLE robot.
+def getIdleRobotIP(conn, ip, port):
+	robotName, attribList = getIdleRobot()
+	try:
+		if robotName is not None:
+			idleRobotIP = attribList[0]
+			conn.sendall(idleRobotIP)
+		else:
+			conn.sendall ("None")
+	except socket.error, (errNo,errMessage):
+		printWithTime ("Socket error with client-IP-only socket::IP (%s:%d)! Error no : %d. Error Message : %s. Closing connection!" %
+			(str(ip), port, errNo, errMessage))
+	finally:
+		printWithTime ("Closing client-IP-only connection :: (%s:%d)." % (str(ip), port))
+		conn.close()
+
+# 11. Function to send JSON data to browser.
 def sendToBrowser (conn, ip, port):
 	"""Function to send the robots info dictionary in JSON format to a browser.
 	conn : The socket connection object to the browser.
@@ -138,7 +159,7 @@ def sendToBrowser (conn, ip, port):
 	finally:
 		conn.close()
 
-# 9. Function to deploy code on a robot
+# 10. Function to deploy code on a robot
 def deployCode(robotName, ip, destination):
 	"""Function deploys the "destination" to the "robotName".
 	robotName : Name of the robot to which the code is deployed.
@@ -149,7 +170,7 @@ def deployCode(robotName, ip, destination):
 	subprocess.call (["python3", "new.py", ip, destination])
 	#subprocess.call (["python3", "nav_to.py", ip, destination])
 
-# 8. Function to get an IDLE robot from ROBOTS_INFO_DICT
+# 9. Function to get an IDLE robot from ROBOTS_INFO_DICT
 def getIdleRobot():
 	"""Function to return a currently available 'idle' robot.
 	Returns :  robotName - Name of the 'idle' robot and attribList - its 
@@ -160,12 +181,12 @@ def getIdleRobot():
 	# Check if there exists atleast 1 robot.
 	if (getIdleRobotCount() > 0):
 		for robotName, attribList in ROBOTS_INFO_DICT.iteritems():
-			if (attribList[2].upper() == "IDLE"):
-				return robotName, attribList
+			#if (attribList[2].upper() == "IDLE"):
+			return robotName, attribList
 	else:
 		return None, None
 
-# 7. Function returns the count of IDLE robots
+# 8. Function returns the count of IDLE robots
 def getIdleRobotCount ():
 	"""Function returns count of the currently 'idle' robots in the system."""
 
@@ -183,7 +204,7 @@ def getIdleRobotCount ():
 		printWithTime ("No robots in the system.")
 	return count
 
-# 6. Function to cater to a client request. Assign an IDLE robot to a client.
+# 7. Function to cater to a client request. Assign an IDLE robot to a client.
 def assignRobot (conn, ip, port):
 	"""Function to assign an 'idle' robot to a client. It also stores the 
 		destination in the ROBOTS_INFO_DICT dictionary.
@@ -228,7 +249,7 @@ def assignRobot (conn, ip, port):
 		printWithTime ("Closing connection with CLIENT :: (%s:%d)." % (str(ip), port))
 		conn.close()
 
-# 5. Function to handle communication with clients.
+# 6. Function to handle communication with clients.
 def clientThread(conn, ip, port, robotName):
 	"""Function to continuously receive the data - robot's status.
 	conn - Socket connection to client.
@@ -263,7 +284,7 @@ def clientThread(conn, ip, port, robotName):
 		(robotName,str(ip), port))
 	conn.close()
 
-# 4. Function to get the robot name and its status
+# 5. Function to get the robot name and its status
 def getRobotNameAndStatus (conn, ip, port):
 	"""Function to get the robot name and its status.
 	conn : Socket connection object of the robot.
@@ -301,7 +322,7 @@ def getRobotNameAndStatus (conn, ip, port):
 		printWithTime (str(E))
 	return None,None
 
-# 3. Function to check for DEAD robots.
+# 4. Function to check for DEAD robots.
 def cleanupRobots():
 	"""For all the robots in the ROBOTS_INFO_DICT, there is a check to determine
 	if a robot is dead or not. This is done, by verifying the difference
@@ -337,7 +358,7 @@ def cleanupRobots():
 		time.sleep (frequency)
 		cleanupRobots()"""
 
-# 2. Function to repeatedly call another function.
+# 3. Function to repeatedly call another function.
 def repeat (frequency, functionName):
 	try:
 		threading.Timer (frequency,repeat, [frequency, functionName]).start()
@@ -372,22 +393,30 @@ def startServer():
 		robotSocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 		clientSocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 		browserSocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+
+		# This will be the permanent socket for Robot() for clients.
+		clientIPOnlySocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+
 		# Bind the sockets
 		robotSocket.bind ((HOST,ROBOT_PORT))
 		clientSocket.bind ((HOST,CLIENT_PORT))
 		browserSocket.bind ((HOST, BROWSER_PORT))
+		clientIPOnlySocket.bind ((HOST, CLIENT_IP_PORT))
+
 		printWithTime ("Sockets binded successfully.")
 		printWithTime ("Robot socket at port : %d" % ROBOT_PORT)
 		printWithTime ("Client socket at port : %d" % CLIENT_PORT)
 		printWithTime ("Browser socket at port : %d" % BROWSER_PORT)
+		printWithTime ("Client-IP-only socket at port : %d" % CLIENT_IP_PORT)
 
 		# Listen for incoming connections
 		robotSocket.listen (MAX_NO_OF_CONNECTIONS)
 		clientSocket.listen (MAX_NO_OF_CONNECTIONS)
-		browserSocket.listen(MAX_NO_OF_CONNECTIONS)
+		browserSocket.listen (MAX_NO_OF_CONNECTIONS)
+		clientIPOnlySocket.listen (MAX_NO_OF_CONNECTIONS)
 		printWithTime ("Listening for incoming connections.")
 		
-		return (robotSocket,clientSocket, browserSocket)
+		return (robotSocket,clientSocket, browserSocket, clientIPOnlySocket)
 	except socket.error, (errNo, errMessage):
 		printWithTime ("Error while starting server. Error code : %d. Error message : %s. Terminating!!!" %
 			(errNo, errMessage))
@@ -405,32 +434,24 @@ def main():
 		2. Output list
 		3. Error list"""
 	# Start the server by creating sockets for robots and server.
-	robotSocket,clientSocket,browserSocket = startServer()
+	robotSocket,clientSocket,browserSocket,clientIPOnlySocket = startServer()
 
 	# Create an input sockets list
-	inputs = [robotSocket,clientSocket,browserSocket]
+	inputs = [robotSocket,clientSocket,browserSocket,clientIPOnlySocket]
 
 	# Create an output socket list
 	outputs = []
 
 	printWithTime ("Server started.")
 	printWithTime ("Server status file : OPENED.")
-	printWithTime ("Log file name : %s" % SERVER_STATUS_FILE)
-	"""
-	1. Creates a socket for communication with the clients (robots).
-	2. After accepting a call, communicates with the client on a separate
-		port. on a separate thread."""
-
+	printWithTime ("Status log file name : %s" % SERVER_STATUS_FILE)
 	printWithTime ("\t%s" % WELCOME_MSG)
-
-	# Start the timer to clean-up dead robots
-	#thread.start_new_thread (cleanupRobots, ())
 
 	# Function to repeat cleanupRobots() forever with interval of 'frequency' seconds
 	repeat(FREQUENCY,cleanupRobots)
 
 	try:
-		# 1. Wait for incoming connections
+		# Wait for incoming connections.
 		while inputs:
 			readable, writeable, exceptional = select.select (inputs, outputs, inputs)
 			
@@ -462,15 +483,23 @@ def main():
 					printWithTime ("%s::%d ---CLIENT connection." % (str(ip), port))
 					
 					# Accept the commands from the client.
-					thread.start_new_thread (assignRobot, (conn,ip,port, ))
+					thread.start_new_thread (assignRobot, (conn,ip,port,))
 
 				# For browser socket
 				elif item is browserSocket:
 					conn, (ip,port) = browserSocket.accept()
-					#printWithTime ("%s::%d ---BROWSER connection." % (str(ip), port))
-					#conn.close()
+
 					# Send the JSON data to the incoming browser connection.
-					thread.start_new_thread (sendToBrowser, (conn,ip,port, ))
+					thread.start_new_thread (sendToBrowser, (conn,ip,port,))
+
+				# For client-IP-only sockets.
+				elif item is clientIPOnlySocket:
+					conn,(ip,port) = clientIPOnlySocket.accept()
+					printWithTime ("%s::%d ---client-IP-only connection." % (str(ip), port))
+					
+					# Accept the commands from the client-IP-only sockets.
+					thread.start_new_thread (getIdleRobotIP, (conn,ip,port,))
+
 				else:
 					printWithTime ("Unknown input connection. Closing connection!")
 					conn.close()
@@ -509,11 +538,15 @@ if __name__ == "__main__":
 	WELCOME_MSG=""
 	HOST=""
 	ROBOT_PORT=0
+	CLIENT_PORT = 0
 	BROWSER_PORT=0
+	CLIENT_IP_PORT = 0
 	BUFFER_SIZE = 0
 	MAX_NO_OF_CONNECTIONS=0
 	ROBOTS_INFO_DICT = {}
 	DELIM = ""
 	SERVER_STATUS_FILE = "serverStatus.txt"
+	ROBOT_TIMEOUT = 0
+	FREQUENCY = 0
 	statusFileHandler = None
 	main()

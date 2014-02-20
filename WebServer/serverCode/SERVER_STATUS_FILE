@@ -1,51 +1,0 @@
-Fri Nov 15 10:36:24 2013-->Server started.Fri Nov 15 10:36:24 2013-->Server status file : OPENED.Fri Nov 15 10:36:24 2013-->	Welcome to corobotics server.Fri Nov 15 10:36:24 2013-->Server Socket binded successfullyFri Nov 15 10:36:24 2013-->Waiting for connection at port - 8081Fri Nov 15 10:36:39 2013-->Connected to : 129.21.84.160 at port : 34848Fri Nov 15 10:36:39 2013-->Sending welcome message : Welcome to corobotics server.Fri Nov 15 10:36:39 2013-->Data received : corobot3:IDLEFri Nov 15 10:36:39 2013-->129.21.84.160 :: Robot name : corobot3 and current status: IDLEFri Nov 15 10:36:39 2013-->New thread for ('129.21.30.80', 8081)Fri Nov 15 10:36:39 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:36:40 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:36:41 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:36:42 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:36:43 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:36:44 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:36:45 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:36:46 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:36:47 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:36:48 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:36:49 2013-->Closing connection with corobot3 :: 129.21.84.160:34848.Fri Nov 15 10:41:21 2013-->Connected to : 129.21.103.19 at port : 49492Fri Nov 15 10:41:21 2013-->Sending welcome message : Welcome to corobotics server.Fri Nov 15 10:41:21 2013-->Data received : BROWSER:IDLEFri Nov 15 10:41:21 2013-->Sending robots dictFri Nov 15 10:41:21 2013-->129.21.103.19 :: Robot name : BROWSER and current status: IDLEFri Nov 15 10:41:32 2013-->Connected to : 129.21.103.19 at port : 49493Fri Nov 15 10:41:32 2013-->Sending welcome message : Welcome to corobotics server.Fri Nov 15 10:41:32 2013-->Data received : akshay:IDLEFri Nov 15 10:41:32 2013-->129.21.103.19 :: Robot name : akshay and current status: IDLEFri Nov 15 10:41:32 2013-->New thread for ('129.21.30.80', 8081)Fri Nov 15 10:41:32 2013-->Data received : akshay:BUSY
-Fri Nov 15 10:41:33 2013-->Data received : akshay:IDLE
-Fri Nov 15 10:41:34 2013-->Data received : akshay:BUSY
-Fri Nov 15 10:41:35 2013-->Data received : akshay:IDLE
-Fri Nov 15 10:41:36 2013-->Data received : akshay:BUSY
-Fri Nov 15 10:41:37 2013-->Data received : akshay:IDLE
-Fri Nov 15 10:41:38 2013-->Data received : akshay:BUSY
-Fri Nov 15 10:41:39 2013-->Data received : akshay:IDLE
-Fri Nov 15 10:41:40 2013-->Data received : akshay:BUSY
-Fri Nov 15 10:41:41 2013-->Data received : akshay:IDLE
-Fri Nov 15 10:41:42 2013-->Closing connection with akshay :: 129.21.103.19:49493.Fri Nov 15 10:42:57 2013-->Connected to : 129.21.84.160 at port : 34849Fri Nov 15 10:42:57 2013-->Sending welcome message : Welcome to corobotics server.Fri Nov 15 10:42:57 2013-->Data received : corobot3:IDLEFri Nov 15 10:42:57 2013-->129.21.84.160 :: Robot name : corobot3 and current status: IDLEFri Nov 15 10:42:57 2013-->New thread for ('129.21.30.80', 8081)Fri Nov 15 10:42:57 2013-->Closing connection with corobot3 :: 129.21.84.160:34849.Fri Nov 15 10:43:13 2013-->Connected to : 129.21.84.160 at port : 34850Fri Nov 15 10:43:13 2013-->Sending welcome message : Welcome to corobotics server.Fri Nov 15 10:43:13 2013-->Data received : corobot3:IDLEFri Nov 15 10:43:13 2013-->129.21.84.160 :: Robot name : corobot3 and current status: IDLEFri Nov 15 10:43:13 2013-->New thread for ('129.21.30.80', 8081)Fri Nov 15 10:43:13 2013-->Closing connection with corobot3 :: 129.21.84.160:34850.Fri Nov 15 10:43:52 2013-->Connected to : 129.21.84.160 at port : 34851Fri Nov 15 10:43:52 2013-->Sending welcome message : Welcome to corobotics server.Fri Nov 15 10:43:52 2013-->Data received : corobot3:IDLEFri Nov 15 10:43:52 2013-->129.21.84.160 :: Robot name : corobot3 and current status: IDLEFri Nov 15 10:43:52 2013-->New thread for ('129.21.30.80', 8081)Fri Nov 15 10:43:52 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:43:53 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:43:54 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:43:55 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:43:56 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:43:57 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:43:58 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:43:59 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:44:00 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:44:01 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:44:02 2013-->Closing connection with corobot3 :: 129.21.84.160:34851.Fri Nov 15 10:44:37 2013-->Connected to : 129.21.84.160 at port : 34852Fri Nov 15 10:44:37 2013-->Sending welcome message : Welcome to corobotics server.Fri Nov 15 10:44:37 2013-->Data received : corobot3:IDLEFri Nov 15 10:44:37 2013-->129.21.84.160 :: Robot name : corobot3 and current status: IDLEFri Nov 15 10:44:37 2013-->New thread for ('129.21.30.80', 8081)Fri Nov 15 10:44:37 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:44:38 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:44:39 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:44:40 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:44:41 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:44:42 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:44:43 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:44:44 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:44:45 2013-->Data received : corobot3:BUSY
-Fri Nov 15 10:44:46 2013-->Data received : corobot3:IDLE
-Fri Nov 15 10:44:48 2013-->Closing connection with corobot3 :: 129.21.84.160:34852.Fri Nov 15 10:44:53 2013-->KeyboardInterrupt!Fri Nov 15 11:29:54 2013-->Server started.Fri Nov 15 11:29:54 2013-->Server status file : OPENED.Fri Nov 15 11:29:54 2013-->	Welcome to corobotics server.Fri Nov 15 11:29:54 2013-->Server Socket binded successfullyFri Nov 15 11:29:54 2013-->Waiting for connection at port - 8081Fri Nov 15 11:30:06 2013-->Connected to : 129.21.84.160 at port : 34854Fri Nov 15 11:30:06 2013-->Sending welcome message : Welcome to corobotics server.Fri Nov 15 11:30:06 2013-->Data received : corobot3:IDLEFri Nov 15 11:30:06 2013-->129.21.84.160 :: Robot name : corobot3 and current status: IDLEFri Nov 15 11:30:06 2013-->New thread for ('129.21.30.80', 8081)Fri Nov 15 11:30:06 2013-->Data received : corobot3:BUSY
-Fri Nov 15 11:30:07 2013-->Data received : corobot3:IDLE
-Fri Nov 15 11:30:08 2013-->Data received : corobot3:BUSY
-Fri Nov 15 11:30:09 2013-->Data received : corobot3:IDLE
-Fri Nov 15 11:30:10 2013-->Data received : corobot3:BUSY
-Fri Nov 15 11:30:11 2013-->Data received : corobot3:IDLE
-Fri Nov 15 11:30:12 2013-->Data received : corobot3:BUSY
-Fri Nov 15 11:30:13 2013-->Data received : corobot3:IDLE
-Fri Nov 15 11:30:14 2013-->Data received : corobot3:BUSY
-Fri Nov 15 11:30:15 2013-->Data received : corobot3:IDLE
-Fri Nov 15 11:30:16 2013-->Closing connection with corobot3 :: 129.21.84.160:34854.Fri Nov 15 11:45:44 2013-->Connected to : 129.21.103.19 at port : 50089Fri Nov 15 11:45:44 2013-->Sending welcome message : Welcome to corobotics server.Fri Nov 15 11:45:44 2013-->Data received : ROBOT1:IDLEFri Nov 15 11:45:44 2013-->129.21.103.19 :: Robot name : ROBOT1 and current status: IDLEFri Nov 15 11:45:44 2013-->New thread for ('129.21.30.80', 8081)Fri Nov 15 11:45:44 2013-->Closing connection with ROBOT1 :: 129.21.103.19:50089.Fri Nov 15 12:59:35 2013-->KeyboardInterrupt!Fri Nov 15 12:59:35 2013-->Server closed.Fri Nov 15 12:59:35 2013-->Server status file : CLOSED.
