@@ -9,6 +9,7 @@
     <?php include "./include.php"; 
         error_reporting(E_ALL); 
     ?>
+    <!--h1>Server down for maintenance</h1-->
         <div>
             <table>
                 <tr>

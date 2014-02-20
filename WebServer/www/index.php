@@ -3,14 +3,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="GenericWeb/css/style.css" type="text/css"/>
-    <title>Welcome Corobots server</title>
+    <title>Welcome to the Corobotics project</title>
   </head>
   <body>
     <?php include "./include.php";
         error_reporting(E_ALL);
     ?>
     <div class="body">
-      <h1>Welcome to the RIT Corobot server!</h1>
+      <h1>Welcome to the RIT Corobotics server!</h1>
         <p>
       	  Our robots are ready and waiting on the third floor of the Golisano
       	  building to help you with tasks that you define.  These robots are
