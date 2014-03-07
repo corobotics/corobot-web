@@ -3,86 +3,48 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../GenericWeb/css/style.css" type="text/css" />
-    <title>Workspace</title>
+    <title>My workspace</title>
   </head>
   <body>
     <?php include "../include.php";
         error_reporting(E_ALL);
     ?>
-    <div class="body">
-      <h1>Work Space</h1>
-    <div id="container">
-        <table>
-            <tr>
-                <td><label for="uName">Username:</label></td>
-                <td width="33px"></td>
-                <td>
-                    <input type="text" name="uName" label="User Name"  id="uName"/>
-                    </td>
-            </tr>
-                <tr>
-                    <td>
-                        <label for="pName">Password:</label>  
-                    </td>
-                    <td></td>
-                    <td>
-                        <input type="password" name="pName"  id="pName"/> 
-                    </td>
-                </tr>
-                <tr>
-                    <td><label>Upload File: </label></td>
-                    <td>
-                        
-                    </td>
-                    <td>
-                        <input type="file" name="uploadFile" id="uploadFile"/> 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    </td>
-                    <td></td>
-                    <td>
-                        <button type="button" name="login" id="login">Show Workspace</button> 
-                    </td>
-                </tr>
-                
-            </table>
-            <div id="tableContent" class="CSSTableGenerator">
-            </div>
-            <table>
-                <tr>
-                    <td>
-                        <label for="fileList">Filenames:</label>  
-                    </td>
-                    <td></td>
-                    <td>
-                        <input type="text" name="fileList"  id="fileList"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="numFiles">Number of Files:</label>  
-                    </td>
-                    <td></td>
-                    <td>
-                        <input type="text" name="numFiles"  id="numFiles"/> 
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" name="deploy" id="deploy">Deploy</button>
-                    </td>
-                </tr>
-            </table>
+    <div style="width:940px;margin:0 auto">
+        <h3>List of my files</h3>
+        <table border=1;align=center>
+            <th>Upload timestamp</th>
+            <th>File Name</th>
+            <th>Operation</th>
+            <?php
+                $fileLocation = 'uploads/';
+                chdir($fileLocation);
+                $files = glob ("*.py", GLOB_NOSORT);
+                //usort($files, create_function('$a,$b', 'return filemtime($b) - filemtime($a);'));
+                array_multisort(array_map('filemtime', $files), SORT_NUMERIC, SORT_DESC, $files);
+                foreach ($files as $fileName) {
+                    echo "<tr><td>" . date("F d Y H:i:s", filectime($fileName)) . "</td><td><a href='$fileLocation$fileName'>" . $fileName . "</a></td>";
+                    echo "<td><button type='submit' value='$fileName' class='deployFileName'>Deploy</button></td></tr>";
+                }
+            ?>
+        </table>
         </div>
-      </div>
-         <p>
-    </p>
-        <script type="application/dart" src="myworkspace.dart"></script>
-        <script src="https://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
     </body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.deployFileName').on("click", function(){
+                var fileName = $(this).val();
+                $.ajax({
+                    url : "/cgi-bin/run.php",
+                    data :  "fileName=" + fileName,
+                    type : "GET",
+                    dataType : "text",
+                    success : function(data){
+                        alert(data)},
+                    fail : $("#status").text("Sorry! Unable to deploy. Please contact the administator.")
+                });
+            })
+        });
+    </script>
 </html>
 

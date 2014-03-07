@@ -1,0 +1,1079 @@
+
+Thu Mar  6 22:11:24 2014-->Sockets binded successfully..
+Thu Mar  6 22:11:24 2014-->Robot socket at port : 51000.
+Thu Mar  6 22:11:24 2014-->Client socket at port : 56000.
+Thu Mar  6 22:11:24 2014-->Browser socket at port : 61000.
+Thu Mar  6 22:11:24 2014-->Client-IP-only socket at port : 65000.
+Thu Mar  6 22:11:24 2014-->Listening for incoming connections..
+Thu Mar  6 22:11:24 2014-->Server started..
+Thu Mar  6 22:11:24 2014-->Server status file : OPENED..
+Thu Mar  6 22:11:24 2014-->Status log file name : /home/robotics/Desktop/gitWebServer/corobot-web/WebServer/serverCode/serverStatusLog-2014-03-06::22:11.txt.
+Thu Mar  6 22:11:24 2014-->	Welcome to corobotics server..
+Thu Mar  6 22:11:24 2014-->Trying to cleanup robots..
+Thu Mar  6 22:11:24 2014-->No robots to clean..
+Thu Mar  6 22:11:36 2014-->129.21.30.80::38315 ---CLIENT connection..
+Thu Mar  6 22:11:36 2014-->Total robots : 0 .
+Thu Mar  6 22:11:36 2014-->No robots in the system..
+Thu Mar  6 22:11:36 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Thu Mar  6 22:11:36 2014-->Total robots : 0 .
+Thu Mar  6 22:11:36 2014-->No robots in the system..
+Thu Mar  6 22:11:36 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Thu Mar  6 22:11:36 2014-->Closing connection with CLIENT :: (129.21.30.80:38315)..
+Thu Mar  6 22:11:39 2014-->Trying to cleanup robots..
+Thu Mar  6 22:11:39 2014-->No robots to clean..
+Thu Mar  6 22:11:54 2014-->Trying to cleanup robots..
+Thu Mar  6 22:11:54 2014-->No robots to clean..
+Thu Mar  6 22:12:05 2014-->Sending welcome message : Welcome to corobotics server...
+Thu Mar  6 22:12:05 2014-->Welcome message sent..
+Thu Mar  6 22:12:05 2014-->Data received : corobot5:IDLE..
+Thu Mar  6 22:12:05 2014-->129.21.70.161 :: Robot name : corobot5 and current status: IDLE..
+Thu Mar  6 22:12:05 2014-->New thread for 129.21.70.161..
+Thu Mar  6 22:12:06 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:07 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:08 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:09 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:09 2014-->Trying to cleanup robots..
+Thu Mar  6 22:12:09 2014-->corobot5 :: Timestamp : 1394161929. Now : 1394161929. Diff : 0..
+Thu Mar  6 22:12:10 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:11 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:12 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:13 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:14 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:15 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:16 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:17 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:18 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:19 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:20 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:21 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:22 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:23 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:24 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:24 2014-->Trying to cleanup robots..
+Thu Mar  6 22:12:24 2014-->corobot5 :: Timestamp : 1394161944. Now : 1394161944. Diff : 0..
+Thu Mar  6 22:12:25 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:12:25 2014-->129.21.30.80::38318 ---CLIENT connection..
+Thu Mar  6 22:12:25 2014-->Total robots : 1 .
+Thu Mar  6 22:12:25 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 1..
+Thu Mar  6 22:12:25 2014-->Total robots : 1 .
+Thu Mar  6 22:12:25 2014-->129.21.30.80::Idle robot found. Robot name : corobot5.
+Thu Mar  6 22:12:25 2014-->129.21.30.80::Deploying code on IP (129.21.70.161) Robot name : corobot5..
+Thu Mar  6 22:12:25 2014-->Deploying code on corobot5. Destination : AtriumN..
+Thu Mar  6 22:12:26 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:27 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:28 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:29 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:30 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:31 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:32 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:33 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:34 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:35 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:36 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:37 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:38 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:39 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:39 2014-->Trying to cleanup robots..
+Thu Mar  6 22:12:39 2014-->corobot5 :: Timestamp : 1394161959. Now : 1394161959. Diff : 0..
+Thu Mar  6 22:12:40 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:41 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:42 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:43 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:44 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:45 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:46 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:47 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:48 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:49 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:50 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:51 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:52 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:53 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:54 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:54 2014-->Trying to cleanup robots..
+Thu Mar  6 22:12:54 2014-->corobot5 :: Timestamp : 1394161974. Now : 1394161974. Diff : 0..
+Thu Mar  6 22:12:55 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:56 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:57 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:58 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:12:59 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:00 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:01 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:02 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:03 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:04 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:05 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:06 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:07 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:08 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:09 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:09 2014-->Trying to cleanup robots..
+Thu Mar  6 22:13:09 2014-->corobot5 :: Timestamp : 1394161989. Now : 1394161989. Diff : 0..
+Thu Mar  6 22:13:10 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:11 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:12 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:13 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:14 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:15 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:16 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:17 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:18 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:19 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:20 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:21 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:22 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:23 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:24 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:24 2014-->Trying to cleanup robots..
+Thu Mar  6 22:13:24 2014-->corobot5 :: Timestamp : 1394162004. Now : 1394162004. Diff : 0..
+Thu Mar  6 22:13:25 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:26 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:27 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:28 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:29 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:30 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:31 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:32 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:33 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:34 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:35 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:36 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:37 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:38 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:39 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:39 2014-->Trying to cleanup robots..
+Thu Mar  6 22:13:39 2014-->corobot5 :: Timestamp : 1394162019. Now : 1394162019. Diff : 0..
+Thu Mar  6 22:13:40 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:41 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:42 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:43 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:44 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:45 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:46 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:47 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:48 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:49 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:50 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:51 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:52 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:53 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:54 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:54 2014-->Trying to cleanup robots..
+Thu Mar  6 22:13:54 2014-->corobot5 :: Timestamp : 1394162034. Now : 1394162034. Diff : 0..
+Thu Mar  6 22:13:55 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:56 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:57 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:58 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:13:59 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:00 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:01 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:02 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:03 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:04 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:05 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:06 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:07 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:08 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:09 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:09 2014-->Trying to cleanup robots..
+Thu Mar  6 22:14:09 2014-->corobot5 :: Timestamp : 1394162049. Now : 1394162049. Diff : 0..
+Thu Mar  6 22:14:10 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:11 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:12 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:13 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:14 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:15 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:16 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:17 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:18 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:19 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:20 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:21 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:22 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:23 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:24 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:24 2014-->Trying to cleanup robots..
+Thu Mar  6 22:14:24 2014-->corobot5 :: Timestamp : 1394162064. Now : 1394162064. Diff : 0..
+Thu Mar  6 22:14:25 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:26 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:27 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:28 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:29 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:30 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:31 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:32 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:33 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:34 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:35 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:36 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:37 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:38 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:39 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:39 2014-->Trying to cleanup robots..
+Thu Mar  6 22:14:39 2014-->corobot5 :: Timestamp : 1394162079. Now : 1394162079. Diff : 0..
+Thu Mar  6 22:14:40 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:41 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:42 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:43 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:44 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:45 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:46 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:47 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:48 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:49 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:50 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:51 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:52 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:53 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:54 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:54 2014-->Trying to cleanup robots..
+Thu Mar  6 22:14:54 2014-->corobot5 :: Timestamp : 1394162094. Now : 1394162094. Diff : 0..
+Thu Mar  6 22:14:55 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:56 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:57 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:58 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:14:59 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:15:00 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:15:00 2014-->Closing connection with corobot5 :: (129.21.70.161:59164)..
+Thu Mar  6 22:15:09 2014-->Trying to cleanup robots..
+Thu Mar  6 22:15:09 2014-->corobot5 :: Timestamp : 1394162100. Now : 1394162109. Diff : 9..
+Thu Mar  6 22:15:24 2014-->Trying to cleanup robots..
+Thu Mar  6 22:15:24 2014-->corobot5 :: Timestamp : 1394162100. Now : 1394162124. Diff : 24..
+Thu Mar  6 22:15:24 2014-->corobot5 status expired. Will be removed..
+Thu Mar  6 22:15:25 2014-->129.21.30.80::38322 ---CLIENT connection..
+Thu Mar  6 22:15:25 2014-->Total robots : 0 .
+Thu Mar  6 22:15:25 2014-->No robots in the system..
+Thu Mar  6 22:15:25 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Thu Mar  6 22:15:25 2014-->Total robots : 0 .
+Thu Mar  6 22:15:25 2014-->No robots in the system..
+Thu Mar  6 22:15:25 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Thu Mar  6 22:15:25 2014-->Closing connection with CLIENT :: (129.21.30.80:38322)..
+Thu Mar  6 22:15:39 2014-->Trying to cleanup robots..
+Thu Mar  6 22:15:39 2014-->No robots to clean..
+Thu Mar  6 22:15:44 2014-->129.21.30.80::38323 ---CLIENT connection..
+Thu Mar  6 22:15:44 2014-->Total robots : 0 .
+Thu Mar  6 22:15:44 2014-->No robots in the system..
+Thu Mar  6 22:15:44 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Thu Mar  6 22:15:44 2014-->Total robots : 0 .
+Thu Mar  6 22:15:44 2014-->No robots in the system..
+Thu Mar  6 22:15:44 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Thu Mar  6 22:15:44 2014-->Closing connection with CLIENT :: (129.21.30.80:38323)..
+Thu Mar  6 22:15:54 2014-->Trying to cleanup robots..
+Thu Mar  6 22:15:54 2014-->No robots to clean..
+Thu Mar  6 22:16:09 2014-->Trying to cleanup robots..
+Thu Mar  6 22:16:09 2014-->No robots to clean..
+Thu Mar  6 22:16:24 2014-->Trying to cleanup robots..
+Thu Mar  6 22:16:24 2014-->No robots to clean..
+Thu Mar  6 22:16:39 2014-->Trying to cleanup robots..
+Thu Mar  6 22:16:39 2014-->No robots to clean..
+Thu Mar  6 22:16:54 2014-->Trying to cleanup robots..
+Thu Mar  6 22:16:54 2014-->No robots to clean..
+Thu Mar  6 22:17:09 2014-->Trying to cleanup robots..
+Thu Mar  6 22:17:09 2014-->No robots to clean..
+Thu Mar  6 22:17:24 2014-->Trying to cleanup robots..
+Thu Mar  6 22:17:24 2014-->No robots to clean..
+Thu Mar  6 22:17:39 2014-->Trying to cleanup robots..
+Thu Mar  6 22:17:39 2014-->No robots to clean..
+Thu Mar  6 22:17:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:17:55 2014-->No robots to clean..
+Thu Mar  6 22:18:09 2014-->Trying to cleanup robots..
+Thu Mar  6 22:18:09 2014-->No robots to clean..
+Thu Mar  6 22:18:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:18:25 2014-->No robots to clean..
+Thu Mar  6 22:18:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:18:40 2014-->No robots to clean..
+Thu Mar  6 22:18:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:18:55 2014-->No robots to clean..
+Thu Mar  6 22:19:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:19:10 2014-->No robots to clean..
+Thu Mar  6 22:19:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:19:25 2014-->No robots to clean..
+Thu Mar  6 22:19:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:19:40 2014-->No robots to clean..
+Thu Mar  6 22:19:50 2014-->129.21.30.80::38325 ---CLIENT connection..
+Thu Mar  6 22:19:50 2014-->Total robots : 0 .
+Thu Mar  6 22:19:50 2014-->No robots in the system..
+Thu Mar  6 22:19:50 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Thu Mar  6 22:19:50 2014-->Total robots : 0 .
+Thu Mar  6 22:19:50 2014-->No robots in the system..
+Thu Mar  6 22:19:50 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Thu Mar  6 22:19:50 2014-->Closing connection with CLIENT :: (129.21.30.80:38325)..
+Thu Mar  6 22:19:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:19:55 2014-->No robots to clean..
+Thu Mar  6 22:19:58 2014-->Sending welcome message : Welcome to corobotics server...
+Thu Mar  6 22:19:58 2014-->Welcome message sent..
+Thu Mar  6 22:19:58 2014-->Data received : corobot5:IDLE..
+Thu Mar  6 22:19:58 2014-->129.21.70.161 :: Robot name : corobot5 and current status: IDLE..
+Thu Mar  6 22:19:58 2014-->New thread for 129.21.70.161..
+Thu Mar  6 22:19:59 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:20:00 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:20:01 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:20:02 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:20:03 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:20:04 2014-->129.21.30.80::38326 ---CLIENT connection..
+Thu Mar  6 22:20:04 2014-->Total robots : 1 .
+Thu Mar  6 22:20:04 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 1..
+Thu Mar  6 22:20:04 2014-->Total robots : 1 .
+Thu Mar  6 22:20:04 2014-->129.21.30.80::Idle robot found. Robot name : corobot5.
+Thu Mar  6 22:20:04 2014-->129.21.30.80::Deploying code on IP (129.21.70.161) Robot name : corobot5..
+Thu Mar  6 22:20:04 2014-->Deploying code on corobot5. Destination : AtriumN..
+Thu Mar  6 22:20:04 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:20:05 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:06 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:07 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:08 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:09 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:20:10 2014-->corobot5 :: Timestamp : 1394162409. Now : 1394162410. Diff : 1..
+Thu Mar  6 22:20:10 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:11 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:12 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:13 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:14 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:15 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:16 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:17 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:18 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:19 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:20 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:21 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:22 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:23 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:24 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:20:25 2014-->corobot5 :: Timestamp : 1394162424. Now : 1394162425. Diff : 1..
+Thu Mar  6 22:20:25 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:26 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:27 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:28 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:29 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:30 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:31 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:32 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:33 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:34 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:35 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:36 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:37 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:38 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:39 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:20:40 2014-->corobot5 :: Timestamp : 1394162439. Now : 1394162440. Diff : 1..
+Thu Mar  6 22:20:40 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:41 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:42 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:43 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:44 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:45 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:46 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:47 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:48 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:49 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:50 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:51 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:52 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:53 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:54 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:20:55 2014-->corobot5 :: Timestamp : 1394162454. Now : 1394162455. Diff : 1..
+Thu Mar  6 22:20:55 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:56 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:57 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:58 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:20:59 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:00 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:01 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:02 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:03 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:04 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:05 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:06 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:07 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:08 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:09 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:21:10 2014-->corobot5 :: Timestamp : 1394162469. Now : 1394162470. Diff : 1..
+Thu Mar  6 22:21:10 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:11 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:12 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:13 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:14 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:15 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:16 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:17 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:18 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:19 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:20 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:21 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:22 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:23 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:24 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:21:25 2014-->corobot5 :: Timestamp : 1394162484. Now : 1394162485. Diff : 1..
+Thu Mar  6 22:21:25 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:26 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:27 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:28 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:29 2014-->129.21.30.80::38328 ---CLIENT connection..
+Thu Mar  6 22:21:29 2014-->Total robots : 1 .
+Thu Mar  6 22:21:29 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Thu Mar  6 22:21:29 2014-->Total robots : 1 .
+Thu Mar  6 22:21:29 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Thu Mar  6 22:21:29 2014-->Closing connection with CLIENT :: (129.21.30.80:38328)..
+Thu Mar  6 22:21:29 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:30 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:31 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:32 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:33 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:34 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:35 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:36 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:37 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:38 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:39 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:21:40 2014-->corobot5 :: Timestamp : 1394162499. Now : 1394162500. Diff : 1..
+Thu Mar  6 22:21:40 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:41 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:42 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:43 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:44 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:45 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:46 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:47 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:48 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:49 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:50 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:51 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:52 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:53 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:54 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:21:55 2014-->corobot5 :: Timestamp : 1394162514. Now : 1394162515. Diff : 1..
+Thu Mar  6 22:21:55 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:56 2014-->129.21.30.80::38329 ---CLIENT connection..
+Thu Mar  6 22:21:56 2014-->Total robots : 1 .
+Thu Mar  6 22:21:56 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Thu Mar  6 22:21:56 2014-->Total robots : 1 .
+Thu Mar  6 22:21:56 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Thu Mar  6 22:21:56 2014-->Closing connection with CLIENT :: (129.21.30.80:38329)..
+Thu Mar  6 22:21:56 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:57 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:58 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:21:59 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:00 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:01 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:02 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:03 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:04 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:05 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:06 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:07 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:08 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:09 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:22:10 2014-->corobot5 :: Timestamp : 1394162529. Now : 1394162530. Diff : 1..
+Thu Mar  6 22:22:10 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:11 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:12 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:13 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:14 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:15 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:16 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:17 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:18 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:19 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:20 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:21 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:22 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:23 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:24 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:22:25 2014-->corobot5 :: Timestamp : 1394162544. Now : 1394162545. Diff : 1..
+Thu Mar  6 22:22:25 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:26 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:27 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:28 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:29 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:30 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:31 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:32 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:33 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:34 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:35 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:36 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:22:37 2014-->Closing connection with corobot5 :: (129.21.70.161:59660)..
+Thu Mar  6 22:22:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:22:40 2014-->corobot5 :: Timestamp : 1394162556. Now : 1394162560. Diff : 4..
+Thu Mar  6 22:22:42 2014-->Sending welcome message : Welcome to corobotics server...
+Thu Mar  6 22:22:42 2014-->Welcome message sent..
+Thu Mar  6 22:22:42 2014-->Data received : corobot5:IDLE..
+Thu Mar  6 22:22:42 2014-->129.21.70.161 :: Robot name : corobot5 and current status: IDLE..
+Thu Mar  6 22:22:42 2014-->New thread for 129.21.70.161..
+Thu Mar  6 22:22:43 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:44 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:45 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:46 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:47 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:48 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:49 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:50 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:51 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:52 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:53 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:54 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:22:55 2014-->corobot5 :: Timestamp : 1394162574. Now : 1394162575. Diff : 1..
+Thu Mar  6 22:22:55 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:56 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:57 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:58 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:22:59 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:23:00 2014-->129.21.30.80::38330 ---CLIENT connection..
+Thu Mar  6 22:23:00 2014-->Total robots : 1 .
+Thu Mar  6 22:23:00 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 1..
+Thu Mar  6 22:23:00 2014-->Total robots : 1 .
+Thu Mar  6 22:23:00 2014-->129.21.30.80::Idle robot found. Robot name : corobot5.
+Thu Mar  6 22:23:00 2014-->129.21.30.80::Deploying code on IP (129.21.70.161) Robot name : corobot5..
+Thu Mar  6 22:23:00 2014-->Deploying code on corobot5. Destination : AtriumN..
+Thu Mar  6 22:23:00 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:23:01 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:02 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:03 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:04 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:05 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:06 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:07 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:08 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:09 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:23:10 2014-->corobot5 :: Timestamp : 1394162589. Now : 1394162590. Diff : 1..
+Thu Mar  6 22:23:10 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:11 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:12 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:13 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:14 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:15 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:16 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:17 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:18 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:19 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:20 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:21 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:22 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:23 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:24 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:23:25 2014-->corobot5 :: Timestamp : 1394162604. Now : 1394162605. Diff : 1..
+Thu Mar  6 22:23:25 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:26 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:27 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:28 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:29 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:30 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:31 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:32 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:33 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:34 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:35 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:36 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:37 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:38 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:39 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:23:40 2014-->corobot5 :: Timestamp : 1394162619. Now : 1394162620. Diff : 1..
+Thu Mar  6 22:23:40 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:41 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:42 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:43 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:44 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:45 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:46 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:47 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:48 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:49 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:50 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:51 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:52 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:53 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:54 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:23:55 2014-->corobot5 :: Timestamp : 1394162634. Now : 1394162635. Diff : 1..
+Thu Mar  6 22:23:55 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:56 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:57 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:58 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:23:59 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:00 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:01 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:02 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:03 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:04 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:05 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:06 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:07 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:08 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:09 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:24:10 2014-->corobot5 :: Timestamp : 1394162649. Now : 1394162650. Diff : 1..
+Thu Mar  6 22:24:10 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:11 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:12 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:13 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:14 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:15 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:16 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:17 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:18 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:19 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:20 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:21 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:22 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:23 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:24 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:24:25 2014-->corobot5 :: Timestamp : 1394162664. Now : 1394162665. Diff : 1..
+Thu Mar  6 22:24:25 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:26 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:27 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:28 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:29 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:30 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:31 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:32 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:33 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:34 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:35 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:36 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:37 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:38 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:39 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:24:40 2014-->corobot5 :: Timestamp : 1394162679. Now : 1394162680. Diff : 1..
+Thu Mar  6 22:24:40 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:41 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:42 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:43 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:44 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:45 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:46 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:47 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:48 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:49 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:50 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:51 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:52 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:53 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:54 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:24:55 2014-->corobot5 :: Timestamp : 1394162694. Now : 1394162695. Diff : 1..
+Thu Mar  6 22:24:55 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:56 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:57 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:58 2014-->129.21.30.80::38332 ---CLIENT connection..
+Thu Mar  6 22:24:58 2014-->Total robots : 1 .
+Thu Mar  6 22:24:58 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Thu Mar  6 22:24:58 2014-->Total robots : 1 .
+Thu Mar  6 22:24:58 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Thu Mar  6 22:24:58 2014-->Closing connection with CLIENT :: (129.21.30.80:38332)..
+Thu Mar  6 22:24:58 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:24:59 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:00 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:01 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:02 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:03 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:04 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:05 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:06 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:07 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:08 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:09 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:25:10 2014-->corobot5 :: Timestamp : 1394162709. Now : 1394162710. Diff : 1..
+Thu Mar  6 22:25:10 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:11 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:12 2014-->Closing connection with corobot5 :: (129.21.70.161:60144)..
+Thu Mar  6 22:25:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:25:25 2014-->corobot5 :: Timestamp : 1394162711. Now : 1394162725. Diff : 14..
+Thu Mar  6 22:25:25 2014-->corobot5 status expired. Will be removed..
+Thu Mar  6 22:25:32 2014-->Sending welcome message : Welcome to corobotics server...
+Thu Mar  6 22:25:32 2014-->Welcome message sent..
+Thu Mar  6 22:25:32 2014-->Data received : corobot5:IDLE..
+Thu Mar  6 22:25:32 2014-->129.21.70.161 :: Robot name : corobot5 and current status: IDLE..
+Thu Mar  6 22:25:32 2014-->New thread for 129.21.70.161..
+Thu Mar  6 22:25:33 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:25:34 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:25:35 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:25:36 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:25:37 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:25:38 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:25:39 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:25:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:25:40 2014-->corobot5 :: Timestamp : 1394162739. Now : 1394162740. Diff : 1..
+Thu Mar  6 22:25:40 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:25:41 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:25:41 2014-->129.21.30.80::38333 ---CLIENT connection..
+Thu Mar  6 22:25:41 2014-->Total robots : 1 .
+Thu Mar  6 22:25:41 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 1..
+Thu Mar  6 22:25:41 2014-->Total robots : 1 .
+Thu Mar  6 22:25:41 2014-->129.21.30.80::Idle robot found. Robot name : corobot5.
+Thu Mar  6 22:25:41 2014-->129.21.30.80::Deploying code on IP (129.21.70.161) Robot name : corobot5..
+Thu Mar  6 22:25:41 2014-->Deploying code on corobot5. Destination : AtriumN..
+Thu Mar  6 22:25:42 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:43 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:44 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:45 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:46 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:47 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:48 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:49 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:50 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:51 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:52 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:53 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:54 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:25:55 2014-->corobot5 :: Timestamp : 1394162754. Now : 1394162755. Diff : 1..
+Thu Mar  6 22:25:55 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:56 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:57 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:58 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:25:59 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:00 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:01 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:02 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:03 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:04 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:05 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:06 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:07 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:08 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:09 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:26:10 2014-->corobot5 :: Timestamp : 1394162769. Now : 1394162770. Diff : 1..
+Thu Mar  6 22:26:10 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:11 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:12 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:13 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:14 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:15 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:16 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:17 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:18 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:18 2014-->129.21.30.80::38335 ---CLIENT connection..
+Thu Mar  6 22:26:18 2014-->Total robots : 1 .
+Thu Mar  6 22:26:18 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Thu Mar  6 22:26:18 2014-->Total robots : 1 .
+Thu Mar  6 22:26:18 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Thu Mar  6 22:26:18 2014-->Closing connection with CLIENT :: (129.21.30.80:38335)..
+Thu Mar  6 22:26:19 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:20 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:21 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:22 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:23 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:24 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:26:25 2014-->corobot5 :: Timestamp : 1394162784. Now : 1394162785. Diff : 1..
+Thu Mar  6 22:26:25 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:26 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:27 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:28 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:29 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:30 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:31 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:32 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:33 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:34 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:35 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:36 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:37 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:38 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:39 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:26:40 2014-->corobot5 :: Timestamp : 1394162799. Now : 1394162800. Diff : 1..
+Thu Mar  6 22:26:40 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:41 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:42 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:43 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:44 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:45 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:46 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:47 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:48 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:49 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:50 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:51 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:52 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:53 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:54 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:26:55 2014-->corobot5 :: Timestamp : 1394162814. Now : 1394162815. Diff : 1..
+Thu Mar  6 22:26:55 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:56 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:57 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:58 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:26:59 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:00 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:01 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:02 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:03 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:04 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:05 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:06 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:07 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:08 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:09 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:27:10 2014-->corobot5 :: Timestamp : 1394162829. Now : 1394162830. Diff : 1..
+Thu Mar  6 22:27:10 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:11 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:12 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:12 2014-->129.21.30.80::38336 ---CLIENT connection..
+Thu Mar  6 22:27:12 2014-->Total robots : 1 .
+Thu Mar  6 22:27:12 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Thu Mar  6 22:27:12 2014-->Total robots : 1 .
+Thu Mar  6 22:27:12 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Thu Mar  6 22:27:12 2014-->Closing connection with CLIENT :: (129.21.30.80:38336)..
+Thu Mar  6 22:27:13 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:14 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:15 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:16 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:17 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:18 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:19 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:20 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:21 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:21 2014-->Closing connection with corobot5 :: (129.21.70.161:60637)..
+Thu Mar  6 22:27:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:27:25 2014-->corobot5 :: Timestamp : 1394162841. Now : 1394162845. Diff : 4..
+Thu Mar  6 22:27:32 2014-->Sending welcome message : Welcome to corobotics server...
+Thu Mar  6 22:27:32 2014-->Welcome message sent..
+Thu Mar  6 22:27:32 2014-->Data received : corobot5:IDLE..
+Thu Mar  6 22:27:32 2014-->129.21.70.161 :: Robot name : corobot5 and current status: IDLE..
+Thu Mar  6 22:27:32 2014-->New thread for 129.21.70.161..
+Thu Mar  6 22:27:33 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:27:34 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:27:35 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:27:36 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:27:37 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:27:38 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:27:39 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:27:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:27:40 2014-->corobot5 :: Timestamp : 1394162859. Now : 1394162860. Diff : 1..
+Thu Mar  6 22:27:40 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:27:41 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:27:41 2014-->129.21.30.80::38337 ---CLIENT connection..
+Thu Mar  6 22:27:41 2014-->Total robots : 1 .
+Thu Mar  6 22:27:41 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 1..
+Thu Mar  6 22:27:41 2014-->Total robots : 1 .
+Thu Mar  6 22:27:41 2014-->129.21.30.80::Idle robot found. Robot name : corobot5.
+Thu Mar  6 22:27:41 2014-->129.21.30.80::Deploying code on IP (129.21.70.161) Robot name : corobot5..
+Thu Mar  6 22:27:41 2014-->Deploying code on corobot5. Destination : AtriumN..
+Thu Mar  6 22:27:42 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:43 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:44 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:45 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:46 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:47 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:48 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:49 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:50 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:51 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:52 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:53 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:54 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:27:55 2014-->corobot5 :: Timestamp : 1394162874. Now : 1394162875. Diff : 1..
+Thu Mar  6 22:27:55 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:56 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:57 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:58 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:27:59 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:00 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:01 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:02 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:03 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:04 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:05 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:06 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:07 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:08 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:09 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:28:10 2014-->corobot5 :: Timestamp : 1394162889. Now : 1394162890. Diff : 1..
+Thu Mar  6 22:28:10 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:11 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:12 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:13 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:14 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:28:14 2014-->Closing connection with corobot5 :: (129.21.70.161:32880)..
+Thu Mar  6 22:28:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:28:25 2014-->corobot5 :: Timestamp : 1394162894. Now : 1394162905. Diff : 11..
+Thu Mar  6 22:28:25 2014-->corobot5 status expired. Will be removed..
+Thu Mar  6 22:28:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:28:40 2014-->No robots to clean..
+Thu Mar  6 22:28:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:28:55 2014-->No robots to clean..
+Thu Mar  6 22:29:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:29:10 2014-->No robots to clean..
+Thu Mar  6 22:29:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:29:25 2014-->No robots to clean..
+Thu Mar  6 22:29:27 2014-->129.21.30.80::38339 ---CLIENT connection..
+Thu Mar  6 22:29:27 2014-->Total robots : 0 .
+Thu Mar  6 22:29:27 2014-->No robots in the system..
+Thu Mar  6 22:29:27 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Thu Mar  6 22:29:27 2014-->Total robots : 0 .
+Thu Mar  6 22:29:27 2014-->No robots in the system..
+Thu Mar  6 22:29:27 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Thu Mar  6 22:29:27 2014-->Closing connection with CLIENT :: (129.21.30.80:38339)..
+Thu Mar  6 22:29:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:29:40 2014-->No robots to clean..
+Thu Mar  6 22:29:44 2014-->129.21.30.80::38340 ---CLIENT connection..
+Thu Mar  6 22:29:44 2014-->Total robots : 0 .
+Thu Mar  6 22:29:44 2014-->No robots in the system..
+Thu Mar  6 22:29:44 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Thu Mar  6 22:29:44 2014-->Total robots : 0 .
+Thu Mar  6 22:29:44 2014-->No robots in the system..
+Thu Mar  6 22:29:44 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Thu Mar  6 22:29:44 2014-->Closing connection with CLIENT :: (129.21.30.80:38340)..
+Thu Mar  6 22:29:50 2014-->Sending welcome message : Welcome to corobotics server...
+Thu Mar  6 22:29:50 2014-->Welcome message sent..
+Thu Mar  6 22:29:50 2014-->Data received : corobot5:IDLE..
+Thu Mar  6 22:29:50 2014-->129.21.70.161 :: Robot name : corobot5 and current status: IDLE..
+Thu Mar  6 22:29:50 2014-->New thread for 129.21.70.161..
+Thu Mar  6 22:29:51 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:29:52 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:29:53 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:29:54 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:29:54 2014-->129.21.30.80::38341 ---CLIENT connection..
+Thu Mar  6 22:29:54 2014-->Total robots : 1 .
+Thu Mar  6 22:29:54 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 1..
+Thu Mar  6 22:29:54 2014-->Total robots : 1 .
+Thu Mar  6 22:29:54 2014-->129.21.30.80::Idle robot found. Robot name : corobot5.
+Thu Mar  6 22:29:54 2014-->129.21.30.80::Deploying code on IP (129.21.70.161) Robot name : corobot5..
+Thu Mar  6 22:29:54 2014-->Deploying code on corobot5. Destination : AtriumN..
+Thu Mar  6 22:29:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:29:55 2014-->corobot5 :: Timestamp : 1394162994. Now : 1394162995. Diff : 1..
+Thu Mar  6 22:29:55 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:29:56 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:29:57 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:29:58 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:29:59 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:00 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:01 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:02 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:03 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:04 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:05 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:06 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:07 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:08 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:09 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:30:10 2014-->corobot5 :: Timestamp : 1394163009. Now : 1394163010. Diff : 1..
+Thu Mar  6 22:30:10 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:11 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:12 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:13 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:14 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:15 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:16 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:17 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:18 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:19 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:20 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:21 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:22 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:23 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:24 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:30:25 2014-->corobot5 :: Timestamp : 1394163024. Now : 1394163025. Diff : 1..
+Thu Mar  6 22:30:25 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:26 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:27 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:28 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:29 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:30 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:31 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:32 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:33 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:34 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:35 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:36 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:37 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:38 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:39 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:30:40 2014-->corobot5 :: Timestamp : 1394163039. Now : 1394163040. Diff : 1..
+Thu Mar  6 22:30:40 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:41 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:42 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:43 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:44 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:45 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:46 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:47 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:48 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:49 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:50 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:51 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:52 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:53 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:54 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:30:55 2014-->corobot5 :: Timestamp : 1394163054. Now : 1394163055. Diff : 1..
+Thu Mar  6 22:30:55 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:56 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:30:57 2014-->Closing connection with corobot5 :: (129.21.70.161:33364)..
+Thu Mar  6 22:31:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:31:10 2014-->corobot5 :: Timestamp : 1394163056. Now : 1394163070. Diff : 14..
+Thu Mar  6 22:31:10 2014-->corobot5 status expired. Will be removed..
+Thu Mar  6 22:31:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:31:25 2014-->No robots to clean..
+Thu Mar  6 22:31:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:31:40 2014-->No robots to clean..
+Thu Mar  6 22:31:46 2014-->129.21.30.80::38343 ---CLIENT connection..
+Thu Mar  6 22:31:46 2014-->Total robots : 0 .
+Thu Mar  6 22:31:46 2014-->No robots in the system..
+Thu Mar  6 22:31:46 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Thu Mar  6 22:31:46 2014-->Total robots : 0 .
+Thu Mar  6 22:31:46 2014-->No robots in the system..
+Thu Mar  6 22:31:46 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Thu Mar  6 22:31:46 2014-->Closing connection with CLIENT :: (129.21.30.80:38343)..
+Thu Mar  6 22:31:52 2014-->Sending welcome message : Welcome to corobotics server...
+Thu Mar  6 22:31:52 2014-->Welcome message sent..
+Thu Mar  6 22:31:52 2014-->Data received : corobot5:IDLE..
+Thu Mar  6 22:31:52 2014-->129.21.70.161 :: Robot name : corobot5 and current status: IDLE..
+Thu Mar  6 22:31:52 2014-->New thread for 129.21.70.161..
+Thu Mar  6 22:31:53 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:31:54 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:31:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:31:55 2014-->corobot5 :: Timestamp : 1394163114. Now : 1394163115. Diff : 1..
+Thu Mar  6 22:31:55 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:31:56 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:31:57 2014-->129.21.30.80::38344 ---CLIENT connection..
+Thu Mar  6 22:31:57 2014-->Total robots : 1 .
+Thu Mar  6 22:31:57 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 1..
+Thu Mar  6 22:31:57 2014-->Total robots : 1 .
+Thu Mar  6 22:31:57 2014-->129.21.30.80::Idle robot found. Robot name : corobot5.
+Thu Mar  6 22:31:57 2014-->129.21.30.80::Deploying code on IP (129.21.70.161) Robot name : corobot5..
+Thu Mar  6 22:31:57 2014-->Deploying code on corobot5. Destination : AtriumN..
+Thu Mar  6 22:31:57 2014-->'129.21.70.161'::corobot5:Data received : IDLE:0.0:0.0..
+Thu Mar  6 22:31:58 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:31:59 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:32:00 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:32:01 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:32:02 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:32:03 2014-->'129.21.70.161'::corobot5:Data received : BUSY:0.0:0.0..
+Thu Mar  6 22:32:03 2014-->Closing connection with corobot5 :: (129.21.70.161:33837)..
+Thu Mar  6 22:32:10 2014-->Trying to cleanup robots..
+Thu Mar  6 22:32:10 2014-->corobot5 :: Timestamp : 1394163123. Now : 1394163130. Diff : 7..
+Thu Mar  6 22:32:25 2014-->Trying to cleanup robots..
+Thu Mar  6 22:32:25 2014-->corobot5 :: Timestamp : 1394163123. Now : 1394163145. Diff : 22..
+Thu Mar  6 22:32:25 2014-->corobot5 status expired. Will be removed..
+Thu Mar  6 22:32:40 2014-->Trying to cleanup robots..
+Thu Mar  6 22:32:40 2014-->No robots to clean..
+Thu Mar  6 22:32:55 2014-->Trying to cleanup robots..
+Thu Mar  6 22:32:55 2014-->No robots to clean..
+Thu Mar  6 22:33:08 2014-->Keyboard interrupt!.
+Thu Mar  6 22:33:08 2014-->Server closed..

@@ -11,15 +11,16 @@
     ?>
     <!--h1>Server down for maintenance</h1-->
         <div>
-            <h3>NAV_TO.PY &ltDestination&gt : 
+            <!--h3>NAV_TO.PY &ltDestination&gt : -->
+            <h3>Select a destination : 
                 <select name="destination" id="destination" required>
                 </select>
                 <!--input type="text" name="destination" id="destination"-->
             </h3>
-            <button type="button" name="deploy" id="deploy">Deploy</button> 
-            <button type="button" name="startServer" id="startServer">Start server</button>
+            <button name="deploy" id="deploy">Deploy</button> 
+            <button name="startServer" id="startServer">Start server</button>
             <a href="temp.py"><button type="button" name="downloadFile">Download sample file</button></a>
-            <h4>Code status : <label id="codeStatus"></label></h4>
+            <h4>Status : <label id="status"></label></h4>
         </div>
     </body>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -30,18 +31,20 @@
                 url : "/cgi-bin/deployAjax.php",
                 data :  "destination=" + $("#destination").val(),
                 type : "GET",
-                done : console.log ("I sent data : " + $("#destination").val()),
+                dataType : "text",
+                done : console.log ("Destination : " + $("#destination").val()),
                 success : function(data){
-                    $("#codeStatus").text (data)},
-                fail : $("#codeStatus").text("Sorry! Communication error!")
+                    $("#status").text (data)},
+                fail : $("#status").text("Sorry! Communication error!")
             });
         });
+
         $("#startServer").click(function(){
             $.ajax({
                 url : "/cgi-bin/startServer.py",
                 success : function(data){
-                    $("#codeStatus").text (data)},
-                fail : $("#codeStatus").text("Sorry! Communication error!")
+                    $("#status").text (data)},
+                fail : $("#status").text("Sorry! Communication error!")
             });
         });
         $(window).load(function(){

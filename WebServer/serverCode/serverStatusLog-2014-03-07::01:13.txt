@@ -1,0 +1,68 @@
+
+Fri Mar  7 01:13:24 2014-->Sockets binded successfully..
+Fri Mar  7 01:13:24 2014-->Robot socket at port : 51000.
+Fri Mar  7 01:13:24 2014-->Client socket at port : 56000.
+Fri Mar  7 01:13:24 2014-->Browser socket at port : 61000.
+Fri Mar  7 01:13:24 2014-->Client-IP-only socket at port : 65000.
+Fri Mar  7 01:13:24 2014-->Listening for incoming connections..
+Fri Mar  7 01:13:24 2014-->Server started..
+Fri Mar  7 01:13:24 2014-->Server status file : OPENED..
+Fri Mar  7 01:13:24 2014-->Status log file name : /home/robotics/Desktop/gitWebServer/corobot-web/WebServer/serverCode/serverStatusLog-2014-03-07::01:13.txt.
+Fri Mar  7 01:13:24 2014-->	Welcome to corobotics server..
+Fri Mar  7 01:13:24 2014-->Trying to cleanup robots..
+Fri Mar  7 01:13:24 2014-->No robots to clean..
+Fri Mar  7 01:13:32 2014-->129.21.30.80::40830 ---client-IP-only connection..
+Fri Mar  7 01:13:32 2014-->Total robots : 0 .
+Fri Mar  7 01:13:32 2014-->No robots in the system..
+Fri Mar  7 01:13:32 2014-->Closing client-IP-only connection :: (129.21.30.80:40830)..
+Fri Mar  7 01:13:39 2014-->Trying to cleanup robots..
+Fri Mar  7 01:13:39 2014-->No robots to clean..
+Fri Mar  7 01:13:54 2014-->Trying to cleanup robots..
+Fri Mar  7 01:13:54 2014-->No robots to clean..
+Fri Mar  7 01:13:58 2014-->129.21.30.80::40831 ---client-IP-only connection..
+Fri Mar  7 01:13:58 2014-->Total robots : 0 .
+Fri Mar  7 01:13:58 2014-->No robots in the system..
+Fri Mar  7 01:13:58 2014-->Closing client-IP-only connection :: (129.21.30.80:40831)..
+Fri Mar  7 01:14:09 2014-->Trying to cleanup robots..
+Fri Mar  7 01:14:09 2014-->No robots to clean..
+Fri Mar  7 01:14:12 2014-->129.21.30.80::40832 ---client-IP-only connection..
+Fri Mar  7 01:14:12 2014-->Total robots : 0 .
+Fri Mar  7 01:14:12 2014-->No robots in the system..
+Fri Mar  7 01:14:12 2014-->Closing client-IP-only connection :: (129.21.30.80:40832)..
+Fri Mar  7 01:14:24 2014-->Trying to cleanup robots..
+Fri Mar  7 01:14:24 2014-->No robots to clean..
+Fri Mar  7 01:14:39 2014-->Trying to cleanup robots..
+Fri Mar  7 01:14:39 2014-->No robots to clean..
+Fri Mar  7 01:14:42 2014-->Sending Robots' information to browser::IP (129.21.30.80:52872)..
+Fri Mar  7 01:14:42 2014-->No robots availble. None string sent to browser::IP (129.21.30.80:52872). Closing connection!.
+Fri Mar  7 01:14:47 2014-->129.21.30.80::38685 ---CLIENT connection..
+Fri Mar  7 01:14:47 2014-->Total robots : 0 .
+Fri Mar  7 01:14:47 2014-->No robots in the system..
+Fri Mar  7 01:14:47 2014-->129.21.30.80::Destination to be assigned : AtriumN. No of IDLE robots : 0..
+Fri Mar  7 01:14:47 2014-->Total robots : 0 .
+Fri Mar  7 01:14:47 2014-->No robots in the system..
+Fri Mar  7 01:14:47 2014-->129.21.30.80::Sorry. Unable to assign a robot. Closing connection!.
+Fri Mar  7 01:14:47 2014-->Closing connection with CLIENT :: (129.21.30.80:38685)..
+Fri Mar  7 01:14:54 2014-->Trying to cleanup robots..
+Fri Mar  7 01:14:54 2014-->No robots to clean..
+Fri Mar  7 01:15:09 2014-->Trying to cleanup robots..
+Fri Mar  7 01:15:09 2014-->No robots to clean..
+Fri Mar  7 01:15:24 2014-->Trying to cleanup robots..
+Fri Mar  7 01:15:24 2014-->No robots to clean..
+Fri Mar  7 01:15:38 2014-->129.21.30.80::40835 ---client-IP-only connection..
+Fri Mar  7 01:15:38 2014-->Total robots : 0 .
+Fri Mar  7 01:15:38 2014-->No robots in the system..
+Fri Mar  7 01:15:38 2014-->Closing client-IP-only connection :: (129.21.30.80:40835)..
+Fri Mar  7 01:15:39 2014-->Trying to cleanup robots..
+Fri Mar  7 01:15:39 2014-->No robots to clean..
+Fri Mar  7 01:15:54 2014-->Trying to cleanup robots..
+Fri Mar  7 01:15:54 2014-->No robots to clean..
+Fri Mar  7 01:16:09 2014-->Trying to cleanup robots..
+Fri Mar  7 01:16:09 2014-->No robots to clean..
+Fri Mar  7 01:16:19 2014-->129.21.30.80::40837 ---client-IP-only connection..
+Fri Mar  7 01:16:19 2014-->Total robots : 0 .
+Fri Mar  7 01:16:19 2014-->No robots in the system..
+Fri Mar  7 01:16:19 2014-->Closing client-IP-only connection :: (129.21.30.80:40837)..
+Fri Mar  7 01:16:24 2014-->Trying to cleanup robots..
+Fri Mar  7 01:16:24 2014-->No robots to clean..
+Fri M

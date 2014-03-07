@@ -80,7 +80,7 @@ def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
 
 
 	# Open server status file in append + reading mode
-	statusFileHandler = open (SERVER_STATUS_FILE,"a+")
+	statusFileHandler = open (SERVER_STATUS_FILE,"a")
 
 	# DEBUG 
 	"""printWithTime ("Initialized with -->\nWELCOME_MSG : %s\nHOST : %s\n\
@@ -122,9 +122,9 @@ def getIdleRobotIP(conn, ip, port):
 	try:
 		if robotName is not None:
 			idleRobotIP = attribList[0]
-			conn.sendall(idleRobotIP)
+			conn.sendall(robotName + "-" + idleRobotIP)
 		else:
-			conn.sendall ("None")
+			conn.sendall ("None-None")
 	except socket.error, (errNo,errMessage):
 		printWithTime ("Socket error with client-IP-only socket::IP (%s:%d)! Error no : %d. Error Message : %s. Closing connection!" %
 			(str(ip), port, errNo, errMessage))
@@ -166,7 +166,7 @@ def deployCode(robotName, ip, destination):
 	ip : IP address of the robot with name - "robotName".
 	destination : A string for the "nav_to.py" program."""
 
-	printWithTime ("Deploying code on %s, Destination : %s." % (robotName, destination))
+	printWithTime ("Deploying code on %s. Destination : %s." % (robotName, destination))
 	subprocess.call (["python3", "new.py", ip, destination])
 	#subprocess.call (["python3", "nav_to.py", ip, destination])
 
@@ -181,8 +181,8 @@ def getIdleRobot():
 	# Check if there exists atleast 1 robot.
 	if (getIdleRobotCount() > 0):
 		for robotName, attribList in ROBOTS_INFO_DICT.iteritems():
-			#if (attribList[2].upper() == "IDLE"):
-			return robotName, attribList
+			if (attribList[2].upper() == "IDLE"):
+				return robotName, attribList
 	else:
 		return None, None
 
@@ -232,7 +232,7 @@ def assignRobot (conn, ip, port):
 				ROBOTS_INFO_DICT[robotName][5] = destination
 
 			else:
-				conn.sendall ("Sorry. Unable to assign a robot. Closing connection!")
+				conn.sendall ("Sorry. Unable to assign a robot.")
 				printWithTime ("%s::Sorry. Unable to assign a robot. Closing connection!" % str(ip))
 	except socket.error, (errNo,errMessage):
 		printWithTime ("Socket error with browser::IP (%s:%d)! Error no : %d. Error Message : %s. Closing connection!" %
@@ -242,10 +242,9 @@ def assignRobot (conn, ip, port):
 	finally:
 		# Deploy the code for the assigned robot
 		if robotName is not None:
-			conn.sendall("%s::Deploying code on IP (%s) Robot name : %s." % (str(ip), attribList[0], robotName))
 			printWithTime ("%s::Deploying code on IP (%s) Robot name : %s." % (str(ip), attribList[0], robotName))
-			conn.sendall ("Please check the status on our webpage : www.vhost1.cs.rit.edu/status.php")
 			deployCode (robotName, attribList[0], destination)
+		conn.sendall  ("Closing connection!")
 		printWithTime ("Closing connection with CLIENT :: (%s:%d)." % (str(ip), port))
 		conn.close()
 
@@ -259,7 +258,7 @@ def clientThread(conn, ip, port, robotName):
 	
 	global ROBOTS_INFO_DICT
 
-	printWithTime ("New thread for %s." % str(conn.getsockname()))
+	printWithTime ("New thread for %s." % ip)
 	while True:
 		try:
 			data = conn.recv (BUFFER_SIZE)
@@ -363,6 +362,8 @@ def repeat (frequency, functionName):
 	try:
 		threading.Timer (frequency,repeat, [frequency, functionName]).start()
 		functionName()
+		# Add a flag to check if server is closed.
+
 	except Exception as E:
 		printWithTime (E)
 
@@ -447,7 +448,7 @@ def main():
 	printWithTime ("Status log file name : %s" % SERVER_STATUS_FILE)
 	printWithTime ("\t%s" % WELCOME_MSG)
 
-	# Function to repeat cleanupRobots() forever with interval of 'frequency' seconds
+	# Function to repeat cleanupRobots() forever with interval of 'FREQUENCY' seconds
 	repeat(FREQUENCY,cleanupRobots)
 
 	try:

@@ -5,7 +5,7 @@ filename = "server.py"
 
 # Function to check if a program is running.
 def checkProgram():
-    print (((os.popen("ps -ef | grep \"python.*%s\"" % filename)).read()).strip())
+    #print (((os.popen("ps -ef | grep \"python.*%s\"" % filename)).read()).strip())
     return int(((os.popen("ps -ef | grep -c \"python.*%s\"" % filename)).read()).strip())
 
 print ("Content-type : text/plain\n")
