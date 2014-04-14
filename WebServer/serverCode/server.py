@@ -32,10 +32,7 @@ def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
 	FREQUENCY 				: Frequency of dead robot cleanup method in seconds.
 	"""
 	# File handler for status file.
-	global statusFileHandler, myLock
-
-	myLock = threading.Lock()
-
+	global statusFileHandler
 	if WELCOME_MSG == "" :
 		WELCOME_MSG = "Welcome to corobotics server."
 	if HOST == "":
@@ -232,8 +229,8 @@ def assignRobot (conn, ip, port):
 				ROBOTS_INFO_DICT[robotName][5] = destination
 
 			else:
-				conn.sendall ("Sorry. Unable to assign a robot.")
-				printWithTime ("%s::Sorry. Unable to assign a robot. Closing connection!" % str(ip))
+				conn.sendall ("Sorry, no IDLE corobot found.")
+				printWithTime ("%s::Sorry, no IDLE corobot found. Closing connection!" % str(ip))
 	except socket.error, (errNo,errMessage):
 		printWithTime ("Socket error with browser::IP (%s:%d)! Error no : %d. Error Message : %s. Closing connection!" %
 			(str(ip), port, errNo, errMessage))
