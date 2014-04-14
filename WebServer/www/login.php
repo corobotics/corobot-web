@@ -1,33 +1,47 @@
+<?php
+    include_once 'includes/db_connect.php';
+    include_once 'includes/functions.php';
+     
+    sec_session_start();
+     
+    if (logged_in_check($mysqli) == true) {
+        $loggedStatus = 'in';
+        header ("Location: index.php");
+    } else {
+        $loggedStatus = 'out';
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Testing login</title>
+        <title>Secure Login: Log in to the Corobotics portal</title>
+        <!--script type="text/JavaScript" src="js/sha512.js"></script--> 
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha512.js"></script>
+        <script src="js/forms.js"></script> 
+        <link rel="stylesheet" href="/css/style.css" type="text/css" />
     </head>
     <body>
-        <form>
+        <?php
+            include "include.php";
+            if (isset($_GET['error'])) {
+                echo '<p>Error Logging In!</p>';
+            }
+        ?> 
+        <form action="/includes/process_login.php" method="post" id="loginForm">                      
             <table>
                 <tr>
-                    <td>Username</td>
-                    <td><input type="text" name="username" id="username"></td>
+                    <td>RIT Id: </td>
+                    <td><input type="text" name="id" id="id" style="text-transform:lowercase"/></td>
                 </tr>
                 <tr>
-                    <td>Password</td>
-                    <td><input type="text" name="password" id="password"></td>
+                    <td>Password: </td>
+                    <td><input type="password" name="p" id="p"/></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><button name="submit" onclick="validate()">Login</button>
-                    <button type="reset" value="reset">Reset</button></td>
-                </tr>
+                    <td><input type="submit" value="Login" onclick="formhash(this.form,this.form.p);"/>
+                    <input type="reset"/></td>
             </table>
         </form>
     </body>
-    <script>
-        function validate() {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            console.log (username);
-            console.log (password);
-        }
-    </script>
 </html>

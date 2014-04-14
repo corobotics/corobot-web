@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Contact Corobots team</title>
-    <link rel="stylesheet" href="./GenericWeb/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
   </head>
   <body>
     <?php include "./include.php";

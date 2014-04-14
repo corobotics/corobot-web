@@ -1,13 +1,21 @@
+<?php
+    include_once 'includes/db_connect.php';
+    include_once 'includes/functions.php';
+     
+    sec_session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Deploy code page</title>
-        <link rel="stylesheet" href="./GenericWeb/css/style.css" type="text/css" />
+        <link rel="stylesheet" href="/css/style.css" type="text/css" />
     </head>
     <body>
     <?php include "./include.php";
         error_reporting(E_ALL);
+        if (logged_in_check($mysqli) == true) :
     ?>
     <!--h1>Server down for maintenance</h1-->
         <div>
@@ -18,14 +26,17 @@
                 <!--input type="text" name="destination" id="destination"-->
             </h3>
             <button name="deploy" id="deploy">Deploy</button> 
-            <button name="startServer" id="startServer">Start server</button>
-            <a href="temp.py"><button type="button" name="downloadFile">Download sample file</button></a>
+            <a href="/uploadModule/uploads/sampleFile.py"><button type="button" name="downloadFile">Download sample file</button></a>
             <h4>Status : <label id="status"></label></h4>
         </div>
+        <p><a href="<?php echo "logs/" . $_SESSION['id'] . "/" . $_SESSION['id'] . "_deployLog.txt" ?>">Download</a> deploy log file.</p>
+    <?php else : ?>
+        <p>You are not authorized to access this page. Please <a href="login.php">login</a>.</p>
+    <?php endif; ?>
     </body>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
-        var waypointsFileLocation = "./waypoints.txt";
+        var waypointsFileLocation = "/waypoints.txt";
         $("#deploy").click(function(){
             $.ajax({
                 url : "/cgi-bin/deployAjax.php",
@@ -33,15 +44,6 @@
                 type : "GET",
                 dataType : "text",
                 done : console.log ("Destination : " + $("#destination").val()),
-                success : function(data){
-                    $("#status").text (data)},
-                fail : $("#status").text("Sorry! Communication error!")
-            });
-        });
-
-        $("#startServer").click(function(){
-            $.ajax({
-                url : "/cgi-bin/startServer.py",
                 success : function(data){
                     $("#status").text (data)},
                 fail : $("#status").text("Sorry! Communication error!")

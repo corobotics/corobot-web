@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <link rel="stylesheet" href="./GenericWeb/css/style.css" type="text/css" />
+        <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <title>Status page</title>
     </head>
     <body>
@@ -77,7 +77,7 @@
     	function communicate(){
             // Check if communicate status is active or not.
             if (!getCommunicateStatus()) return;
-        	$.getJSON("/cgi-bin/jsonTest.py", function (data){
+        	$.getJSON("/cgi-bin/jsonOutput.py", function (data){
                 var output = $.parseJSON (data);
                 $("#robotStatusTable td").parent().remove();
                 if (output == null){
