@@ -18,7 +18,7 @@
             if (logged_in_check($mysqli) == true) :
         ?>
         <form action="/cgi-bin/uploader.php" method="post" enctype="multipart/form-data" 
-            id="uploadForm" onsubmit="return validateFileUpload();">
+            name="uploadForm" id="uploadForm" onsubmit="return validateFileUpload();">
             <div class="body">
                 <p>Upload one file at a time and kindly confirm your upload in your workspace.</p>
                 <table>
@@ -27,7 +27,8 @@
                     </tr>
                     <tr><td></td><td><input type="submit" name="uploadBtn" value="Upload"></td></tr>
                 </table>
-                <p><a href="<?php echo "logs/" . $_SESSION['id'] . "/" . $_SESSION['id'] . "_uploadLog.txt" ?>">Download</a> upload log file</p>
+                <p><a href="<?php echo "logs/" . $_SESSION['id'] . "/" . $_SESSION['id'] . "_uploadLog.txt" ?>">
+                    Download</a> upload log file</p>
             </div>
         </form>
         <?php else : ?>
@@ -51,13 +52,13 @@
             }
             // Check the file extension.
             var extension = fileName.substring (fileName.lastIndexOf (".")+1);
-            if (extension != "py") {
-                alert ("Only python files allowed.");
+            if ((extension != "py") && (extension != "java")) {
+                alert ("Only Python and Java files allowed.");
                 document.getElementById ('uploadForm').reset();
                 return false;
             }
             else {
-                alert ("File uploaded. Please check the logs.");
+                alert ("File uploaded successfully.");
             }
         }
     </script>

@@ -22,8 +22,9 @@
                         Send/receive requests : <label id="requestStatus">ACTIVE</label>
                         <input type="submit" onclick="toggleCommunicateStatus()" id="toggleButton" value="Stop getting status" 
                         title="Click to toggle send/receive request status"</input>
+                        Status refresh rate = <label id="refreshRate">5</label> seconds.
                     </td>
-                </tr>
+                </tr>                
             </table>
         </div>
     	<div>
@@ -101,7 +102,8 @@
                 $("#errorCode").text("Not connected to server.");
             });
             // Call communicate every 5 seconds.
-    		setTimeout ('communicate()',5000);
+            var refreshRateTimeout = $("#refreshRate").text() * 1000;
+    		setTimeout ('communicate()',refreshRateTimeout);
     	}; // End of communicate()
 
     	$(document).ready( function(){

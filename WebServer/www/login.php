@@ -14,9 +14,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>Secure Login: Log in to the Corobotics portal</title>
-        <!--script type="text/JavaScript" src="js/sha512.js"></script--> 
-        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha512.js"></script>
         <script src="js/forms.js"></script> 
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
     </head>
@@ -24,10 +23,11 @@
         <?php
             include "include.php";
             if (isset($_GET['error'])) {
-                echo '<p>Error Logging In!</p>';
+                header('Location: error.php?err=$_GET["error"]');
             }
         ?> 
-        <form action="/includes/process_login.php" method="post" id="loginForm">                      
+        <form action="/includes/process_login.php" method="post" name="loginForm"
+            onsubmit="return formhash(loginForm,loginForm.id,loginForm.p);">                      
             <table>
                 <tr>
                     <td>RIT Id: </td>
@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" value="Login" onclick="formhash(this.form,this.form.p);"/>
+                    <td><input type="submit" value="Login">
                     <input type="reset"/></td>
             </table>
         </form>
