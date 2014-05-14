@@ -78,7 +78,7 @@
     	function communicate(){
             // Check if communicate status is active or not.
             if (!getCommunicateStatus()) return;
-        	$.getJSON("/cgi-bin/jsonOutput.py", function (data){
+        	$.getJSON("/cgi-bin/jsonOutput.php", function (data){
                 var output = $.parseJSON (data);
                 $("#robotStatusTable td").parent().remove();
                 if (output == null){

@@ -22,11 +22,12 @@
 		  <li><a href="/login.php">Login</a></li>
         <?php endif; ?>
 		<?php if ($loggedIn): ?> 
-			<li><a href="workspace.php">My workspace (<?php echo $_SESSION['id'];?>)</a></li>
+			<li><a href="workspace.php"><?php echo $_SESSION['id'];?>'s workspace</a></li>
+            <li><a href="logs.php">Logs</a></li>
 		<?php endif; ?>
 		<li><a href="/status.php">Status</a></li>
 		<?php if ($loggedIn): ?> 
-			<li><a href="/dispatchCorobot.php">Dispatch Corobot</a></li>
+			<li><a href="/dispatch.php">Dispatch Corobot</a></li>
 		<?php endif; ?>
 		<li><a href="/contact.php">Contact us</a></li>
 		<?php if ($loggedIn): ?> 

@@ -20,7 +20,7 @@
             error_reporting(E_ALL);
             if (logged_in_check($mysqli) == true) :
         ?>
-        <div name="uploadCodeDiv" style="width:50%;float:left;">
+        <div style="width:940px;margin:0 auto;">
             <form action="/cgi-bin/uploader.php" method="post" enctype="multipart/form-data" 
                 name="uploadForm" id="uploadForm" onsubmit="return validateFileUpload();">
                 <p>Upload one file at a time and kindly confirm your upload in your workspace and logs.</p>
@@ -30,12 +30,7 @@
                     </tr>
                     <tr><td></td><td><input type="submit" name="uploadBtn" value="Upload"></td></tr>
                 </table>
-                <p><a href="<?php echo "logs/" . $_SESSION['id'] . "/" . $_SESSION['id'] . "_uploadLog.txt" ?>">
-                    Download</a> upload log file</p>
             </form>
-        </div>
-        <!--div style="width:940px;margin:0 auto;"-->
-        <div name="workspaceDiv" style="width:50%;float:right;">
             <h3>List of my files</h3>
             <div style="height:400px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
                 <table border=2;align=center;style="height:250%;border-style:solid;">
@@ -45,7 +40,7 @@
                     <?php
                         $fileLocation = 'uploads/' . $_SESSION['id'];
                         chdir($fileLocation);
-                        $files = glob ("*.*", GLOB_NOSORT);
+                        $files = glob ("*.{java,py}", GLOB_NOSORT+GLOB_BRACE);
                         //usort($files, create_function('$a,$b', 'return filemtime($b) - filemtime($a);'));
                         array_multisort(array_map('filemtime', $files), SORT_NUMERIC, SORT_DESC, $files);
                         foreach ($files as $fileName) {
@@ -54,9 +49,11 @@
                         }
                     ?>
                 </table>
+        <strong>NOTE</strong> :  <ol><li>The output might need a couple of seconds to be displayed.</li>
+        <li>You might see some extra API files in your workspace.</li></ol>
             </div>
-            <p><a href="<?php echo "logs/" . $_SESSION['id'] . "/" . $_SESSION['id'] . "_workspaceDeployLog.txt" ?>">Download</a> workspace log file</p>
         </div>
+
         <?php else : ?>
             <p>You are not authorized to access this page. Please <a href="login.php">login</a>.</p>
         <?php endif; ?>

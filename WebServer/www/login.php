@@ -44,4 +44,7 @@
             </table>
         </form>
     </body>
+    <script type="text/javascript">
+    document.getElementById('id').focus();
+    </script>
 </html>

@@ -4,12 +4,12 @@
 
     // DEFINED variables.
     define ("ROOT","/var/www");
-    define ("UPLOAD_LOG_TABLE", "upload_log");
 
     chdir(ROOT);
     include_once 'includes/db_connect.php';
     include_once 'includes/functions.php';
-    include_once 'includes/initial_setup.php';
+    include_once 'includes/folder_setup.php';
+    include_once 'inclues/db_names.php';
 
     // Check for unauthorized login.     
     sec_session_start();

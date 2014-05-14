@@ -1,7 +1,7 @@
 import socket,sys,thread,time,select,json,threading,subprocess,datetime
 
 # 0. Function to initialize with default values
-def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
+def init (WELCOME_MSG="",HOSTNAME="",ROBOT_PORT=0,CLIENT_PORT=0,BROWSER_PORT=0,
 	CLIENT_IP_PORT=0, BUFFER_SIZE=0, MAX_NO_OF_CONNECTIONS=0,ROBOTS_INFO_DICT={},
 	DELIM="",SERVER_STATUS_FILE="", ROBOT_TIMEOUT=0, FREQUENCY=0):
 	"""
@@ -10,8 +10,7 @@ def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
 
 	WELCOME_MSG 			: Welcome message that is sent to the robots on the 
 								first attempt of connection.
-	HOST 					: Hostname
-	PORT 					: Host port no.
+	HOSTNAME 				: Hostname
 	ROBOT_PORT 				: Port no. for robot connections.
 	CLIENT_PORT 			: Port no. for client connections.
 	BROWSER_PORT 			: Port no. for browser connections.
@@ -35,8 +34,10 @@ def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
 	global statusFileHandler
 	if WELCOME_MSG == "" :
 		WELCOME_MSG = "Welcome to corobotics server."
-	if HOST == "":
-		HOST = "129.21.30.80"
+	# Read the server details from a json file
+	readServerDetails()
+	if HOSTNAME == "":
+		HOSTNAME = "vhost1.cs.rit.edu"
 	if ROBOT_PORT == 0:
 		ROBOT_PORT = 51000
 	if CLIENT_PORT == 0:
@@ -62,7 +63,7 @@ def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
 		FREQUENCY = 15
 
 	globals()["WELCOME_MSG"] = WELCOME_MSG
-	globals()["HOST"] = HOST
+	globals()["HOSTNAME"] = HOSTNAME
 	globals()["ROBOT_PORT"] = ROBOT_PORT
 	globals()["CLIENT_PORT"] = CLIENT_PORT
 	globals()["BROWSER_PORT"] = BROWSER_PORT
@@ -80,12 +81,35 @@ def init (WELCOME_MSG="", HOST="", ROBOT_PORT=0, CLIENT_PORT=0, BROWSER_PORT=0,
 	statusFileHandler = open (SERVER_STATUS_FILE,"a")
 
 	# DEBUG 
-	"""printWithTime ("Initialized with -->\nWELCOME_MSG : %s\nHOST : %s\n\
+	"""printWithTime ("Initialized with -->\nWELCOME_MSG : %s\nHOSTNAME : %s\n\
 		ROBOT_PORT : %s\nCLIENT_PORT : %s\nBROWSER_PORT : %d\n \
 		BUFFER_SIZE : %d\nMAX_NO_OF_CONNECTIONS : %s\nROBOTS_INFO_DICT : %s\n \
-		DELIM : %s\nROBOT_TIMEOUT : %d" % (WELCOME_MSG, HOST, ROBOT_PORT,
+		DELIM : %s\nROBOT_TIMEOUT : %d" % (WELCOME_MSG, HOSTNAME, ROBOT_PORT,
 		CLIENT_PORT, BROWSER_PORT,BUFFER_SIZE,MAX_NO_OF_CONNECTIONS,
 		ROBOTS_INFO_DICT,DELIM, ROBOT_TIMEOUT)"""
+
+# 0. Function to read the server details from a json file.
+def readServerDetails():
+	global HOSTNAME, ROBOT_PORT, CLIENT_PORT, BROWSER_PORT, CLIENT_IP_PORT
+	try:
+	    import json
+	    filename = "/var/www/includes/server_details.json"
+	    file_handler = open (filename)
+	    input_string = file_handler.read().strip()
+	    json_data = json.loads(input_string)
+	    HOSTNAME = json_data['HOSTNAME']
+	    ROBOT_PORT= json_data['ROBOT_PORT']
+	    CLIENT_PORT = json_data['CLIENT_PORT']
+	    BROWSER_PORT = json_data['BROWSER_PORT']
+	    CLIENT_IP_PORT = json_data['CLIENT_IP_PORT']
+	except ImportError as E:
+	    print "Unable to import 'json' module. " + str(E)
+	except IOError as E:
+	    print "Error reading json file. " + str(E)
+	except Exception as E:
+	    print "Some exception. " + str(E)
+	finally:
+	    file_handler.close()
 
 # 0. Function to print the current time and the data
 def printWithTime(data):
@@ -138,7 +162,7 @@ def sendToBrowser (conn, ip, port):
 	global ROBOTS_INFO_DICT
 
 	try:
-		printWithTime ("Sending Robots' information to browser::IP (%s:%d)." % 
+		printWithTime ("Sending Corobots' information to browser::IP (%s:%d)." % 
 			(str(ip), port))
 		# If atleast 1 robot is present, send output in JSON format. Else, 'none' is sent.
 		ROBOTS_INFO_JSON = json.dumps (ROBOTS_INFO_DICT)
@@ -396,10 +420,10 @@ def startServer():
 		clientIPOnlySocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
 		# Bind the sockets
-		robotSocket.bind ((HOST,ROBOT_PORT))
-		clientSocket.bind ((HOST,CLIENT_PORT))
-		browserSocket.bind ((HOST, BROWSER_PORT))
-		clientIPOnlySocket.bind ((HOST, CLIENT_IP_PORT))
+		robotSocket.bind ((HOSTNAME,ROBOT_PORT))
+		clientSocket.bind ((HOSTNAME,CLIENT_PORT))
+		browserSocket.bind ((HOSTNAME, BROWSER_PORT))
+		clientIPOnlySocket.bind ((HOSTNAME, CLIENT_IP_PORT))
 
 		printWithTime ("Sockets binded successfully.")
 		printWithTime ("Robot socket at port : %d" % ROBOT_PORT)
@@ -530,11 +554,12 @@ def main():
 		closeServer (robotSocket, clientSocket,browserSocket)
 		printWithTime ("Server closed.")
 		closeFile ()
+		sys.exit(0)
 
 if __name__ == "__main__":
 	# Global variables
 	WELCOME_MSG=""
-	HOST=""
+	HOSTNAME=""
 	ROBOT_PORT=0
 	CLIENT_PORT = 0
 	BROWSER_PORT=0

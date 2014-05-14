@@ -3,12 +3,12 @@
     error_reporting(E_ALL);
     // DEFINED variables.
     define ("ROOT","/var/www");
-    define ("WORKSPACE_DEPLOY_LOG_TABLE", "workspace_deploy_log");
 
     chdir(ROOT);
     include_once 'includes/db_connect.php';
     include_once 'includes/functions.php';
-    include_once 'includes/initial_setup.php';
+    include_once 'includes/folder_setup.php';
+    include_once 'include/db_names.php';
 
     sec_session_start();
     // Check if its an authorized login

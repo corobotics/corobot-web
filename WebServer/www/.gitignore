@@ -1,6 +1,6 @@
-includes/*
-js/*
-uploads/*
-LiveStream/*
-distributed/*
-logs/*
+includes/
+logs/
+js/
+uploads/
+LiveStream/
+distributed/
