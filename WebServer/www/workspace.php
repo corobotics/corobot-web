@@ -12,6 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta content = "utf-8" http-equiv="encoding"/>
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <title>My workspace</title>
     </head>
@@ -36,6 +37,7 @@
                 <table border=2;align=center;style="height:250%;border-style:solid;">
                     <th>Upload timestamp</th>
                     <th>File Name</th>
+		    <th>Arguments</th>
                     <th>Operation</th>
                     <?php
                         $fileLocation = 'uploads/' . $_SESSION['id'];
@@ -45,6 +47,7 @@
                         array_multisort(array_map('filemtime', $files), SORT_NUMERIC, SORT_DESC, $files);
                         foreach ($files as $fileName) {
                             echo "<tr><td>" . date("F d Y H:i:s", filectime($fileName)) . "</td><td><a href='$fileLocation/$fileName'>" . $fileName . "</a></td>";
+			    echo "<td><input type = 'text' name = '$fileName'></td>";
                             echo "<td><button type='submit' value='$fileName' class='deployFileName'>Deploy</button></td></tr>";
                         }
                     ?>
@@ -91,18 +94,19 @@
         $(function(){
             $('.deployFileName').on("click", function(){
                 var fileName = $(this).val();
-                $.ajax({
-                    url : "/cgi-bin/workspaceDeploy.php",
-                    data :  "fileName=" + fileName,
-                    type : "GET",
-                    dataType : "text",
-                    success : function(data){
-                        alert(data)},
-                    fail : function(data){
-                        //alert("Sorry! Unable to deploy. Please contact the administator.")
-                        alert(data)}
+		var args = $("[name = '"+ fileName+"']").val();
+		$.ajax({
+		   url : "/cgi-bin/workspaceDeploy.php",
+		   data : "fileName=" + fileName + "&args="+args,
+		   type : "GET",
+		   dataType: "text",
+		   cache : false,
+		   success : function(data){
+			alert(data)},
+		   fail : function(data){
+			alert(data)}
                 });
-            })
+            });
         });
     </script>
 </html>

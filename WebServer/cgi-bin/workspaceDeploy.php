@@ -20,7 +20,7 @@
         header ("Location: /login.php");
     }
 
-    // Location of the API folder. NOTE: It is not a PHP 'define' type, as we need to append
+   // Location of the API folder. NOTE: It is not a PHP 'define' type, as we need to append
     // it with the extension of the file type.
     $API_FOLDER = "/var/www/api/";
 
@@ -32,9 +32,10 @@
     chdir ($id);
 
     // Extract the 'file name' from $_GET
-    $fileName = $_GET ["fileName"];
+    $fileName = $_GET["fileName"];
     $fileType = substr(strrchr($fileName, '.'),1);
 
+    $args = $_GET["args"];
     // Set the appropriate variables based on the file-type.
     switch ($fileType) {
         case 'py':
@@ -65,7 +66,7 @@
     chdir ($id);
     shell_exec("cp -r $API_FOLDER/* .");
     if ($fileType == "python")
-        $output = trim(shell_exec("python3 $fileName"));
+        $output = trim(shell_exec("python3 $fileName $args"));
     else if ($fileType == "java") {
         $output = exec("javac $fileName", $array, $returnVar);
         // Successful compilation.
@@ -80,7 +81,7 @@
         if (!$returnVar) {
             $executableName = substr($fileName,0,strpos($fileName, "."));
             //echo "<br>Executing $fileName";
-            $output = exec("java $executableName", $array, $returnVar);
+            $output = exec("java $executableName $args", $array, $returnVar);
             /*
             echo "java $fileName output-> $output.";
             foreach ($array as $value) {
