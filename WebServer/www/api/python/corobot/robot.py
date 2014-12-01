@@ -40,7 +40,8 @@ class Robot():
         self.connected_event.wait()
         if self.error_connecting:
             raise CorobotException("Couldn't connect to robot at %s:%d" % (host, port))
-
+        else:
+            print ("Connected to corobot\n")
     def _io_loop(self):
         asyncore.loop(0.1)
 
@@ -54,6 +55,9 @@ class Robot():
             data = tuple(map(float, data))
         elif key == "CONFIRM":
             data = bool(data)
+        elif key == "LOG":
+            print(data)
+            return
         else:
             data = None
         if key != "ERROR":
@@ -72,30 +76,37 @@ class Robot():
 
     def nav_to(self, location):
         """Drives the robot to the given location with path planning."""
+        print("Navigating to " + location + "\n")
         return self._write_message("NAVTOLOC " + location.upper())
 
     def nav_to_xy(self, x, y):
         """Drives the robot to the given location with path planning."""
+        print("Navigating to position ("+x+", "+y+")\n")
         return self._write_message("NAVTOXY %f %f" % (x, y))
 
     def go_to(self, location):
         """Drives the robot in a straight line to the given location."""
+        print("Going to " + location + "\n")
         return self._write_message("GOTOLOC " + location.upper())
 
     def go_to_xy(self, x, y):
         """Drives the robot in a straight line to the given coordinates."""
+        print("Going to position ("+x+", "+y+")\n")
         return self._write_message("GOTOXY %f %f" % (x, y))
 
     def get_pos(self):
         """Returns the robot's position as an (x, y, theta) tuple."""
+        print("Getting position\n")
         return self._write_message("GETPOS")
 
     def display_message(self, msg, timeout=120):
         """Requests the robot to display a message on its monitor."""
+        print("Displaying message\n")
         return self._write_message("SHOW_MSG %d %s" % (timeout, msg))
 
     def request_confirm(self, msg, timeout=120):
         """Requests the robot to wait for confirmation from a local human."""
+        print("Displaying confirmation\n")
         return self._write_message("SHOW_MSG_CONFIRM %d %s" % (timeout, msg))
 
     def get_closest_loc(self):
@@ -103,6 +114,7 @@ class Robot():
         raise NotImplementedError()
 
     def close(self):
+        print("Closing connection\n")
         self.client.close_when_done()
 
     def __enter__(self):

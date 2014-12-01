@@ -1,6 +1,8 @@
 <?php
+
     header("content-type:text/plain");
     error_reporting(E_ALL);
+
     // DEFINED variables.
     define ("ROOT","/var/www");
 
@@ -10,20 +12,10 @@
     include_once 'includes/folder_setup.php';
     include_once 'include/db_names.php';
 
-    sec_session_start();
-    // Check if its an authorized login
-    if (isset($_SESSION['id'])) {
-        $id = $_SESSION['id'];
-    }
-    else { 
-        echo "Unauthorized login";
-        header ("Location: /login.php");
-    }
-
+    $id = $argv[2];
    // Location of the API folder. NOTE: It is not a PHP 'define' type, as we need to append
     // it with the extension of the file type.
     $API_FOLDER = "/var/www/api/";
-
     // Test to see if the folders and files exist or not.
     createFoldersAndFiles ($id);
 
@@ -32,10 +24,12 @@
     chdir ($id);
 
     // Extract the 'file name' from $_GET
-    $fileName = $_GET["fileName"];
+    $fileName = $argv[1];
     $fileType = substr(strrchr($fileName, '.'),1);
+    $fileExt = $fileType;
+    $fileTitle = substr($fileName, 0, strpos($fileName, "."));
 
-    $args = $_GET["args"];
+    $args = $argv[3]; 
     // Set the appropriate variables based on the file-type.
     switch ($fileType) {
         case 'py':
@@ -49,9 +43,8 @@
     }
     // Append the file-type for the respective API folder.
     $API_FOLDER .= $fileType;
-
     // Log file details.
-    $logFileName = $id . WORKSPACE_DEPLOY_LOG_FILE;
+    $logFileName = $fileTitle . "_" . $fileExt . "_" . date ("Y-m-d_H:i:s") . WORKSPACE_DEPLOY_LOG_FILE;
     // Open the log file in append mode.
     $logFileHandler = fopen($logFileName, 'a') or die ('Cannot open log file' . $logFileName);
     // Write the following details - Current time, IP, file name.
@@ -65,8 +58,9 @@
     chdir (UPLOAD_FOLDER);
     chdir ($id);
     shell_exec("cp -r $API_FOLDER/* .");
-    if ($fileType == "python")
-        $output = trim(shell_exec("python3 $fileName $args"));
+    if ($fileType == "python"){
+        $output = trim(shell_exec("python3 $fileName $args 2>&1"));
+    }
     else if ($fileType == "java") {
         $output = exec("javac $fileName", $array, $returnVar);
         // Successful compilation.
@@ -81,25 +75,23 @@
         if (!$returnVar) {
             $executableName = substr($fileName,0,strpos($fileName, "."));
             //echo "<br>Executing $fileName";
+/*
             $output = exec("java $executableName $args", $array, $returnVar);
-            /*
             echo "java $fileName output-> $output.";
             foreach ($array as $value) {
                 echo "<br>$value";
             }
-            */
+*/
         }
     }
-    $output = str_replace("\n", ".", $output);
     echo $output;
     fwrite($logFileHandler, $data . "::'$output'\n");
     fclose($logFileHandler);
-
     // Write the log to the database
     if ($stmt = $mysqli->prepare("INSERT INTO " . WORKSPACE_DEPLOY_LOG_TABLE . 
         " (user_id, user_ip4, filename, output) VALUES " . 
         "(?,?,?,?)")) {
-        $stmt->bind_param ('ssss',$_SESSION['id'], $userIp, $fileName, $output);
+        $stmt->bind_param ('ssss',$_SESSION['id'], $userIp, $logFileName, $output);
         $stmt->execute();
     }
     else

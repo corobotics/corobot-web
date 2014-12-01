@@ -45,3 +45,8 @@ class CorobotClient(LineClient):
             self.robot.error_connecting = True
             self.robot.connected_event.set()
         self.close_when_done()
+    def handle_close(self):
+        if self.connected:
+            for future in self.robot.futures.values():
+                future._error_occured("Robot Connection Closed")
+        sys.exit()

@@ -3,7 +3,7 @@ import socket,sys,thread,time,select,json,threading,subprocess,datetime
 # 0. Function to initialize with default values
 def init (WELCOME_MSG="",HOSTNAME="",ROBOT_PORT=0,CLIENT_PORT=0,BROWSER_PORT=0,
 	CLIENT_IP_PORT=0, BUFFER_SIZE=0, MAX_NO_OF_CONNECTIONS=0,ROBOTS_INFO_DICT={},
-	DELIM="",SERVER_STATUS_FILE="", ROBOT_TIMEOUT=0, FREQUENCY=0):
+	DELIM="",SERVER_STATUS_FILE="", ROBOT_TIMEOUT=0, FREQUENCY=0, ROBOT_WARN = 0):
 	"""
 	Includes variables for the default communication setup.
 	Initializes the parameters. 
@@ -28,6 +28,7 @@ def init (WELCOME_MSG="",HOSTNAME="",ROBOT_PORT=0,CLIENT_PORT=0,BROWSER_PORT=0,
 	DELIM 					: Delimiter of data sent from robots.
 	SERVER_STATUS_FILE 		: Name of the server status log file.
 	ROBOT_TIMEOUT 			: Timeout in seconds for robot status.
+        ROBOT_WARN                      : Time period in seconds before a robot is declared unresponsive
 	FREQUENCY 				: Frequency of dead robot cleanup method in seconds.
 	"""
 	# File handler for status file.
@@ -58,7 +59,9 @@ def init (WELCOME_MSG="",HOSTNAME="",ROBOT_PORT=0,CLIENT_PORT=0,BROWSER_PORT=0,
 		directory = "/home/robotics/Desktop/gitWebServer/corobot-web/WebServer/serverCode/"
 		SERVER_STATUS_FILE = directory + "serverStatusLog" + "-" + str(datetime.datetime.now().strftime ("%Y-%m-%d::%H:%M")) + ".txt"
 	if ROBOT_TIMEOUT == 0:
-		ROBOT_TIMEOUT = 10
+		ROBOT_TIMEOUT = 120
+        if ROBOT_WARN == 0:
+                ROBOT_WARN = 10
 	if FREQUENCY == 0:
 		FREQUENCY = 15
 
@@ -74,8 +77,9 @@ def init (WELCOME_MSG="",HOSTNAME="",ROBOT_PORT=0,CLIENT_PORT=0,BROWSER_PORT=0,
 	globals()["DELIM"] = DELIM
 	globals()["SERVER_STATUS_FILE"] = SERVER_STATUS_FILE
 	globals()["ROBOT_TIMEOUT"] = ROBOT_TIMEOUT
+        globals()["ROBOT_WARN"] = ROBOT_WARN
 	globals()["FREQUENCY"] = FREQUENCY
-
+        globals()["listOfRobotsToBeRemoved"] = list()
 
 	# Open server status file in append + reading mode
 	statusFileHandler = open (SERVER_STATUS_FILE,"a")
@@ -277,17 +281,18 @@ def clientThread(conn, ip, port, robotName):
 	port : Port address of the client.
 	robotName - Name of the connected robot."""
 	
-	global ROBOTS_INFO_DICT
+	global ROBOTS_INFO_DICT, listOfRobotsToBeRemoved
 
 	printWithTime ("New thread for %s." % ip)
 	while True:
 		try:
 			data = conn.recv (BUFFER_SIZE)
 			if not data:
+				printWithTime("Disconnect Here?")
 				break
-			printWithTime ("'%s'::%s:Data received : %s." % 
-				(str(ip),robotName, data))
-			status,x,y = data.split (DELIM)
+			printWithTime ("'%s'::%s:%i::Data received : %s." % 
+				(str(ip),robotName,len(ROBOTS_INFO_DICT), data))
+			status,x,y = data.split('\r\n')[0].split (DELIM)
 			status.strip()
 			#ROBOTS_INFO_DICT[robotName] = (ip,port,status, x,y, "-", time.time())
 			ROBOTS_INFO_DICT[robotName][2] = status
@@ -295,6 +300,7 @@ def clientThread(conn, ip, port, robotName):
 			ROBOTS_INFO_DICT[robotName][4] = y
 			ROBOTS_INFO_DICT[robotName][-1] = time.time()
 		except ValueError:
+                        printWithTime("Exiting Thread")
 			pass
 		except socket.error, (errNo,errMessage):
 			printWithTime ("Error no : %d. Error Message : %s." % 
@@ -302,6 +308,7 @@ def clientThread(conn, ip, port, robotName):
 			break
 	printWithTime ("Closing connection with %s :: (%s:%d)." % 
 		(robotName,str(ip), port))
+        listOfRobotsToBeRemoved.append(robotName)
 	conn.close()
 
 # 5. Function to get the robot name and its status
@@ -355,9 +362,8 @@ def cleanupRobots():
 	# Frequency of clean up operation.
 	#frequency = 15
 	try:
-		global ROBOT_TIMEOUT, ROBOTS_INFO_DICT
+		global ROBOT_TIMEOUT, ROBOTS_INFO_DICT, ROBOT_WARN, listOfRobotsToBeRemoved
 		printWithTime ("Trying to cleanup robots.")
-		listOfRobotsToBeRemoved = list()
 		if (len(ROBOTS_INFO_DICT) > 0):
 			for robotName,attribList in ROBOTS_INFO_DICT.iteritems():
 				robotTime = int(ROBOTS_INFO_DICT[robotName][-1])
@@ -367,8 +373,12 @@ def cleanupRobots():
 				if  (diff > ROBOT_TIMEOUT):
 					listOfRobotsToBeRemoved.append (robotName)
 					printWithTime ("%s status expired. Will be removed." % robotName)
+                                elif(diff > ROBOT_WARN):
+                                        ROBOTS_INFO_DICT[robotName][2] = "WARN"
 			for robotName in listOfRobotsToBeRemoved:
+                                printWithTime ("Removing %s"% robotName)
 				ROBOTS_INFO_DICT.pop(robotName)
+                        listOfRobotsToBeRemoved = list()
 		else:
 			printWithTime ("No robots to clean.")
 	except Exception as E:
@@ -570,6 +580,7 @@ if __name__ == "__main__":
 	DELIM = ""
 	SERVER_STATUS_FILE = "serverStatus.txt"
 	ROBOT_TIMEOUT = 0
+	ROBOT_WARN = 0
 	FREQUENCY = 0
 	statusFileHandler = None
 	main()
