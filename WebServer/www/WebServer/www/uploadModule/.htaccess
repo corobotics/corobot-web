@@ -1,0 +1,7 @@
+<Directory>
+  Order allow,deny
+  Deny from all
+<Files>
+  Order allow,deny
+</Files>
+</Directory>
