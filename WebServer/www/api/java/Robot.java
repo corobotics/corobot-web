@@ -31,6 +31,8 @@ public class Robot {
     private Socket sock;
     private PrintWriter out;
     private BufferedReader in;
+    private ArrayList<Future> futures;
+    private readerThread read;
     public String robotData[];
     public static RobotMap robotMap = new RobotMap();
 
@@ -54,7 +56,9 @@ public class Robot {
     // Javadocs can be hidden 
         robotData = null;
         robotData = openSocket();
-
+        msgId = 0;
+	read = new readerThread();
+        futures = new ArrayList<Future>();
         if ((robotData[1].equals("None")) || (robotData[1].equals("")) || (robotData[0] == null))  {
         	System.out.println ("No idle robot found");
             System.exit(1);
@@ -74,6 +78,13 @@ public class Robot {
 	 * Finalize is not guaranteed to be called immediately or might not get called at all 
 	 * if the robot object is still referenced in code.
 	 */
+    protected void finalize() throws Throwable {
+    try{
+	this.closeSocket();
+    }finally{
+        super.finalize();
+    }
+    }
     /**
      * crap!  how does the server tell us which robot 
      * without making the user code do something?  
@@ -117,30 +128,44 @@ public class Robot {
 	 * @param args: String vararg parameters to take the command and its options and send it to the 
 	 * robot over the socket connection.
 	 */
-	public void sendMsgToRobot(String... args){
+	public Future sendMsgToRobot(String... args){
+		Future fut = new Future();
+		futures.add(fut);
+		if(!read.isAlive()){
+			read.start();
+		}
 		StringBuilder msgToSend = new StringBuilder((msgId++) + "");
 		for (String arg : args )
 			msgToSend.append(" " + arg);
 		out.println(msgToSend.toString());
 		out.flush();
+		return fut;
 	}
 
 	/**
 	 * This checks whether the response from the robot contains the word 'arrived'
 	 * @return : True or False
 	 */
-	private boolean checkArrivedResponse(String methodName){
+	private void checkArrivedResponse(){
 		String response = null;
 		try {
 			response = in.readLine();
-			System.out.println("the respose for " + methodName + "() is " + response);
+			if(response == null){
+				return;
+			}
+			String[] msgs = response.split(" ");
+			int id = Integer.parseInt(msgs[0]) -1;
+			Future future = futures.remove(id);
+			String[] data = Arrays.copyOfRange(msgs, 2, msgs.length);
+			if( msgs[1] != "ERROR" ){
+				future.fulfilled(data);
+			}else{
+				future.error_occured(data);
+			} 
 		} catch (IOException e) {
 			System.err.println("Lost connection with robot!");
-			throw new RobotConnectionException("in " + methodName + "()");
+			throw new RobotConnectionException("Lost connection with robot!");
 		}
-		if(response.toLowerCase().contains("arrived"))
-			return true;
-		return false;
 	}
 
     /**
@@ -150,15 +175,14 @@ public class Robot {
      * @param block specifies whether this call blocks until location reached or some failure condition.
      * @return return whether location has been reached (if blocking)
      */
-    public boolean navigateToLocation(String location) {
+    public Future navigateToLocation(String location) throws MapException{
         location = location.toUpperCase();
         if (robotMap.isNode(location)) {
-		sendMsgToRobot(CMD_NAVTOLOC, location.toUpperCase());
+		return sendMsgToRobot(CMD_NAVTOLOC, location.toUpperCase());
 		//return checkArrivedResponse("navigateToLocation");
-		return true;
-        }
-        else 
-		return false;
+        }else{
+		throw new MapException("Location does not exist");
+	}
     }
     
 
@@ -169,9 +193,8 @@ public class Robot {
      * @param y: y-coordinate in the map
      * @return True or False based on whether the robot succeeded in reaching the coordinates specified.
      */
-	public boolean navigateToXY(double x, double y){
-	   sendMsgToRobot(CMD_NAVTOXY, x+"", y+"");
-	   return checkArrivedResponse("navigateToXY");
+	public Future navigateToXY(double x, double y){
+	   return sendMsgToRobot(CMD_NAVTOXY, x+"", y+"");
 	}
 
     /**
@@ -182,15 +205,14 @@ public class Robot {
      * @param block specifies whether this call blocks until location reached or some failure condition.
      * @return return whether location has been reached (if blocking)
      */
-    public boolean goToLocation(String location) {
+    public Future goToLocation(String location) throws MapException{
         location = location.toUpperCase();
         if (robotMap.isNode(location)) {
-		sendMsgToRobot(CMD_GOTOLOC, location.toUpperCase());
+		return sendMsgToRobot(CMD_GOTOLOC, location.toUpperCase());
 			//return checkArrivedResponse("goToLocation");
-		return true;
 			
 	} else
-            return false;
+		throw new MapException("Location does not exist");
     }
 
     /**
@@ -200,10 +222,12 @@ public class Robot {
      * @param block specifies whether this call blocks until location reached or some failure condition.
      * @return return whether location has been reached (if blocking)
      */
-    public boolean goToXY(double x, double y) {
-       	sendMsgToRobot(CMD_GOTOXY, x+"", y+"");
-		return checkArrivedResponse("goToXY");
+    public Future goToXY(double x, double y) {
+       	return sendMsgToRobot(CMD_GOTOXY, x+"", y+"");
     }
+/**
+
+#TODO Update this to use the new future system. It might be a tricky.
 
     public Point getPos() {
 		sendMsgToRobot(CMD_GETPOS);
@@ -221,12 +245,12 @@ public class Robot {
 			return null;
 		return new Point(Double.parseDouble(tokens[2]), Double.parseDouble(tokens[3]));
     }
-
-    /** 
+*/
+/**
+#TODO Update this too
      * Gives the named location closest to the robot's current position.
      *
      * @return Name of location
-     */
     public String getClosestLoc() {
         Point p = getPos();
         return robotMap.getClosestNode(p.getX(),p.getY());
@@ -239,7 +263,6 @@ public class Robot {
      * Currently not implemented.
      *
      * @return list of nearby location names
-     */
     public List<String> getAllCloseLocs() {
         throw new UnsupportedOperationException();
     }
@@ -250,12 +273,12 @@ public class Robot {
 	 * @param timeout : timeout duration 
      */
     // show a message on the laptop GUI
-    public void showMessage(String msg, int timeout) {
+    public Future showMessage(String msg, int timeout) {
         if (msg.length() > 255)
             msg = msg.substring(0,255);
 		if (timeout > 120)
             timeout = 120;
-        sendMsgToRobot(CMD_SHOW_MSG, timeout+"", msg);
+        return sendMsgToRobot(CMD_SHOW_MSG, timeout+"", msg);
     }
 
 	/**
@@ -264,24 +287,12 @@ public class Robot {
 	 * @param timeout : timeout duration 
      */
     // show a message on the laptop GUI
-	public Boolean showMessageWithConfirmation(String msg, int timeout) {
+	public Future showMessageWithConfirmation(String msg, int timeout) {
          if (msg.length() > 255)
             msg = msg.substring(0,255);
 		 if (timeout > 120)
             timeout = 120;
-		 sendMsgToRobot(CMD_SHOW_MSG_CONFIRM, timeout+"", msg);
-		String response = null;
-        try {
-            response = in.readLine();
-			System.out.println("the respose for Robot.showMessageWithConfirmation() is " + response);
-        } catch (IOException e) {
-            System.err.println("Lost connection with robot!");
-            throw new RobotConnectionException("in Robot.showMessageWithConfirmation()");
-        }
-        String[] tokens = response.split(" ");
-        if (!(tokens[1].equals(CMD_CONFIRM)))
-            return null;
-        return Boolean.parseBoolean(tokens[2]);
+	return sendMsgToRobot(CMD_SHOW_MSG_CONFIRM, timeout+"", msg);
     }
     
     /**
@@ -293,6 +304,11 @@ public class Robot {
     public Image getImage(int whichCamera) {    
         throw new UnsupportedOperationException();
     }
-
-    // may want other access to robot data but not sure what yet.
+    private class readerThread extends Thread{
+	public void run(){
+		while(futures.size() > 0){
+			checkArrivedResponse();
+		}
+	}
+    }    // may want other access to robot data but not sure what yet.
 }
