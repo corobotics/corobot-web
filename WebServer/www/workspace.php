@@ -46,7 +46,7 @@
                         //usort($files, create_function('$a,$b', 'return filemtime($b) - filemtime($a);'));
                         array_multisort(array_map('filemtime', $files), SORT_NUMERIC, SORT_DESC, $files);
                         foreach ($files as $fileName) {
-                            echo "<tr><td>" . date("F d Y H:i:s", filectime($fileName)) . "</td><td><a href='$fileLocation/$fileName'>" . $fileName . "</a></td>";
+                            echo "<tr><td>" . date("F d Y H:i:s", filemtime($fileName)) . "</td><td><a href='$fileLocation/$fileName'>" . $fileName . "</a></td>";
 			    echo "<td><input type = 'text' name = '$fileName'></td>";
                             echo "<td><button type='submit' value='$fileName' class='deployFileName'>Deploy</button></td></tr>";
                         }
@@ -65,7 +65,7 @@
                          $files = glob ("*_log.txt", GLOB_NOSORT+GLOB_BRACE);
                          array_multisort(array_map('filemtime', $files), SORT_NUMERIC, SORT_DESC, $files);
                          foreach ($files as $fileName) {
-                             echo "<tr><td>" .date("F d Y H:i:s", filectime($fileName)) . "</td><td><a href= '$fileLocation/$fileName'>" .$fileName . "</a></td>";
+                             echo "<tr><td>" .date("F d Y H:i:s", filemtime($fileName)) . "</td><td><a href= '$fileLocation/$fileName'>" .$fileName . "</a></td>";
                              echo "<td><button type='submit' value='$fileName' class = 'removeFileName'>Delete</button></td></tr>";
                          }
                      ?>
@@ -120,7 +120,7 @@
 		   dataType: "text",
 		   cache : false,
 		   success : function(data){
-                        alert("Program successfully deployed")
+                        alert("Program Succesfully Deployed");
 		   },
                    fail : function(data){
 			alert("Sorry! Unable to deploy. Please contact the administrator.")},

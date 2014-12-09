@@ -55,6 +55,10 @@
     $data = "'" . $currentTimestamp . "'::'" . $userIp . "'::'" . $fileName . "'";
     //WORK HERE
     //chroot(directory)
+    if ($fileType == "java"){
+        chdir ("/var/www/api/java/corobot");
+        echo shell_exec("javac -cp . *.java 2>&1");
+    }
     chdir (UPLOAD_FOLDER);
     chdir ($id);
     shell_exec("cp -r $API_FOLDER/* .");
@@ -62,17 +66,15 @@
         $output = trim(shell_exec("python3 $fileName $args 2>&1"));
     }
     else if ($fileType == "java") {
-        $output = exec("javac $fileName", $array, $returnVar);
+        shell_exec("rm corobot/*.java");
+        $output = shell_exec("javac $fileName 2>&1");
         // Successful compilation.
         if ((!$output) || ($output == ""))
             echo "Successful compilation.";
         else {
             echo "javac output-> $output.";
-            foreach ($array as $value) {
-                echo "<br>$value";
-            }
         }
-        if (!$returnVar) {
+        if ((!$output) || ($output === "")) {
             $executableName = substr($fileName,0,strpos($fileName, "."));
             //echo "<br>Executing $fileName";
 /*

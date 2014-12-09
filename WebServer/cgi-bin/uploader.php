@@ -21,7 +21,7 @@
     }
 
     // Allowed file types.
-    $allowed_file_types = array("text/x-python-script","text/x-python","application/octet-stream");
+    $allowed_file_types = array("text/x-python-script","text/x-python","application/octet-stream","text/x-java");
 
     // Test to see if the folders and files exist or not.
     createFoldersAndFiles ($id);
