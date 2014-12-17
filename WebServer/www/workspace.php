@@ -120,7 +120,7 @@
 		   dataType: "text",
 		   cache : false,
 		   success : function(data){
-                        alert("Program Succesfully Deployed");
+                        alert("Program Submitted");
 		   },
                    fail : function(data){
 			alert("Sorry! Unable to deploy. Please contact the administrator.")},

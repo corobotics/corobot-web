@@ -26,6 +26,7 @@ public class Future{
 		done = false;
 		awaitingIO = new Semaphore(0);
 		callbacks = new ArrayList<Callback>();
+		errors = new ArrayList<Callback>();
     }
     
 	/**
@@ -45,7 +46,6 @@ public class Future{
 		awaitingIO.release();
 		return this;
 	}
-
 	/**
 	 * Performs a function after the future is fufilled
      * @args The function that gets called when the future is fufilled
@@ -92,14 +92,18 @@ public class Future{
      * @args the callback to call
      */
 	protected void safe_call(Callback f){
-		safe_call(f, null);
+		try{
+			f.call("");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	/**
 	 * Contains the callback
      * @args the callback to call
      * @args the data to pass to the callback
      */
-	protected void safe_call(Callback f, String[] data){
+	protected void safe_call(Callback f, String... data){
 		try{
 			f.call(data);
 		}catch(Exception e){
@@ -110,11 +114,15 @@ public class Future{
 	 * Marks that this future has been fufilled
 	 * @args the data to be used for the callback
 	 */
-	protected void fulfilled(String[] data){
-		this.data = data;
+	protected void fulfilled(String... data){
+		ArrayList<String> dat = new ArrayList<String>();
+		for (String d : data){
+			dat.add(d);
+		}
+		this.data = dat.toArray(new String[dat.size()]);
 		Iterator<Callback> i = callbacks.iterator();
 		while( i.hasNext() ){
-			safe_call(i.next(), this.data);
+			safe_call(i.next(), data);
 		}
 		awaitingIO.release();
 	}
@@ -122,7 +130,7 @@ public class Future{
      * Marks that this future has had an error occur
      * @args The error data to be used for the callback
      */
-	protected void error_occured(String[] error){
+	protected void error_occured(String... error){
 		StringBuilder builder = new StringBuilder();
 		for(String s : error){
 			builder.append(s);

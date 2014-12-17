@@ -9,6 +9,6 @@ public interface Callback{
      * The function being enacted. Should be overwritten with user specification
      * @args The data to be sent, can be null
      */
-    void call(String[] data);
+    void call(String... data);
 }
 

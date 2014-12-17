@@ -77,13 +77,7 @@
         if ((!$output) || ($output === "")) {
             $executableName = substr($fileName,0,strpos($fileName, "."));
             //echo "<br>Executing $fileName";
-/*
-            $output = exec("java $executableName $args", $array, $returnVar);
-            echo "java $fileName output-> $output.";
-            foreach ($array as $value) {
-                echo "<br>$value";
-            }
-*/
+            $output .= shell_exec("java $executableName $args 2>&1");
         }
     }
     echo $output;
